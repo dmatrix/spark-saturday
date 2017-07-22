@@ -36,9 +36,9 @@ Lunch
 
 * Go to your Databricks-->Workspace->Users->your_account@your-emal.com->Import
 
- * Click *File* option
- * Click on "Drop file here to upload or click to select."
- * Upload **MeetupWorkshops.dbc**
+	* Click *File* option
+ 	* Click on "Drop file here to upload or click to select."
+	* Upload **MeetupWorkshops.dbc**
 
  You should have Folder by that name with notesbooks
 
