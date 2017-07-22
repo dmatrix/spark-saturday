@@ -32,13 +32,13 @@ Lunch
 
 * Got to gitbub: [https://github.com/dmatrix/spark-saturday](https://github.com/dmatrix/spark-saturday)
 
-* Download DBC file: ** MeetupWorkshops.dbc **
+* Download DBC file: **MeetupWorkshops.dbc**
 
 * Go to your Databricks-->Workspace->Users->your_account@your-emal.com->Import
 
  * Click *File* option
  * Click on "Drop file here to upload or click to select."
- * Upload ** ** MeetupWorkshops.dbc ***
+ * Upload **MeetupWorkshops.dbc**
 
  You should have Folder by that name with notesbooks
 
