@@ -24,11 +24,24 @@ Lunch
 
 ### Instructions to Register for Free Databricks Community Edition
 
-1. Go to [http://databricks.com/try-databricks](http://databricks.com/try-databricks)
+* Go to [http://databricks.com/try-databricks](http://databricks.com/try-databricks)
 
-2. *Start Today* for Community Edition.
+*  **Start Today** for Community Edition.
 
-4. Make sure you use an email address from which you can access e-mails.
+* Make sure you use an email address from which you can access e-mails.
+
+* Got to gitbub: [https://github.com/dmatrix/spark-saturday](https://github.com/dmatrix/spark-saturday)
+
+* Download DBC file: ** MeetupWorkshops.dbc **
+
+* Go to your Databricks-->Workspace->Users->your_account@your-emal.com->Import
+
+ * Click *File* option
+ * Click on "Drop file here to upload or click to select."
+ * Upload ** ** MeetupWorkshops.dbc ***
+
+ You should have Folder by that name with notesbooks
+
 
 ### Notebooks URLS for the Labs:
 
@@ -38,7 +51,7 @@ Lunch
  * DataFrames & SQL (optional): [http://dbricks.co/sqldf_wkshp2](http://dbricks.co/sqldf_wkshp2)
  * Mount Points (python): [http://dbricks.co/data_mounts](http://dbricks.co/data_mounts)
  * Datasets & IoT Devices: [http://dbricks.co/iotds_wkshp3](http://dbricks.co/iotds_wkshp3)
- * Streaming * IoT Devices: [http://dbricks.co/iotss_wkshp4](http://dbricks.co/iotss_wkshp4)
+ * Streaming & IoT Devices: [http://dbricks.co/iotss_wkshp4](http://dbricks.co/iotss_wkshp4)
 
 
 ## Resources and APIs
