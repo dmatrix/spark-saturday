@@ -1,3 +1,4 @@
+
 ## Spark Saturday July 27.
 
 ### Jumpstart on Apache Spark 2.2 with Databricks
@@ -32,7 +33,7 @@ Lunch
 ### Notebooks URLS for the Labs:
 
  * Word Count: [http://dbricks.co/ss_wkshp0](http://dbricks.co/ss_wkshp0)
- * Spark Session: [http://dbricks.co/ss_wkshp1](http://dbricks.co/ss_wkshp1])
+ * Spark Session: [http://dbricks.co/ss_wkshp1](http://dbricks.co/ss_wkshp1)
  * SQL & Datasets (optional): [http://dbricks.co/sqlds_wkshp2](http://dbricks.co/sqlds_wkshp2)
  * DataFrames & SQL (optional): [http://dbricks.co/sqldf_wkshp2](http://dbricks.co/sqldf_wkshp2)
  * Mount Points (python): [http://dbricks.co/data_mounts](http://dbricks.co/data_mounts)
@@ -44,3 +45,6 @@ Lunch
 * http://docs.databricks.com
 * http://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.sql.SparkSession
 * https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.sql.Dataset
+
+
+
