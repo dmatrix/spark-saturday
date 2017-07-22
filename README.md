@@ -38,7 +38,7 @@ Lunch
 
 	* Click *File* option
  	* Click on "Drop file here to upload or click to select."
-	* Upload **MeetupWorkshops.dbc**
+	* Import **MeetupWorkshops.dbc**
 
  You should have Folder by that name with notesbooks
 
