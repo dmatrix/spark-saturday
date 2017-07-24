@@ -7,20 +7,20 @@
 
 ### Morning
 * Get to know Databricks
-  * Notebook 0
+  * Notebook 0: [WordCount](http://dbricks.co/ss_wkshp0) 
 * Overview of Spark Fundamentals & Architecture
 * What’s New in Spark 2.x
 * Break
 * Unified APIs: SparkSessions, SQL, DataFrames, Datasets…
-* Workshop Notebook 1
+* Workshop Notebook 1: [SparkSession](http://dbricks.co/ss_wkshp1)
 Lunch
 
 ### Afternoon
 * Introduction to DataFrames, Datasets and Spark SQL
-* Workshop Notebook 2
+* Workshop Notebook 3: [IoT and Datasets](http://dbricks.co/iotds_wkshp3)
 * Break
 * Introduction to Structured Streaming Concepts
-* Workshop Notebook 3
+* Workshop Notebook 4: [IoT and Structured Streaming](http://dbricks.co/iotss_wkshp4)
 
 ### Instructions to Register for Free Databricks Community Edition
 
@@ -40,7 +40,7 @@ Lunch
  	* Click on "Drop file here to upload or click to select."
 	* Import **MeetupWorkshops.dbc**
 
- You should have Folder by that name with notesbooks
+ You should have folder by that name with all the notesbooks
 
 
 ### Notebooks URLS for the Labs:
