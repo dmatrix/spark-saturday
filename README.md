@@ -13,7 +13,7 @@
 * Break
 * Unified APIs: SparkSessions, SQL, DataFrames, Datasets…
 * Workshop Notebook 1: [SparkSession](http://dbricks.co/ss_wkshp1)
-Lunch
+* Lunch
 
 ### Afternoon
 * Introduction to DataFrames, Datasets and Spark SQL
