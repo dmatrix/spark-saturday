@@ -32,7 +32,7 @@
 
 * Got to gitbub: [https://github.com/dmatrix/spark-saturday](https://github.com/dmatrix/spark-saturday)
 
-* Download DBC file: **MeetupWorkshops.dbc**
+* Download DBC file: **dbcs/spark_saturday_workshop/MeetupWorkshops.dbc**
 
 * Go to your Databricks-->Workspace->Users->your_account@your-emal.com->Import
 
