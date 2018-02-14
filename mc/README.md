@@ -20,7 +20,7 @@
 
 * Make sure you use an email address from which you can access e-mails.
 
-* Got to gitbub: [https://github.com/dmatrix/spark-saturday](https://github.com/dmatrix/spark-saturday/dbcs/mc/dbcs)
+* Got to gitbub: [https://github.com/dmatrix/spark-saturday/mc](https://github.com/dmatrix/spark-saturday/mc)
 
 * Download DBC file: **MC.dbc**
 
