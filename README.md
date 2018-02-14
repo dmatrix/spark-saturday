@@ -1,7 +1,5 @@
 
-## Spark Saturday Workshop
-
-### Jumpstart on Apache Spark MLlib with Databricks
+## Jumpstart on Machine Learning with Apache Spark
 
 ### Agenda
 
