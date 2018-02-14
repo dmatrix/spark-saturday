@@ -16,7 +16,7 @@
 
 * Go to [http://databricks.com/try-databricks](http://databricks.com/try-databricks)
 
-*  **Start Today** for Community Edition.
+*  **GET STARTED** for Community Edition.
 
 * Make sure you use an email address from which you can access e-mails.
 
