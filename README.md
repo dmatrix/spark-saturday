@@ -24,7 +24,7 @@
 
 * Got to gitbub: [https://github.com/dmatrix/spark-saturday](https://github.com/dmatrix/spark-saturday/dbcs/mc/dbcs)
 
-* Download DBC file: **dbcs/dbcs/mc/dbcs/MC.dbc**
+* Download DBC file: **MC.dbc**
 
 * Go to your Databricks-->Workspace->Users->your_account@your-emal.com->Import
 
