@@ -32,7 +32,7 @@
  	* Click on "Drop file here to upload or click to select."
 	* Import **MC.dbc**
 
- You should have folder by that name with all the notesbooks
+ You should have folder by that name with all the notebooks
 
 
 ## Resources and APIs
