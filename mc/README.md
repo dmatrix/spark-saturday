@@ -6,11 +6,11 @@
 * What’s Big Data Done To Us
 * What and Why Apache Spark
 * Survey of Popular Open Source ML Libraries
-* TensorFlow
-* Scikit-learn & Spark-sklearn
-* Spark MLlib 
+	* TensorFlow
+	* Scikit-learn & Spark-sklearn
+	* Spark MLlib 
 * Supervised Learning: 
-* Logistic Regression using Spark MLlib in Databricks Notebook
+	* Linear & Logistic Regression using Spark MLlib in Databricks Notebook
 
 ### Instructions to Register for Free Databricks Community Edition
 
