@@ -1,0 +1,128 @@
+'''
+
+Problem - part 1: We want to predict the gas consumption in millions of gallons in 48 of the US states
+based on some key features. These features are petrol tax (in cents), per capital income (in US dollars),
+paved highway (in miles), population of people with driving licences
+
+Solution:
+
+Since this is a regression problem where the value is a range of numbers, we can use the
+common Random Forest Algorithm in Sckit-Learn. Most regression models are evaluated with
+three standard evalution metrics: Mean Absolute Error(MAE); Mean Squared Error (MSE); and
+Root Mean Squared Error (RSME), and r2.
+
+This example is borrowed from the source below, modified and modularized for this tutorial
+source: https://stackabuse.com/random-forest-algorithm-with-python-and-scikit-learn/
+
+Aim of this Lab:
+
+1. Understand MLflow Tracking API
+2. How to use the MLflow Tracking API
+3. Use the MLflow API to experiment several Runs
+4. Interpret and observer runs via the MLflow UI
+'''
+
+import os
+import numpy as np
+import mlflow.sklearn
+
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.ensemble import RandomForestRegressor
+from sklearn import metrics
+from lab_utils import load_data, plot_graphs, get_mlflow_directory_path, print_pandas_dataset
+
+class RFRModel():
+
+    # class wide variables common to all instances
+    rsme = []
+    estimators = []
+
+    def __init__(self, params={}):
+        self.rf = RandomForestRegressor(**params)
+        self.params = params
+
+    def model(self):
+        return self.rf
+
+    def mlflow_run(self, df, r_name="RF Petrol Regression Experiment"):
+
+        with mlflow.start_run(run_name=r_name) as run:
+            # get all rows and columns but the last column
+            X = dataset.iloc[:, 0:4].values
+            # get all the last columns, which is what we want to predict
+            y = dataset.iloc[:, 4].values
+
+            # create train and test data
+            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
+
+            # Feature Scaling
+            sc = StandardScaler()
+            X_train = sc.fit_transform(X_train)
+            X_test = sc.transform(X_test)
+
+            # train and predict
+            self.rf.fit(X_train, y_train)
+            y_pred = self.rf.predict(X_test)
+
+            # Log model and params using the MLflow sklearn APIs
+            mlflow.sklearn.log_model(self.rf, "random-forest-reg-model")
+            mlflow.log_params(self.params)
+
+            # compute  metrics
+            mae = metrics.mean_absolute_error(y_test, y_pred)
+            mse = metrics.mean_squared_error(y_test, y_pred)
+            rsme = np.sqrt(mse)
+            r2 = metrics.r2_score(y_test, y_pred)
+
+            # Log metrics
+            mlflow.log_metric("mae", mae)
+            mlflow.log_metric("mse", mse)
+            mlflow.log_metric("rsme", rsme)
+            mlflow.log_metric("r2", r2)
+
+            # update global class instance variable with values
+            self.rsme.append(rsme)
+            self.estimators.append(params["n_estimators"])
+
+            # plot graphs and save as artifacts
+            fig = plot_graphs(rfr.estimators, rfr.rsme, "Random Forest Estimators", "Root Mean Square")
+
+            # get current run and experiment id
+            runID = run.info.run_uuid
+            experimentID = run.info.experiment_id
+
+            # create image artifact directory
+            image_dir = get_mlflow_directory_path(experimentID, runID, "images")
+            save_image = os.path.join(image_dir, "rsme_estimators.png")
+            fig.savefig(save_image)
+
+            # log artifact
+            mlflow.log_artifacts(image_dir, "images")
+
+            # print some data
+            print("Inside MLflow Run with run_id {} and experiment_id {}".format(runID, experimentID))
+            print("Estimator trees        :", self.params["n_estimators"])
+            print('Mean Absolute Error    :', mae)
+            print('Mean Squared Error     :', mse)
+            print('Root Mean Squared Error:', rsme)
+            print('R2                     :', r2)
+            print("-" * 100)
+
+# Lab/Homework for Some Experimental runs
+    # 1. Consult RandomForestRegressor documentation
+    # 2. Change or add parameters, such as depth of the tree or random_state: 42 etc.
+    # 3. Change or alter the range of runs and increments of n_estimators
+    # 4. Check in MLfow UI if the metrics are affected
+    # challenge-1: create mean square error and r2 artifacts and save them for each run
+    # challenge-2: Use linear regression model and see if it makes a difference in the evaluation metrics
+
+if __name__ == '__main__':
+    # load and print dataset
+    dataset = load_data("data/petrol_consumption.csv")
+    print_pandas_dataset(dataset)
+    # iterate over several runs with different parameters
+    for n in range (25, 350, 25):
+        params = {"n_estimators": n, "random_state": 0 }
+        rfr = RFRModel(params)
+        rfr.mlflow_run(dataset)
