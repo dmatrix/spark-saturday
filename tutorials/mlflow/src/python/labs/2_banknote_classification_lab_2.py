@@ -22,6 +22,8 @@ Aim of this Lab:
 3. Use the MLflow API to experiment several Runs
 4. Interpret and observer runs via the MLflow UI
 
+Some resources:
+https://devopedia.org/confusion-matrix
 https://stackabuse.com/random-forest-algorithm-with-python-and-scikit-learn/
 '''
 

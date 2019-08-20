@@ -12,10 +12,11 @@ def load_data(path):
     df = pd.read_csv(path)
     return df
 
-def plot_graphs(x_data, y_data, x_label, y_label):
+def plot_graphs(x_data, y_data, x_label, y_label, title):
     plt.plot(x_data, y_data)
     plt.xlabel(x_label)
     plt.ylabel(y_label)
+    plt.title(title)
     return plt
 
 def get_mlflow_directory_path(*paths, create_dir=True):
