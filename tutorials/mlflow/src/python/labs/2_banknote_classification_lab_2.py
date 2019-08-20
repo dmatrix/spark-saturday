@@ -30,7 +30,7 @@ import mlflow.sklearn
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
+from sklearn.metrics import classification_report, confusion_matrix, accuracy_score, precision_score
 from lab_utils import load_data, plot_graphs, get_mlflow_directory_path, print_pandas_dataset
 
 class RFCModel():
@@ -71,9 +71,11 @@ class RFCModel():
 
             # compute evaluation metrics
             acc = accuracy_score(y_test, y_pred)
+            precision = precision_score(y_test, y_pred)
 
             # log metrics
             mlflow.log_metric("accuracy_score", acc)
+            mlflow.log_metric("precision", precision)
 
             # get current run and experiment id
             runID = run.info.run_uuid
@@ -86,7 +88,8 @@ class RFCModel():
             print("Estimators trees:", self.params["n_estimators"])
             print(confusion_matrix(y_test,y_pred))
             print(classification_report(y_test,y_pred))
-            print(accuracy_score(y_test, y_pred))
+            print("Accuracy Score:", acc)
+            print("Precision     :", precision)
             print("-" * 100)
 
 # Lab/Homewor for Some Experimental runs
@@ -95,6 +98,7 @@ class RFCModel():
     # 3. Change or alter the range of runs and increments of n_estimators
     # 4. Check in MLfow UI if the metrics are affected
     # 5. Log recall and F1-score as metrics
+    # Nice blog: https://joshlawman.com/metrics-classification-report-breakdown-precision-recall-f1/
 
 if __name__ == '__main__':
     # load and print dataset

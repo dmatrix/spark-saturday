@@ -101,7 +101,7 @@ def log_rf(experimentID, run_name, params, X_train, X_test, y_train, y_test):
         finally:
             temp.close() # Delete the temp file
 
-        display(fig)
+        #display(fig)
         return run.info.run_uuid
 
 params = {
