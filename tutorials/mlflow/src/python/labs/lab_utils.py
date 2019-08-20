@@ -9,17 +9,40 @@ import os
 
 
 def load_data(path):
+    '''
+    Read a CSV file from a given path and return a Pandas DataFrame
+    :param path: path to csv file
+    :return: returns Pandas DataFrame
+    '''
     df = pd.read_csv(path)
     return df
 
 def plot_graphs(x_data, y_data, x_label, y_label, title):
+    '''
+    Use the Mathplot lib to plot data points provide and respective x-axis and y-axis labels
+    :param x_data: Data for x-axis
+    :param y_data: Data for y-axis
+    :param x_label: Label for x-axis
+    :param y_label: LabEL FOR Y-axis
+    :param title: Title for the plot
+    :return: return an instance of the plt
+    '''
     plt.plot(x_data, y_data)
     plt.xlabel(x_label)
     plt.ylabel(y_label)
     plt.title(title)
+
     return plt
 
 def get_mlflow_directory_path(*paths, create_dir=True):
+    '''
+    Get the current running path where mlruns is created. This is the directorty from which
+    the pythonfile containing Mlflow code is executed. This method is used for artifacts, such
+    as images, where we want to store plots.
+    :param paths: list of directories below mlfruns, experimentID, mlflow_run_id
+    :param create_dir: detfault is True
+    :return: path to directorys.
+    '''
     cwd = os.getcwd()
     dir = os.path.join(cwd, "mlruns", *paths)
     if create_dir:
@@ -29,6 +52,11 @@ def get_mlflow_directory_path(*paths, create_dir=True):
 
 
 def print_pandas_dataset(d):
+    '''
+    Given a Pandas dataFrame show the dimensions sizes
+    :param d: Pandas dataFrame
+    :return: None
+    '''
     print("rows = %d; columns=%d" % (d.shape[0], d.shape[1]))
     print(d.head())
 
@@ -36,10 +64,18 @@ def plot_confusion_matrix(y_true, y_pred, classes,
                           normalize=False,
                           title=None,
                           cmap=plt.cm.Blues):
-    """
+    '''
     This function prints and plots the confusion matrix.
     Normalization can be applied by setting `normalize=True`.
-    """
+
+    :param y_true: the actual value of y
+    :param y_pred: the predicted valuye of y
+    :param classes: list of label classes to be predicted
+    :param normalize: normalize the data
+    :param title: title of the plot for confusion matrix
+    :param cmap: color of plot
+    :return: returns a tuple of (plt, fig, ax)
+    '''
     if not title:
         if normalize:
             title = 'Normalized confusion matrix'

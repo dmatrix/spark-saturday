@@ -23,6 +23,7 @@ Aim of this Lab:
 4. Interpret and observer runs via the MLflow UI
 
 Some resources:
+https://mlflow.org/docs/latest/python_api/mlflow.html
 https://devopedia.org/confusion-matrix
 https://stackabuse.com/random-forest-algorithm-with-python-and-scikit-learn/
 '''
@@ -40,13 +41,31 @@ class RFCModel():
     # class wide variables common to all instances
 
     def __init__(self, params={}):
+        '''
+        Constructor for RandamForestClassifier
+        :param params: parameters for the constructor such as no of estimators, depth of the tree, random_state etc
+        '''
         self.rf = RandomForestClassifier(**params)
         self.params = params
 
     def model(self):
+        '''
+        Fetch the model
+        :return: return the model
+        '''
         return self.rf
 
     def mlflow_run(self, df, r_name="RF Bank Note Classification Experiment"):
+        '''
+        This method trains, computes metrics, and logs all metrics, parameters,
+        and artifacts for the current run
+        :param df: pandas dataFrame
+        :param r_name: Name of the experiment as logged by MLflow
+        :return: None
+        :param df:
+        :param r_name:
+        :return: none
+        '''
 
         with mlflow.start_run(run_name=r_name) as run:
             # get all rows and columns but the last column

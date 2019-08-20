@@ -16,10 +16,15 @@ Aim of this module is:
 1. Introduce tracking ML experiments in MLflow
 2. Log a base experiment and explore the results in the UI
 3. Record parameters, metrics, and a model
+
+Some Resources:
+https://mlflow.org/docs/latest/python_api/mlflow.html
+https://www.saedsayad.com/decision_tree_reg.htm
+https://stackabuse.com/random-forest-algorithm-with-python-and-scikit-learn/
+https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html
 '''
 
 import mlflow.sklearn
-import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
@@ -29,17 +34,28 @@ from lab_utils import load_data, print_pandas_dataset
 class RFRBaseModel():
 
     def __init__(self, params={}):
+        '''
+        Construtor for the RandomForestRegressor
+        :param params: dictionary to RandomForestRegressor
+        '''
         self.params = params
         self.rf = RandomForestRegressor(**params)
 
     def model(self):
+        '''
+        Getter for the model
+        :return: return the model
+        '''
         return self.rf
 
-    def load_data(self, path):
-        self.df = pd.read_csv(path)
-        return self.df
-
     def mlflow_run(self, df, r_name="Basic RF Experiment"):
+        '''
+        This method trains, computes metrics, and logs all metrics, parameters,
+        and artifacts for the current run
+        :param df: pandas dataFrame
+        :param r_name: Name of the experiment as logged by MLflow
+        :return: None
+        '''
         with mlflow.start_run(run_name=r_name) as run:
             X_train, X_test, y_train, y_test = train_test_split(df.drop(["price"], axis=1), df[["price"]].values.ravel(), random_state=42)
             self.rf.fit(X_train, y_train)

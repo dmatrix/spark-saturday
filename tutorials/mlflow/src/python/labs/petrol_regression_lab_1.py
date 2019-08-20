@@ -20,6 +20,12 @@ Aim of this Lab:
 2. How to use the MLflow Tracking API
 3. Use the MLflow API to experiment several Runs
 4. Interpret and observer runs via the MLflow UI
+
+Some Resources:
+https://mlflow.org/docs/latest/python_api/mlflow.html
+https://www.saedsayad.com/decision_tree_reg.htm
+https://stackabuse.com/random-forest-algorithm-with-python-and-scikit-learn/
+https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html
 '''
 
 import os
@@ -33,19 +39,37 @@ from sklearn import metrics
 from lab_utils import load_data, plot_graphs, get_mlflow_directory_path, print_pandas_dataset
 
 class RFRModel():
+    '''
+    General class for Sckit-learn RandomForestRegressor
+    '''
 
     # class wide variables common to all instances
     rsme = []
     estimators = []
 
     def __init__(self, params={}):
+        '''
+        Construtor for the RandomForestRegressor
+        :param params: dictionary to RandomForestRegressor
+        '''
         self.rf = RandomForestRegressor(**params)
         self.params = params
 
     def model(self):
+        '''
+        Return the model craeted
+        :return: handle or instance of the RandomForestReqgressor
+        '''
         return self.rf
 
     def mlflow_run(self, df, r_name="RF Petrol Regression Experiment"):
+        '''
+        This method trains, computes metrics, and logs all metrics, parameters,
+        and artifacts for the current run
+        :param df: pandas dataFrame
+        :param r_name: Name of the experiment as logged by MLflow
+        :return: None
+        '''
 
         with mlflow.start_run(run_name=r_name) as run:
             # get all rows and columns but the last column
