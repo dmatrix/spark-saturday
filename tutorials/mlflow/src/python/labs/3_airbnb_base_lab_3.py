@@ -1,7 +1,23 @@
 
 '''
-Databricks Learning Academy Lab
+source: Databricks Learning Academy Lab
+
+While iterating or build models, data scientists will often create a base line model to see how the model performs.
+And then iterate with experiments, changing or altering parameters to ascertain how the new parameters or
+hyper-parameters move the metrics closer to their confidence level.
+
+This is our base line model using RandomForestRegressor model to predict AirBnb house prices in SF.
+Given 22 features can we predict what the next house price will be?
+
+We will compute standard evalution metrics and log them.
+
+Aim of this module is:
+
+1. Introduce tracking ML experiments in MLflow
+2. Log a base experiment and explore the results in the UI
+3. Record parameters, metrics, and a model
 '''
+
 import mlflow.sklearn
 import pandas as pd
 import numpy as np

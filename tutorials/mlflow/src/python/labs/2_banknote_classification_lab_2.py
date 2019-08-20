@@ -26,12 +26,12 @@ https://stackabuse.com/random-forest-algorithm-with-python-and-scikit-learn/
 '''
 
 import mlflow.sklearn
-
+import os
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score, precision_score
-from lab_utils import load_data, plot_graphs, get_mlflow_directory_path, print_pandas_dataset
+from lab_utils import load_data, plot_graphs, get_mlflow_directory_path, print_pandas_dataset, plot_confusion_matrix
 
 class RFCModel():
 
@@ -61,7 +61,6 @@ class RFCModel():
             X_test = sc.transform(X_test)
 
             # train and predict
-
             self.rf.fit(X_train, y_train)
             y_pred = self.rf.predict(X_test)
 
@@ -81,7 +80,14 @@ class RFCModel():
             runID = run.info.run_uuid
             experimentID = run.info.experiment_id
 
-            # Evaluating the Algorithm
+            # create confusion matrix images
+            (plt, fig, ax) = plot_confusion_matrix(y_test,y_pred,y, title="Bank Note Classification Confusion Matrix")
+            image_dir = get_mlflow_directory_path(experimentID, runID, "images")
+            save_image = os.path.join(image_dir, "confusion_matrix.png")
+            fig.savefig(save_image)
+
+            # log artifact
+            mlflow.log_artifacts(image_dir, "images")
 
             # print some data
             print("Inside MLflow Run with run_id {} and experiment_id {}".format(runID, experimentID))
@@ -92,12 +98,12 @@ class RFCModel():
             print("Precision     :", precision)
             print("-" * 100)
 
-# Lab/Homewor for Some Experimental runs
+# Lab/Homework for Some Experimental runs
     # 1. Consult RandomForestClassifier documentation
     # 2. Change or add parameters, such as depth of the tree or random_state: 42 etc.
     # 3. Change or alter the range of runs and increments of n_estimators
     # 4. Check in MLfow UI if the metrics are affected
-    # 5. Log recall and F1-score as metrics
+    # 5. Log confusion matirx, recall and F1-score as metrics
     # Nice blog: https://joshlawman.com/metrics-classification-report-breakdown-precision-recall-f1/
 
 if __name__ == '__main__':
