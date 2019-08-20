@@ -10,7 +10,6 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn import metrics
 from lab_utils import load_data, print_pandas_dataset
 
-
 class RFRBaseModel():
 
     def __init__(self, params={}):
@@ -62,7 +61,7 @@ if __name__ == '__main__':
     # load and print dataset
     dataset = load_data("data/airbnb-cleaned-mlflow.csv")
     print_pandas_dataset(dataset)
-    # create a base model parameters
+    # create a base line model parameters
     params = {"n_estimators": 100, "random_state": 42 }
     rfr = RFRBaseModel(params)
     rfr.mlflow_run(dataset)
