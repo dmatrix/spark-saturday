@@ -92,13 +92,19 @@ class RFRBaseModel():
             print("-" * 100)
 
             return (experimentID, runID)
+#
+# Lab/Homework for Some Experimental runs
+#
+    # 1. Consult RandomForestClassifier documentation
+    # 2. Run the baseline model
+    # 3. Check in MLfow UI if the metrics are affected
 
 if __name__ == '__main__':
     # load and print dataset
     dataset = load_data("data/airbnb-cleaned-mlflow.csv")
     print_pandas_dataset(dataset)
     # create a base line model parameters
-    params = {"n_estimators": 100, "max_depth": 5, "random_state": 42 }
+    params = {"n_estimators": 100, "max_depth": 3, "random_state": 42}
     rfr = RFRBaseModel(params)
     (experimentID, runID) = rfr.mlflow_run(dataset)
     print("MLflow Run with run_id {} and experiment_id {}".format(runID, experimentID))

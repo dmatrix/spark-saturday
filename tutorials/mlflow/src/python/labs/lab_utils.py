@@ -33,6 +33,16 @@ def plot_graphs(x_data, y_data, x_label, y_label, title):
     return plt
 
 def plot_residual_graphs(predictions, y_test, x_label, y_label, title):
+    '''
+    Create residual plot usin seaborn plotting library
+    https://seaborn.pydata.org/tutorial/regression.html
+    :param predictions: predictions from the run
+    :param y_test: actual labels
+    :param x_label: name for the x-axis
+    :param y_label: name for the y-axis
+    :param title:  title for the plot
+    :return: tuple of plt, fig, ax
+    '''
 
     fig, ax = plt.subplots()
 
@@ -76,6 +86,7 @@ def plot_confusion_matrix(y_true, y_pred, classes,
     '''
     This function prints and plots the confusion matrix.
     Normalization can be applied by setting `normalize=True`.
+    Borrowed from the sckit-learn libary documentation
 
     :param y_true: the actual value of y
     :param y_pred: the predicted valuye of y

@@ -122,12 +122,15 @@ class RFFExperimentModel(RFRBaseModel):
             print("-" * 100)
 
             return (experimentID, runID)
+#
 # Lab/Homework for Some Experimental runs
+#
     # 1. Consult RandomForestClassifier documentation
     # 2. Change or add parameters, such as depth of the tree or random_state: 42 etc.
     # 3. Change or alter the range of runs and increments of n_estimators
     # 4. Check in MLfow UI if the metrics are affected
     # 5. Use MLFlowClient() API to query past runs
+
 if __name__ == '__main__':
     # create three experiments with different parameters
     params_list = [
