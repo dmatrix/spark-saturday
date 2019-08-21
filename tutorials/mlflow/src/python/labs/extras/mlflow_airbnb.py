@@ -63,7 +63,7 @@ def log_rf(experimentID, run_name, params, X_train, X_test, y_train, y_test):
         r2 = r2_score(y_test, predictions)
         print("  mse: {}".format(mse))
         print("  mae: {}".format(mae))
-        print("  R2: {}".format(r2))
+        print("  R2 : {}".format(r2))
 
         # Log metrics
         mlflow.log_metric("mse", mse)

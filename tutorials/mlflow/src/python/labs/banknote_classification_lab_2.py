@@ -64,7 +64,7 @@ class RFCModel():
         :return: None
         :param df:
         :param r_name:
-        :return: none
+        :return: MLflow Tuple (ExperimentID, runID)
         '''
 
         with mlflow.start_run(run_name=r_name) as run:
@@ -119,6 +119,8 @@ class RFCModel():
             print("Precision     :", precision)
             print("-" * 100)
 
+            return  (experimentID, runID)
+
 # Lab/Homework for Some Experimental runs
     # 1. Consult RandomForestClassifier documentation
     # 2. Change or add parameters, such as depth of the tree or random_state: 42 etc.
@@ -135,4 +137,6 @@ if __name__ == '__main__':
     for n in range(25, 350, 25):
         params = {"n_estimators": n, "random_state": 0 }
         rfr = RFCModel(params)
-        rfr.mlflow_run(dataset)
+        (experimentID, runID) = rfr.mlflow_run(dataset)
+        print("MLflow Run with run_id {} and experiment_id {}".format(runID, experimentID))
+

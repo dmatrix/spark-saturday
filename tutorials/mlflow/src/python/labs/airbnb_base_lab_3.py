@@ -2,6 +2,8 @@
 '''
 source: Databricks Learning Academy Lab
 
+Refactored code to modularize it
+
 While iterating or build models, data scientists will often create a base line model to see how the model performs.
 And then iterate with experiments, changing or altering parameters to ascertain how the new parameters or
 hyper-parameters move the metrics closer to their confidence level.
@@ -54,7 +56,7 @@ class RFRBaseModel():
         and artifacts for the current run
         :param df: pandas dataFrame
         :param r_name: Name of the experiment as logged by MLflow
-        :return: None
+        :return: Tuple of MLflow experimentID, runID
         '''
         with mlflow.start_run(run_name=r_name) as run:
             X_train, X_test, y_train, y_test = train_test_split(df.drop(["price"], axis=1), df[["price"]].values.ravel(), random_state=42)
@@ -89,11 +91,14 @@ class RFRBaseModel():
             print('R2                     :', r2)
             print("-" * 100)
 
+            return (experimentID, runID)
+
 if __name__ == '__main__':
     # load and print dataset
     dataset = load_data("data/airbnb-cleaned-mlflow.csv")
     print_pandas_dataset(dataset)
     # create a base line model parameters
-    params = {"n_estimators": 100, "random_state": 42 }
+    params = {"n_estimators": 100, "max_depth": 5, "random_state": 42 }
     rfr = RFRBaseModel(params)
-    rfr.mlflow_run(dataset)
+    (experimentID, runID) = rfr.mlflow_run(dataset)
+    print("MLflow Run with run_id {} and experiment_id {}".format(runID, experimentID))

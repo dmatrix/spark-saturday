@@ -1,12 +1,10 @@
-
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import seaborn as sns
 from sklearn.utils.multiclass import unique_labels
 from sklearn.metrics import confusion_matrix
-
 import os
-
 
 def load_data(path):
     '''
@@ -33,6 +31,17 @@ def plot_graphs(x_data, y_data, x_label, y_label, title):
     plt.title(title)
 
     return plt
+
+def plot_residual_graphs(predictions, y_test, x_label, y_label, title):
+
+    fig, ax = plt.subplots()
+
+    sns.residplot(predictions, y_test, lowess=True)
+    plt.xlabel(x_label)
+    plt.ylabel(y_label)
+    plt.title(title)
+
+    return (plt, fig, ax)
 
 def get_mlflow_directory_path(*paths, create_dir=True):
     '''

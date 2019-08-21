@@ -68,7 +68,7 @@ class RFRModel():
         and artifacts for the current run
         :param df: pandas dataFrame
         :param r_name: Name of the experiment as logged by MLflow
-        :return: None
+        :return: MLflow Tuple (ExperimentID, runID)
         '''
 
         with mlflow.start_run(run_name=r_name) as run:
@@ -133,6 +133,8 @@ class RFRModel():
             print('R2                     :', r2)
             print("-" * 100)
 
+            return (experimentID, runID)
+
 # Lab/Homework for Some Experimental runs
     # 1. Consult RandomForestRegressor documentation
     # 2. Change or add parameters, such as depth of the tree or random_state: 42 etc.
@@ -149,4 +151,5 @@ if __name__ == '__main__':
     for n in range (25, 350, 25):
         params = {"n_estimators": n, "random_state": 0 }
         rfr = RFRModel(params)
-        rfr.mlflow_run(dataset)
+        (experimentID, runID) = rfr.mlflow_run(dataset)
+        print("MLflow Run with run_id {} and experiment_id {}".format(runID, experimentID))
