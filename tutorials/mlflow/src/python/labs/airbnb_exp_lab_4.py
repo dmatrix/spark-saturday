@@ -153,5 +153,6 @@ if __name__ == '__main__':
     # Use MLflowClient API to query programmatically any previous run info
     # consult https://mlflow.org/docs/latest/python_api/mlflow.tracking.html
     client = MlflowClient()
-    print(client.list_run_infos(experimentID))
+    run_list = client.list_run_infos(experimentID)
+    [print(rinfo) for rinfo in run_list]
 
