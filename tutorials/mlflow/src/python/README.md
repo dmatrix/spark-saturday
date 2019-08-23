@@ -1,8 +1,6 @@
 
 ## MLflow Tutorial for Start Conference New York, 2019
 
-Instructions and lab notes coming soon...stay tuned
-
 ### Prerequisites 
 1. Knowledge of Python 3
 2. Preferable a UNIX based laptop with 16 GB
@@ -21,7 +19,7 @@ Instructions and lab notes coming soon...stay tuned
 
 2. Load https://mlflow.org in your browser
  * Click on Documentation (and keep this tab open)
-3. `git clone https://github.com/dmatrix/spark-saturday`
+3. `git@github.com:dmatrix/spark-saturday.git`
 4. `cd <your_cloned_directory>/tutorials/mlflow/src/python`
 5. Install MLflow and the required Python modules 
     * `pip install -r req.txt`
@@ -39,5 +37,7 @@ Instructions and lab notes coming soon...stay tuned
 
 
 Have Fun!
-Cheers,
+
+Cheers
+
 Jules
