@@ -18,7 +18,7 @@
  * Pandas and Numpy
  * Apache Spark MLlib
  * TensorFlow/Keras
-5. PyCharm/IntellJ or Choice of sytnax-highleted Python Editor
+5. PyCharm/IntelliJ or Choice of sytnax-highligted Python Editor
 6. pip/pip3 installed
 7. Loads of laughter and sense of humor... :-)
 
