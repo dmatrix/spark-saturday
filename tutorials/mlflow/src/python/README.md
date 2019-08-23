@@ -6,8 +6,9 @@
 2. Preferable a UNIX based laptop with 16 GB
 3. Chrome Browser
 4. Familiarity with GithHub or account on Github
-3. Knoweldge of some Machine Learning Concetps and Frameworks 
+3. Knoweldge of some Machine Learning Concetps, Libraries, and Frameworks 
  * Sckit-Learn
+ * Pandas and Numpy
  * Apache Spark MLlib
  * TensorFlow/Keras
 4. PyCharm/IntellJ or Choice of sytnax-highleted Python Editor
@@ -17,14 +18,14 @@
 
 ### Installation and Settup environment
 
-2. Load https://mlflow.org in your browser
+1. Load https://mlflow.org in your browser
  * Click on Documentation (and keep this tab open)
-3. `git@github.com:dmatrix/spark-saturday.git`
-4. `cd <your_cloned_directory>/tutorials/mlflow/src/python`
-5. Install MLflow and the required Python modules 
+2. `git@github.com:dmatrix/spark-saturday.git`
+3. `cd <your_cloned_directory>/tutorials/mlflow/src/python`
+4. Install MLflow and the required Python modules 
     * `pip install -r req.txt`
-6. `cd labs`
-7. If using PyCharm, create a project and load these files in the project
+5. `cd labs`
+6. If using PyCharm, create a project and load these files in the project
 
 ### Lab 1 
  * _petrol_regression_lab_1.py_
