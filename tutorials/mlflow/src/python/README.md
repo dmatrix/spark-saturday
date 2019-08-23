@@ -4,7 +4,7 @@
 ### Agenda
  * Introduction
  * Setting up an environment
- * MLflow: Wht, Why, and How
+ * MLflow: What, Why, and How
  * Q & A
  * Break
  * Hands-on Tutorials
