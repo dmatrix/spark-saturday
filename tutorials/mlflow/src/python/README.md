@@ -11,10 +11,10 @@
  
 ### Prerequisites 
 1. Knowledge of Python 3 and programming in general
-2. Preferably a UNIX based fully-charged laptop with 8-16 GB, with a Chrome or Fixfox brower
-3. Familiarity with GithHub or account on Github
-4. Knoweldge of some Machine Learning Concetps, Libraries, and Frameworks 
- * Sckit-Learn
+2. Preferably a UNIX-based, fully-charged laptop with 8-16 GB, with a Chrome or Fixfox brower
+3. Familiarity with GitHub, git, and account on Github
+4. Knowledge of some Machine Learning Concetps, Libraries, and Frameworks 
+ * Scikit-Learn
  * Pandas and Numpy
  * Apache Spark MLlib
  * TensorFlow/Keras
