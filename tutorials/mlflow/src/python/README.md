@@ -5,6 +5,16 @@
  * Introduction
  * Setting up an environment
  * MLflow: What, Why, and How
+  * MLflow Concepts: 
+    * Tracking
+    * Projects
+    * Models
+    * Deployment
+    * Model Workflow
+    * Model Registry
+  * Road Map 1.x
+  * Demo of Managed MLflow
+  * Who is Using it
  * Q & A
  * Break
  * Hands-on Tutorials
@@ -13,24 +23,23 @@
 1. Knowledge of Python 3 and programming in general
 2. Preferably a UNIX-based, fully-charged laptop with 8-16 GB, with a Chrome or Fixfox brower
 3. Familiarity with GitHub, git, and account on Github
-4. Knowledge of some Machine Learning Concetps, Libraries, and Frameworks 
- * Scikit-Learn
- * Pandas and Numpy
- * Apache Spark MLlib
- * TensorFlow/Keras
+4. Some Knowledge of some Machine Learning Concetps, Libraries, and Frameworks 
+     * Scikit-Learn
+     * Pandas and Numpy
+     * Apache Spark MLlib
+     * TensorFlow/Keras
 5. PyCharm/IntelliJ or Choice of sytnax-highligted Python Editor
-6. pip/pip3 installed
+6. pip/pip3 and Python 3 installed
 7. Loads of laughter and sense of humor... :-)
 
-
-### Installation and Settup environment
+### Installation and Setup environment
 
 1. Load MLflow [docs](https://mlflow.org) in your browser
  * Click on Documentation (and keep this tab open)
 2. `git@github.com:dmatrix/spark-saturday.git`
 3. `cd <your_cloned_directory>/tutorials/mlflow/src/python`
 4. Install MLflow and the required Python modules 
-    * `pip install -r req.txt`
+    * `pip install -r req.txt` or `pip3 install -r req.txt`
 5. `cd labs`
 6. If using PyCharm, create a project and load these files in the project
 
@@ -43,15 +52,15 @@
 ### Lab 4: Sckit-Learn Regression Experimental with RandomForestRegressor 
  * _airbnb_exp_lab_4.py_
 ### Lab 5: Deep Learning Neural Networks for Classification
-* _imdb_keras_tensorflow_lab_5.py_
-### Lab 6: Packaging and MLflow model
-* _packaging_model_lab_6.py_
-### Lab 7: Deploying, loading, and predicting an exisiting model 
-* _loading_predicting_model_lab_7.py_
+* _boston_housing_tensorflow_lab_5.py_
+## Lab 6: Deep Learning Neural Networks for Classification
+* _imdb_keras_tensorflow_lab_6.py_
+### Lab 7: Packaging and MLflow model
+* _packaging_model_lab_7.py_
+### Lab 8: Deploying, loading, and predicting an exisiting model 
+* _loading_predicting_model_lab_8.py_
 
-
-
-Have Fun!
+Let's Have Loads of Fun!
 
 Cheers
 
