@@ -53,7 +53,7 @@
  * _airbnb_exp_lab_4.py_
 ### Lab 5: Deep Learning Neural Networks for Classification
 * _boston_housing_tensorflow_lab_5.py_
-## Lab 6: Deep Learning Neural Networks for Classification
+### Lab 6: Deep Learning Neural Networks for Classification
 * _imdb_keras_tensorflow_lab_6.py_
 ### Lab 7: Packaging and MLflow model
 * _packaging_model_lab_7.py_
