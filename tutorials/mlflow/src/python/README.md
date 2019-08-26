@@ -14,7 +14,8 @@
     * Model Registry
   * Road Map 1.x
   * Demo of Managed MLflow
-  * Who is Using it
+  * Community and Adoption
+  * Get Involved!
  * Q & A
  * Break
  * Hands-on Tutorials
@@ -57,7 +58,7 @@
 * _imdb_keras_tensorflow_lab_6.py_
 ### Lab 7: Packaging and MLflow model
 * _packaging_model_lab_7.py_
-### Lab 8: Deploying, loading, and predicting an exisiting model 
+### Lab 8: Deploying, loading, and predicting an existing model 
 * _loading_predicting_model_lab_8.py_
 
 Let's Have Loads of Fun!
