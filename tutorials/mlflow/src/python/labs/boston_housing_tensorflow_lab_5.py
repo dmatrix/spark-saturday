@@ -76,7 +76,7 @@ def main(argv):
 
 if __name__ == "__main__":
     # The Estimator periodically generates "INFO" logs; make these logs visible.
-    #tf.logging.set_verbosity(tf.logging.INFO)
+    tf.logging.set_verbosity(tf.logging.INFO)
     # Enable auto-logging to MLflow to capture TensorBoard metrics.
-    #mlflow.tensorflow.autolog()
+    mlflow.tensorflow.autolog()
     tf.app.run(main=main)
