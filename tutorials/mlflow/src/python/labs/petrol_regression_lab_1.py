@@ -125,13 +125,13 @@ class RFRModel():
             mlflow.log_artifacts(image_dir, "images")
 
             # print some data
+            print("-" * 100)
             print("Inside MLflow Run with run_id {} and experiment_id {}".format(runID, experimentID))
             print("Estimator trees        :", self.params["n_estimators"])
             print('Mean Absolute Error    :', mae)
             print('Mean Squared Error     :', mse)
             print('Root Mean Squared Error:', rsme)
             print('R2                     :', r2)
-            print("-" * 100)
 
             return (experimentID, runID)
 
@@ -154,4 +154,5 @@ if __name__ == '__main__':
         params = {"n_estimators": n, "random_state": 0 }
         rfr = RFRModel(params)
         (experimentID, runID) = rfr.mlflow_run(dataset)
-        print("MLflow Run with run_id {} and experiment_id {}".format(runID, experimentID))
+        print("MLflow Run completed with run_id {} and experiment_id {}".format(runID, experimentID))
+        print("-" * 100)

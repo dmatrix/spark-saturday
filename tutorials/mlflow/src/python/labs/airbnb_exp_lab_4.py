@@ -55,7 +55,7 @@ class RFFExperimentModel(RFRBaseModel):
         '''
         RFRBaseModel.__init__(self, params)
 
-    def mlflow_run(self, df, r_name="RF Experiment"):
+    def mlflow_run(self, df, r_name="RF Experiment Model"):
         '''
         Override the base class mlflow_run for this epxerimental runs
         This method trains the model, evaluates, computes the metrics, logs
@@ -72,6 +72,8 @@ class RFFExperimentModel(RFRBaseModel):
 
             # Log model and parameters
             mlflow.sklearn.log_model(self.rf, "random-forest-model")
+            # Note we are logging as dictionary of all params instead
+            # loggging each parameter
             mlflow.log_params(self.params)
 
             # Log params
@@ -115,12 +117,12 @@ class RFFExperimentModel(RFRBaseModel):
             # log artifact
             mlflow.log_artifacts(image_dir, "images")
 
-            print("Inside MLflow Run with experiment {} and parameters {}".format(r_name, params))
+            print("-" * 100)
+            print("Inside MLflow {} Run with run_id {} and experiment_id {}".format(r_name, runID, experimentID))
             print("  mse: {}".format(mse))
             print(" rmse: {}".format(rmse))
             print("  mae: {}".format(mae))
             print("  R2 : {}".format(r2))
-            print("-" * 100)
 
             return (experimentID, runID)
 #
@@ -130,26 +132,25 @@ class RFFExperimentModel(RFRBaseModel):
     # 2. Change or add parameters, such as depth of the tree or random_state: 42 etc.
     # 3. Change or alter the range of runs and increments of n_estimators
     # 4. Check in MLfow UI if the metrics are affected
-    # 5. Use MLFlowClient() API to query past runs
 
 if __name__ == '__main__':
-    # create three experiments with different parameters
+    # create four experiments with different parameters
+    # TO DO add more parameters to the list
     params_list = [
-        {"n_estimators": 500,"max_depth":  5, "random_state": 42},
-        {"n_estimators": 600,"max_depth": 6, "random_state": 42},
-        {"n_estimators": 750,"max_depth": 8, "random_state": 42},
-        {"n_estimators": 1000,"max_depth": 10,"random_state": 42}
+        {"n_estimators": 200,"max_depth":  6, "random_state": 42}
+        # add more to this list here
         ]
-
     # load the data
     dataset = load_data("data/airbnb-cleaned-mlflow.csv")
+
 
     # run three different experiments, each with its own instance of model with the supplied parameters.
     for params in params_list:
         rfr = RFFExperimentModel(params)
         experiment = "Experiment with {} trees".format(params['n_estimators'])
         (experimentID, runID) = rfr.mlflow_run(dataset, experiment)
-        print("MLflow Run with run_id {} and experiment_id {}".format(runID, experimentID))
+        print("MLflow Run completed with run_id {} and experiment_id {}".format(runID, experimentID))
+        print("-" * 100)
 
     # Use MLflowClient API to query programmatically any previous run info
     # consult https://mlflow.org/docs/latest/python_api/mlflow.tracking.html

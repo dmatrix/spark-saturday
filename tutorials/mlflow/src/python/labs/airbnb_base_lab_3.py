@@ -51,7 +51,7 @@ class RFRBaseModel():
         '''
         return self.rf
 
-    def mlflow_run(self, df, r_name="Basic RF Experiment"):
+    def mlflow_run(self, df, r_name="Baseline RF Model"):
         '''
         This method trains, computes metrics, and logs all metrics, parameters,
         and artifacts for the current run
@@ -84,28 +84,32 @@ class RFRBaseModel():
             experimentID = run.info.experiment_id
 
             # print some data
-            print("Inside MLflow Run with run_id {} and experiment_id {}".format(runID, experimentID))
+            print("-" * 100)
+            print("Inside MLflow {} Run with run_id {} and experiment_id {}".format(r_name, runID, experimentID))
             print("Estimator trees        :", self.params["n_estimators"])
             print('Mean Absolute Error    :', mae)
             print('Mean Squared Error     :', mse)
             print('Root Mean Squared Error:', rsme)
             print('R2                     :', r2)
-            print("-" * 100)
 
             return (experimentID, runID)
 #
 # Lab/Homework for Some Experimental runs
 #
-    # 1. Consult RandomForestClassifier documentation
+    # 1. Consult RandomForest documentation
     # 2. Run the baseline model
-    # 3. Check in MLfow UI if the metrics are affected
+    # 3. Check in MLflow UI for parameters, metrics, and artifacts
 
 if __name__ == '__main__':
     # load and print dataset
     dataset = load_data("data/airbnb-cleaned-mlflow.csv")
     print_pandas_dataset(dataset)
+    #
     # create a base line model parameters
-    params = {"n_estimators": 100, "max_depth": 3, "random_state": 42}
+    # this is our benchmark model go compare experimental results to
+    #
+    params = {"n_estimators": 10, "max_depth": 3, "random_state": 0}
     rfr = RFRBaseModel(params)
     (experimentID, runID) = rfr.mlflow_run(dataset)
-    print("MLflow Run with run_id {} and experiment_id {}".format(runID, experimentID))
+    print("MLflow completed with run_id {} and experiment_id {}".format(runID, experimentID))
+    print("-" * 100)

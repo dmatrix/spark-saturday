@@ -39,7 +39,23 @@
 5. `cd labs`
 6. If using PyCharm, create a project and load these files in the project
 
-### Lab 1: Sckit-Learn Regression with RandomForestRegressor 
+## Labs 
+The general objective of the labs are to create a baseline or a benchmark mode,
+followed by tuning parameters to affect a better outcome. This is
+achived by experimenting and tracking the effects. Using MLflow tracking
+APIs, we log and observe the results.
+
+In simpler terms:
+
+* 1. Train a base line model with intial parameters
+* 2. Record the relevant metrics and parameters
+* 3. Observer the results vi MLflow UI
+* 4. Change or tweak relevant parameters
+* 5. Repeat 2-4 until satisfied
+
+This above iterative process is recurrent in each of the lab. 
+
+### Lab-1: Sckit-Learn Regression with RandomForestRegressor 
  * _petrol_regression_lab_1.py_
  
  Objectives of this Lab: 
@@ -49,9 +65,9 @@
  * Use the MLflow API to experiment several Runs
  * Interpret and observe runs via the MLflow UI
  
-#### Lab Excercises: 
+#### Lab-1 Excercises: 
 
- 1. Consult RandomForestRegressor documentation
+ 1. Consult [RandomForestRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html) documentation 
  2. Change or add parameters, such as depth of the tree or random_state: 42 etc.
  3. Change or alter the range of runs and increments of n_estimators
  4. Check in MLfow UI if the metrics are affected
@@ -60,37 +76,60 @@
  
  *challenge-2:* Use linear regression model and see if it makes a difference in the evaluation metrics
 
-### Lab 2: Sckit-Learn Classification with RandomForestClassifier
+### Lab-2: Sckit-Learn Classification with RandomForestClassifier
  * _banknote_classification_lab_2.py_
  
 Objectives of this lab:
  * Use a RandomForestClassification Model
- * Understand MLflow Tracking API
  * How to use the MLflow Tracking API
  * Use the MLflow API to experiment several runs
  * Interpret and observe runs via the MLflow UI
  
-#### Lab Excercises: 
-  * Consult RandomForestClassifier documentation
+#### Lab-2 Excercises: 
+  * Consult [RandomForestClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) documentation
   * Change or add parameters, such as depth of the tree or random_state: 42 etc.
   * Change or alter the range of runs and increments of n_estimators
   * Check in MLfow UI if the metrics are affected
   * Log confusion matrix, recall and F1-score as metrics
   
- [Nice blog to read.](https://joshlawman.com/metrics-classification-report-breakdown-precision-recall-f1/)
- [source for Lab 1 & 2](https://stackabuse.com/random-forest-algorithm-with-python-and-scikit-learn/)
- [source for lab 1 & 2](https://archive.ics.uci.edu/ml/datasets/banknote+authentication)
+ [Nice blog to read](https://joshlawman.com/metrics-classification-report-breakdown-precision-recall-f1/), 
+ [source for Lab 1 & 2](https://stackabuse.com/random-forest-algorithm-with-python-and-scikit-learn/), and  
+ [data source for lab 1 & 2](https://archive.ics.uci.edu/ml/datasets/banknote+authentication)
 
-### Lab 3: Sckit-Learn Regression Base with RandomForestRegressor 
+### Lab-3: Sckit-Learn Regression Base with RandomForestRegressor 
+ 
+Objectives of this lab:
+ * How to use the MLflow Tracking API
+ * Interpret and observe runs via the MLflow UI
+ 
  * _airbnb_base_lab_3.py_
+ 
+#### Lab-3 Excercises: 
+  *  Run script and simple base line model
+  *  Observe the parameters and metrics in the MLflow UI
+  
 ### Lab 4: Sckit-Learn Regression Experimental with RandomForestRegressor 
+
+Objectives of this lab:
+ * Create experiments and log meterics and parameters
+ * Interpret and observe runs via the MLflow UI
+ * How to use MLflowClient() API to peruse experiment details
+ 
+ #### Lab-4 Excercises: 
+  * Modify or extend the parameters
+  * Compare the results between baseline and experimental runs
+  * Did the experimental runs produce better outcomes of metrics?
+  * Did the RMSE decrease over the experiments
+
  * _airbnb_exp_lab_4.py_
+ 
+ [Nice blog to read](https://towardsdatascience.com/explaining-feature-importance-by-example-of-a-random-forest-d9166011959e)
+ 
 ### Lab 5: Deep Learning Neural Networks for Classification
 * _keras_mnist_lab_5.py_
 
 Objectives of this lab:
  * Introduce Keras NN Model
- * Introduce MLflowClient()
  * Create your own experiment name and log runs under it
  
 #### Lab Excercises: 
@@ -111,19 +150,19 @@ Objectives of this lab:
 
  * Create a Python script for this example
  * Consult MLflow docs and use Tracking APIs to log:
-    * individual or bulk parameters
-    * individual or bull metrics
+    * individual or bulk parameters and  metrics
     * add tags or notes
-    * experiment with different parameters
+    * experiment different parameters with each run
     * can you create artifacts (mathplot) and save them?
     * Consult MLflow UI to pick the best model
     * Can you load the best model using native model or pyfunc?
     * Can you predict with test data?
     
-Some choices to use:
+Some possible choices to use as a baseline model:
 
 1. [Tensorflow/Keras MNIST fashion Model](https://www.tensorflow.org/tutorials/keras/basic_classification)
 2. [MLflow Examples from Github repo](https://github.com/mlflow/mlflow/tree/master/examples)
+3. [Deep Learning with Python: Francois Challet](https://github.com/fchollet/deep-learning-with-python-notebooks)
 
 Let's Code and Have Loads of Fun!
 

@@ -112,15 +112,16 @@ class RFCModel():
             mlflow.log_artifacts(image_dir, "images")
 
             # print some data
+            print("-" * 100)
             print("Inside MLflow Run with run_id {} and experiment_id {}".format(runID, experimentID))
             print("Estimators trees:", self.params["n_estimators"])
             print(confusion_matrix(y_test,y_pred))
             print(classification_report(y_test,y_pred))
             print("Accuracy Score:", acc)
             print("Precision     :", precision)
-            print("-" * 100)
 
             return (experimentID, runID)
+
 #
 # Lab/Homework for Some Experimental runs
 #
@@ -139,10 +140,11 @@ if __name__ == '__main__':
     # TO DO in the Lab (change these parameters, n_estimators and random_state
     # with each iteration.
     # Does that change the metrics and accuracy?
-    # start with n=25, step by 25 up to 50. 
-    for n in range(25, 50, 25):
+    # start with n=10, step by 10 up to X <=100
+    for n in range(10, 30, 10):
         params = {"n_estimators": n, "random_state": 0 }
         rfr = RFCModel(params)
         (experimentID, runID) = rfr.mlflow_run(dataset)
-        print("MLflow Run with run_id {} and experiment_id {}".format(runID, experimentID))
+        print("MLflow Run completed with run_id {} and experiment_id {}".format(runID, experimentID))
+        print("-" * 100)
 
