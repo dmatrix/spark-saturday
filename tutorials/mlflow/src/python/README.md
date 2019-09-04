@@ -26,13 +26,13 @@
      * TensorFlow/Keras
 5. PyCharm/IntelliJ or Choice of sytnax-highligted Python Editor
 6. pip/pip3 and Python 3 installed
-7. Loads of laughter, curiosity, and sense of humor... :-)
+7. Loads of laughter, curiosity, and sense of humor ... :-)
 
 ### Installation and Setup environment
 
 1. Load MLflow [docs](https://mlflow.org) in your browser
  * Click on Documentation (and keep this tab open)
-2. `git@github.com:dmatrix/spark-saturday.git`
+2. `git clone git@github.com:dmatrix/spark-saturday.git`
 3. `cd <your_cloned_directory>/tutorials/mlflow/src/python`
 4. Install MLflow and the required Python modules 
     * `pip install -r req.txt` or `pip3 install -r req.txt`
@@ -44,11 +44,10 @@
  
  Objectives of this Lab: 
  
- * Use RandomForestReqgressor Model
- * Understand MLflow Tracking API
+ * Use RandomForestRegressor Model
  * How to use the MLflow Tracking API
  * Use the MLflow API to experiment several Runs
- * Interpret and observer runs via the MLflow UI
+ * Interpret and observe runs via the MLflow UI
  
 #### Lab Excercises: 
 
@@ -68,8 +67,8 @@ Objectives of this lab:
  * Use a RandomForestClassification Model
  * Understand MLflow Tracking API
  * How to use the MLflow Tracking API
- * Use the MLflow API to experiment several Runs
- * Interpret and observer runs via the MLflow UI
+ * Use the MLflow API to experiment several runs
+ * Interpret and observe runs via the MLflow UI
  
 #### Lab Excercises: 
   * Consult RandomForestClassifier documentation
@@ -85,14 +84,46 @@ Objectives of this lab:
 ### Lab 4: Sckit-Learn Regression Experimental with RandomForestRegressor 
  * _airbnb_exp_lab_4.py_
 ### Lab 5: Deep Learning Neural Networks for Classification
-* _boston_housing_tensorflow_lab_5.py_
-### Lab 6: Deep Learning Neural Networks for Classification
-* _imdb_keras_tensorflow_lab_6.py_
-### Lab 7: Deploying, loading, and predicting an existing model 
-* _loading_predicting_model_lab_8.py_
-### Lab 8: Experiment your own model of choice
+* _keras_mnist_lab_5.py_
 
-Let's Have Loads of Fun!
+Objectives of this lab:
+ * Introduce Keras NN Model
+ * Introduce MLflowClient()
+ * Create your own experiment name and log runs under it
+ 
+#### Lab Excercises: 
+ * Change or modify Neural Network and regularization parameters
+    * Add layers
+    * Make hidden units larger
+    * Try a different optimizer
+     * RMSprop
+     * Adadelta
+    * Train for more epochs
+ * Log parameters, metrics, and a model
+ * Check MLflow UI and compare metrics among different runs
+
+### Lab 6: Deploying, loading, and predicting an existing model 
+* _loading_predicting_model_lab_8.py_
+
+### Lab 7: Experiment your own model of choice
+
+ * Create a Python script for this example
+ * Consult MLflow docs and use Tracking APIs to log:
+    * individual or bulk parameters
+    * individual or bull metrics
+    * add tags or notes
+    * experiment with different parameters
+    * can you create artifacts (mathplot) and save them?
+    * Consult MLflow UI to pick the best model
+    * Can you load the best model using native model or pyfunc?
+    * Can you predict with test data?
+    
+Some choices to use:
+
+1. [Tensorflow/Keras MNIST fashion Model](https://www.tensorflow.org/tutorials/keras/basic_classification)
+2. [MLflow Examples from Github repo](https://github.com/mlflow/mlflow/tree/master/examples)
+
+Let's Code and Have Loads of Fun!
 
 Cheers
 
