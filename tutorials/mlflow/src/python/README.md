@@ -1,6 +1,5 @@
 
 ## MLflow Tutorial for Start Conference New York, 2019
-
 ### Agenda
  * Introduction
  * MLflow: What, Why, and How
@@ -11,7 +10,6 @@
   * Community and Adoption
   * Get Involved!
  * Q & A
- * Break
  * Setting up your environment
  * Hands-on Tutorials
  
@@ -37,19 +35,17 @@
 4. Install MLflow and the required Python modules 
     * `pip install -r req.txt` or `pip3 install -r req.txt`
 5. `cd labs`
-6. If using PyCharm, create a project and load these files in the project
+6. If using PyCharm or IntelliJ, create a project and load these files in the project
 
 ## Labs 
-The general objective of the labs are to create a baseline or a benchmark mode,
-followed by tuning parameters to affect a better outcome. This is
-achived by experimenting and tracking the effects. Using MLflow tracking
-APIs, we log and observe the results.
+The general objective of the labs are to create a baseline or a benchmark model,
+followed by creating experimental models by tuning parameters to affect a better outcome. 
+This is achived by experimenting and tracking the effects, using MLflow tracking
+APIs. In simpler terms:
 
-In simpler terms:
-
-* 1. Train a base line model with intial parameters
-* 2. Record the relevant metrics and parameters
-* 3. Observer the results vi MLflow UI
+* 1. Train a base line model with initial parameters
+* 2. Record the relevant metrics and parameters with MLflow APIs
+* 3. Observe the results via MLflow UI
 * 4. Change or tweak relevant parameters
 * 5. Repeat 2-4 until satisfied
 
@@ -108,14 +104,14 @@ Objectives of this lab:
   *  Run script and simple base line model
   *  Observe the parameters and metrics in the MLflow UI
   
-### Lab 4: Sckit-Learn Regression Experimental with RandomForestRegressor 
+### Lab-4: Sckit-Learn Regression Experimental with RandomForestRegressor 
 
 Objectives of this lab:
  * Create experiments and log meterics and parameters
  * Interpret and observe runs via the MLflow UI
  * How to use MLflowClient() API to peruse experiment details
  
- #### Lab-4 Excercises: 
+#### Lab-4 Excercises: 
   * Modify or extend the parameters
   * Compare the results between baseline and experimental runs
   * Did the experimental runs produce better outcomes of metrics?
@@ -136,11 +132,9 @@ Objectives of this lab:
  * Change or modify Neural Network and regularization parameters
     * Add layers
     * Make hidden units larger
-    * Try a different optimizer
-     * RMSprop
-     * Adadelta
+    * Try a different optimizer: RMSprop and Adadelta
     * Train for more epochs
- * Log parameters, metrics, and a model
+ * Log parameters, metrics, and the model
  * Check MLflow UI and compare metrics among different runs
 
 ### Lab 6: Deploying, loading, and predicting an existing model 
