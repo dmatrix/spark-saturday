@@ -78,7 +78,9 @@ Objectives of this lab:
   * Log confusion matrix, recall and F1-score as metrics
   
  [Nice blog to read.](https://joshlawman.com/metrics-classification-report-breakdown-precision-recall-f1/)
- 
+ [source for Lab 1 & 2](https://stackabuse.com/random-forest-algorithm-with-python-and-scikit-learn/)
+ [source for lab 1 & 2](https://archive.ics.uci.edu/ml/datasets/banknote+authentication)
+
 ### Lab 3: Sckit-Learn Regression Base with RandomForestRegressor 
  * _airbnb_base_lab_3.py_
 ### Lab 4: Sckit-Learn Regression Experimental with RandomForestRegressor 
@@ -103,7 +105,7 @@ Objectives of this lab:
  * Check MLflow UI and compare metrics among different runs
 
 ### Lab 6: Deploying, loading, and predicting an existing model 
-* _loading_predicting_model_lab_8.py_
+* _loading_predicting_model_lab_6.py_
 
 ### Lab 7: Experiment your own model of choice
 

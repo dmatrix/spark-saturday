@@ -14,6 +14,7 @@ The closer to 1.0 is the accuracy the better is our confidence in its prediction
 
 This example is borrowed from the source below, modified and modularized for this tutorial
 source: https://stackabuse.com/random-forest-algorithm-with-python-and-scikit-learn/
+source:https://archive.ics.uci.edu/ml/datasets/banknote+authentication
 
 Aim of this Lab:
 
@@ -68,9 +69,9 @@ class RFCModel():
         '''
 
         with mlflow.start_run(run_name=r_name) as run:
-            # get all rows and columns but the last column
+            # get all rows and columns but the last column, which is our class
             X = df.iloc[:, 0:4].values
-            # get all the last columns, which is what we want to predict
+            # get all observed values in the last columns, which is what we want to predict
             y = df.iloc[:, 4].values
 
             # create train and test data
@@ -135,7 +136,11 @@ if __name__ == '__main__':
     dataset = load_data("data/bill_authentication.csv")
     print_pandas_dataset(dataset)
     # iterate over several runs with different parameters
-    for n in range(25, 350, 25):
+    # TO DO in the Lab (change these parameters, n_estimators and random_state
+    # with each iteration.
+    # Does that change the metrics and accuracy?
+    # start with n=25, step by 25 up to 50. 
+    for n in range(25, 50, 25):
         params = {"n_estimators": n, "random_state": 0 }
         rfr = RFCModel(params)
         (experimentID, runID) = rfr.mlflow_run(dataset)
