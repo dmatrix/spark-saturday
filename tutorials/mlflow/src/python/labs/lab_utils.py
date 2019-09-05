@@ -1,11 +1,10 @@
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.utils.multiclass import unique_labels
 from sklearn.metrics import confusion_matrix
 import os
-
+import numpy as np
 def load_data(path):
     '''
     Read a CSV file from a given path and return a Pandas DataFrame
@@ -140,3 +139,4 @@ def plot_confusion_matrix(y_true, y_pred, classes,
                     color="white" if cm[i, j] > thresh else "black")
     fig.tight_layout()
     return (plt, fig, ax)
+

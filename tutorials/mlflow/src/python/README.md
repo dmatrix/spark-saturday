@@ -8,8 +8,8 @@
     * Deployment
   * Road Map 1.x
   * Community and Adoption
-  * Demo of Managed MLflow
   * Get Involved!
+  * Demo of Managed MLflow
  * Q & A
  * Setting up your environment
  * Hands-on Tutorials
@@ -138,10 +138,25 @@ Objectives of this lab:
  * Log parameters, metrics, artifacts, and the model
  * Check MLflow UI and compare metrics among different runs
 
-### Lab 6: Deploying, loading, and predicting an existing model 
-* _load_predict_deploy_model_lab_6.py_
+### Lab 6: Loading and predicting an existing model 
+* _load_predict__model_lab_6.py_
+
+Objectives of this lab:
+ * loading an existing model and predicting with test data
+ * using pyfunc model function
+ 
+#### Lab Excercises: 
+ * Extend the _MLflowOps_ class private instance dictionar of 
+ function mappers to include [pyfunc](https://mlflow.org/docs/latest/python_api/mlflow.pyfunc.html#mlflow.pyfunc.load_model) model
+ * Use a couple of the run_uid from your Lab-1 runs. 
+  * Check your MLflow UI for run_uids
+ * 
+ * Use the load_model_type.predict(test_data) to predict tht outcome
+
+
 
 ### Lab 7: Experiment your own model of choice
+ * Extend the MLflowOperations
 
  * Create a Python script for this example
  * Consult MLflow docs and use Tracking APIs to log:

@@ -136,7 +136,7 @@ class RFRModel():
             return (experimentID, runID)
 
 #
-# Lab/Homework for Some Experimental runs
+# TODO in Lab/Homework for Some Experimental runs
 #
     # 1. Consult RandomForestRegressor documentation
     # 2. Change or add parameters, such as depth of the tree or random_state: 42 etc.
@@ -150,7 +150,7 @@ if __name__ == '__main__':
     dataset = load_data("data/petrol_consumption.csv")
     print_pandas_dataset(dataset)
     # iterate over several runs with different parameters
-    for n in range (25, 350, 25):
+    for n in range (25, 200, 25):
         params = {"n_estimators": n, "random_state": 0 }
         rfr = RFRModel(params)
         (experimentID, runID) = rfr.mlflow_run(dataset)

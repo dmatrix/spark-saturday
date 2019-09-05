@@ -106,7 +106,7 @@ if __name__ == '__main__':
     print_pandas_dataset(dataset)
     #
     # create a base line model parameters
-    # this is our benchmark model go compare experimental results to
+    # this is our benchmark model to compare experimental results with
     #
     params = {"n_estimators": 10, "max_depth": 3, "random_state": 0}
     rfr = RFRBaseModel(params)
