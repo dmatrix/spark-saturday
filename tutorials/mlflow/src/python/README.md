@@ -8,6 +8,7 @@
     * Deployment
   * Road Map 1.x
   * Community and Adoption
+  * Demo of Managed MLflow
   * Get Involved!
  * Q & A
  * Setting up your environment
@@ -121,7 +122,7 @@ Objectives of this lab:
  
  [Nice blog to read](https://towardsdatascience.com/explaining-feature-importance-by-example-of-a-random-forest-d9166011959e)
  
-### Lab 5: Deep Learning Neural Networks for Classification
+### Lab-5 : Deep Learning Neural Networks for Classification
 * _keras_mnist_lab_5.py_
 
 Objectives of this lab:
@@ -134,11 +135,11 @@ Objectives of this lab:
     * Make hidden units larger
     * Try a different optimizer: RMSprop and Adadelta
     * Train for more epochs
- * Log parameters, metrics, and the model
+ * Log parameters, metrics, artifacts, and the model
  * Check MLflow UI and compare metrics among different runs
 
 ### Lab 6: Deploying, loading, and predicting an existing model 
-* _loading_predicting_model_lab_6.py_
+* _load_predict_deploy_model_lab_6.py_
 
 ### Lab 7: Experiment your own model of choice
 
