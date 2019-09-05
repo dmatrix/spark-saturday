@@ -144,22 +144,20 @@ Objectives of this lab:
 Objectives of this lab:
  * loading an existing model and predicting with test data
  * using pyfunc model function
+ *challenge-1:* Can you load and predict other models from the labs?
+  * Lab-3, lab-4 or lab-5?
  
 #### Lab Excercises: 
- * Extend the _MLflowOps_ class private instance dictionar of 
+ * Extend the _MLflowOps_ class private instance dictionary of 
  function mappers to include [pyfunc](https://mlflow.org/docs/latest/python_api/mlflow.pyfunc.html#mlflow.pyfunc.load_model) model
  * Use a couple of the run_uid from your Lab-1 runs. 
   * Check your MLflow UI for run_uids
- * 
- * Use the load_model_type.predict(test_data) to predict tht outcome
-
-
+ * Use the _load_model_type.predict(test_data)_ to predict tht outcome
+ 
 
 ### Lab 7: Experiment your own model of choice
- * Extend the MLflowOperations
-
- * Create a Python script for this example
- * Consult MLflow docs and use Tracking APIs to log:
+ * Create a Python script for your example
+ * Consult [MLflow](https://mlflow.org/docs/latest/python_api/mlflow.html) and [Tracking APIs](https://mlflow.org/docs/latest/python_api/mlflow.tracking.html) to log:
     * individual or bulk parameters and  metrics
     * add tags or notes
     * experiment different parameters with each run
