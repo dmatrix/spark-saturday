@@ -17,39 +17,39 @@
  
 ### Prerequisites 
 1. Knowledge of Python 3 and programming in general
-2. Preferably a UNIX-based, fully-charged laptop with 8-16 GB, with a Chrome or Fixfox brower
-3. Familiarity with GitHub, git, and account on Github
-4. Some Knowledge of some Machine Learning Concepts, Libraries, and Frameworks 
-     * scikit-Learn
+2. Preferably a UNIX-based, fully-charged laptop with 8-16 GB, with a Chrome or Fixfox browser
+3. Familiarity with GitHub, git, and an account on Github
+4. Some Knowledge of some Machine Learning concepts, libraries, and frameworks 
+     * sckit-Learn
      * pandas and Numpy
-     * Apache Spark MLlib
      * TensorFlow/Keras
-5. PyCharm/IntelliJ or Choice of sytnax-highligted Python Editor
+5. PyCharm/IntelliJ or choice of sytnax-highligted Python editor
 6. pip/pip3 and Python 3 installed
 7. Loads of laughter, curiosity, and sense of humor ... :-)
 
 ### Installation and Setup environment
 
-1. Load MLflow [docs](https://mlflow.org) in your browser
+1. Open MLflow [docs](https://mlflow.org) in your browser
  * Click on Documentation (and keep this tab open)
 2. `git clone git@github.com:dmatrix/spark-saturday.git`
 3. `cd <your_cloned_directory>/tutorials/mlflow/src/python`
 4. Install MLflow and the required Python modules 
     * `pip install -r req.txt` or `pip3 install -r req.txt`
 5. `cd labs`
-6. If using PyCharm or IntelliJ, create a project and load these files in the project
+6. If using PyCharm or IntelliJ, create a project and load source files in the project
 
 ## Labs 
 The general objective of the labs are to create a baseline or a benchmark model,
-followed by creating experimental models by tuning parameters to affect a better outcome. 
-This is achived by experimenting and tracking the effects, using MLflow tracking
-APIs. In simpler terms:
+followed by creating experimental models by tuning parameters to produce a better outcome. 
+This is achieved by experimenting and tracking the effects, using MLflow and MLflow tracking
+APIs. In simple terms:
 
 * 1. Train a base line model with initial parameters
 * 2. Record the relevant metrics and parameters with MLflow APIs
 * 3. Observe the results via MLflow UI
 * 4. Change or tweak relevant parameters
-* 5. Repeat 2-4 until satisfied
+* 5. Test or evaluate model
+* 6. Repeat 2-5 until satisfied
 
 This above iterative process is recurrent in each of the lab. 
 
@@ -59,11 +59,11 @@ This above iterative process is recurrent in each of the lab.
  Objectives of this Lab: 
  
  * Use RandomForestRegressor Model
- * How to use the MLflow Tracking API
+ * How to use the MLflow API
  * Use the MLflow API to experiment several Runs
  * Interpret and observe runs via the MLflow UI
  
-#### Lab-1 Excercises: 
+#### Lab-1 Exercise: 
 
  1. Consult [RandomForestRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html) documentation 
  2. Change or add parameters, such as depth of the tree or random_state: 42 etc.
@@ -83,7 +83,7 @@ Objectives of this lab:
  * Use the MLflow API to experiment several runs
  * Interpret and observe runs via the MLflow UI
  
-#### Lab-2 Excercises: 
+#### Lab-2 Exercise: 
   * Consult [RandomForestClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) documentation
   * Change or add parameters, such as depth of the tree or random_state: 42 etc.
   * Change or alter the range of runs and increments of n_estimators
@@ -102,11 +102,11 @@ Objectives of this lab:
  * How to use the MLflow Tracking API
  * Interpret and observe runs via the MLflow UI
   
-#### Lab-3 Excercises: 
+#### Lab-3 Exercise: 
   *  Run script and simple base line model
   *  Observe the parameters and metrics in the MLflow UI
   
-### Lab-4: Sckit-Learn Regression Experimental with RandomForestRegressor \
+### Lab-4: Sckit-Learn Regression Experimental with RandomForestRegressor
 * _airbnb_exp_lab_4.py_
  
 Objectives of this lab:
@@ -114,7 +114,7 @@ Objectives of this lab:
  * Interpret and observe runs via the MLflow UI
  * How to use _MLflowClient()_ API to peruse experiment details
  
-#### Lab-4 Excercises: 
+#### Lab-4 Exercise: 
   * Modify or extend the parameters
   * Compare the results between baseline and experimental runs
   * Did the experimental runs produce better outcomes of metrics?
@@ -129,7 +129,7 @@ Objectives of this lab:
  * Introduce Keras NN Model
  * Create your own experiment name and log runs under it
  
-#### Lab Excercises: 
+#### Lab Exercise: 
  * Consult [Keras Sequential Model](https://keras.io/getting-started/sequential-model-guide/) documentation
  * Change or modify Neural Network and regularization parameters
     * Add hidden layers
@@ -148,7 +148,7 @@ Objectives of this lab:
  *challenge-1:* Can you load and predict other models from the labs?
   * Lab-3, lab-4 or lab-5?
  
-#### Lab Excercises: 
+#### Lab Exercise: 
  * Extend the _MLflowOps_ class private instance dictionary of 
  function mappers to include [pyfunc](https://mlflow.org/docs/latest/python_api/mlflow.pyfunc.html#mlflow.pyfunc.load_model) model
  * Use a couple of the run_uid from your Lab-1 runs. 
@@ -161,9 +161,9 @@ Objectives of this lab:
  * Understanding MLflow Project files
  * Running MLflow Project as unit of execution
  
-#### Lab Excercises:
+#### Lab Exercise:
  * Execute an existing MLproject on git
- * Consult [docs]( https://mlflow.org/docs/latest/quickstart.html#running-mlflow-projects
+ * Consult [docs](https://mlflow.org/docs/latest/quickstart.html#running-mlflow-projects)
 ) for running MLprojects
  * Can you create an MLproject for one of these labs?
  * Can you execute it with different parameters?
@@ -175,7 +175,7 @@ Objectives of this lab:
 Objectives of this lab:
  * Use and build whatever you have learned from above
  
- #### Lab Excercises:
+ #### Lab Exercise:
  * Create a Python script for your example
  * Consult [MLflow](https://mlflow.org/docs/latest/python_api/mlflow.html) and [Tracking APIs](https://mlflow.org/docs/latest/python_api/mlflow.tracking.html) to log:
     * individual or bulk parameters and  metrics
@@ -186,11 +186,12 @@ Objectives of this lab:
     * Can you load the best model using native model or pyfunc?
     * Can you predict with test data?
     
-Some possible choices to use as a baseline model:
+Some possible choices to use or to modify:
 
 1. [Tensorflow/Keras MNIST fashion Model](https://www.tensorflow.org/tutorials/keras/basic_classification)
 2. [MLflow Examples from Github repo](https://github.com/mlflow/mlflow/tree/master/examples)
-3. [Deep Learning with Python: Francois Challet](https://github.com/fchollet/deep-learning-with-python-notebooks)
+3. [Deep Learning with Python: Francois Chollet](https://github.com/fchollet/deep-learning-with-python-notebooks)
+4. [Jules' Deep Learning Examples](https://github.com/dmatrix/jsd-mlflow-examples)
 
 Let's Code and Have Loads of Fun!
 
