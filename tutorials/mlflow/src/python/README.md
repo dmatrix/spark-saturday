@@ -4,6 +4,7 @@
  * Introduction
  * MLflow: What, Why, and How
   * MLflow Concepts: 
+    * Philosophy & Motivation
     * Tracking, Projects & Models
     * Deployment
   * Road Map 1.x
@@ -95,23 +96,23 @@ Objectives of this lab:
  [data source for lab 1 & 2](https://archive.ics.uci.edu/ml/datasets/banknote+authentication)
 
 ### Lab-3: Sckit-Learn Regression Base with RandomForestRegressor 
- 
+  * _airbnb_base_lab_3.py_
+
 Objectives of this lab:
  * How to use the MLflow Tracking API
  * Interpret and observe runs via the MLflow UI
- 
- * _airbnb_base_lab_3.py_
- 
+  
 #### Lab-3 Excercises: 
   *  Run script and simple base line model
   *  Observe the parameters and metrics in the MLflow UI
   
-### Lab-4: Sckit-Learn Regression Experimental with RandomForestRegressor 
-
+### Lab-4: Sckit-Learn Regression Experimental with RandomForestRegressor \
+* _airbnb_exp_lab_4.py_
+ 
 Objectives of this lab:
  * Create experiments and log meterics and parameters
  * Interpret and observe runs via the MLflow UI
- * How to use MLflowClient() API to peruse experiment details
+ * How to use _MLflowClient()_ API to peruse experiment details
  
 #### Lab-4 Excercises: 
   * Modify or extend the parameters
@@ -119,8 +120,6 @@ Objectives of this lab:
   * Did the experimental runs produce better outcomes of metrics?
   * Did the RMSE decrease over the experiments
 
- * _airbnb_exp_lab_4.py_
- 
  [Nice blog to read](https://towardsdatascience.com/explaining-feature-importance-by-example-of-a-random-forest-d9166011959e)
  
 ### Lab-5 : Deep Learning Neural Networks for Classification
@@ -140,7 +139,7 @@ Objectives of this lab:
  * Log parameters, metrics, and the model
  * Check MLflow UI and compare metrics among different runs
 
-### Lab 6: Loading and predicting an existing model 
+### Lab-6: Loading and predicting an existing model 
 * _load_predict__model_lab_6.py_
 
 Objectives of this lab:
@@ -156,8 +155,27 @@ Objectives of this lab:
   * Check your MLflow UI for run_uids
  * Use the _load_model_type.predict(test_data)_ to predict tht outcome
  
+### Lab-7 (optional): Executing MLproject from GitHub
 
-### Lab 7: Experiment your own model of choice
+Objectives of this lab:
+ * Understanding MLflow Project files
+ * Running MLflow Project as unit of execution
+ 
+#### Lab Excercises:
+ * Execute an existing MLproject on git
+ * Consult [docs]( https://mlflow.org/docs/latest/quickstart.html#running-mlflow-projects
+) for running MLprojects
+ * Can you create an MLproject for one of these labs?
+ * Can you execute it with different parameters?
+ * `mlflow run https://github.com/mlflow/mlflow-example.git -P alpha=5`
+ * with no-conda use `mlflow run --no-conda https://github.com/mlflow/mlflow-example.git -P alpha=5`
+
+### Lab-8 (Capstone): Experiment your own model of choice
+
+Objectives of this lab:
+ * Use and build whatever you have learned from above
+ 
+ #### Lab Excercises:
  * Create a Python script for your example
  * Consult [MLflow](https://mlflow.org/docs/latest/python_api/mlflow.html) and [Tracking APIs](https://mlflow.org/docs/latest/python_api/mlflow.tracking.html) to log:
     * individual or bulk parameters and  metrics
