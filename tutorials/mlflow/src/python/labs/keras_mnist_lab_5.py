@@ -2,6 +2,8 @@ import argparse
 
 import keras
 import tensorflow as tf
+from keras import models
+from keras import layers
 
 import mlflow
 import mlflow.keras
@@ -25,11 +27,11 @@ Aim of this module is:
 #
 parser = argparse.ArgumentParser(
     description='Train a Keras feed-forward network for MNIST classification in TensorFlow/Keras')
-parser.add_argument('--batch-size', '-b', type=int, default=128)
+parser.add_argument('--batch_size', '-b', type=int, default=128)
 parser.add_argument('--epochs', '-e', type=int, default=5)
-parser.add_argument('--learning-rate', '-l', type=float, default=0.05)
-parser.add_argument('--num-hidden-units', '-n', type=int, default=512)
-parser.add_argument('--num-hidden-layers', '-N', type=int, default=1)
+parser.add_argument('--learning_rate', '-l', type=float, default=0.05)
+parser.add_argument('--num_hidden_units', '-n', type=int, default=512)
+parser.add_argument('--num_hidden_layers', '-N', type=int, default=1)
 parser.add_argument('--dropout', '-d', type=float, default=0.25)
 parser.add_argument('--momentum', '-m', type=float, default=0.85)
 args = parser.parse_args()
@@ -53,16 +55,22 @@ else:
     exp_id = entity.experiment_id
 
 # do the MLflow
-def mlfow_run():
-    with mlflow.start_run(run_name="Lab5:Keras_MNIST",  experiment_id = exp_id) as run:
+def mlfow_run(run_name="Lab-5:Keras_MNIST", experiment_id=exp_id):
+    '''
+    Method to run MLflow experiment
+    :return:
+    '''
+    with mlflow.start_run(run_name=run_name,  experiment_id = exp_id) as run:
 
-        model = keras.models.Sequential([
-          keras.layers.Flatten(input_shape=x_train[0].shape),
-          keras.layers.Dense(args.num_hidden_units, activation=tf.nn.relu),
-          keras.layers.Dropout(args.dropout),
-          keras.layers.Dense(10, activation=tf.nn.softmax)
-        ])
-
+        model = models.Sequential()
+        model.add(layers.Flatten(input_shape=x_train[0].shape))
+        # add extra hidden layers to expand the NN
+        # --num_hidden_layers or -N  in the command line arguments
+        for n in range(0, args.num_hidden_layers):
+            model.add(layers.Dense(args.num_hidden_units, activation=tf.nn.relu))
+        model.add(layers.Dropout(args.dropout))
+        model.add(layers.Dense(10, activation=tf.nn.softmax))
+        model.summary()
         # Use Scholastic Gradient Descent (SGD)
         # https://keras.io/optimizers/
         optimizer = keras.optimizers.SGD(lr=args.learning_rate,
@@ -106,4 +114,4 @@ def mlfow_run():
         print("MLflow Run with run_id {} and experiment_id {}".format(runID, experimentID))
 
 if __name__ == '__main__':
-    mlfow_run()
+    mlfow_run(run_name="Jules-Lab5:Keras_MNIST")

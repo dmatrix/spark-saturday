@@ -28,14 +28,15 @@ if __name__ == '__main__':
     dataset = load_data("data/test_petrol_consumption.csv")
     # get all rows and columns but the last column
     X_test = dataset.iloc[:, 0:4].values
-    # get all the last columns, which is what we want to predict
+    # get all values only from the last columns, which is what we want to predict
     y_test = dataset.iloc[:, 4].values
     print("Observed values {}".format(y_test))
     print("-" * 100)
     #
     # TODO in Lab
     # Add your run_uids from Lab-1 Runs. <cut-and-past in the list>
-    # Can you try Lab-2 runs with random-forest-class-mode, our classification model
+    # Can you try Lab-2 runs with model `random-forest-class-mode`, our classification modelive
+    # and use its respective run_uids and test data
     for run_id in ['05c16b8bfdc845e7b69949bc16a5a361', 'f93bd1881de6404cb7726317215921bf']:
         uri = "runs:/" + run_id + "/random-forest-reg-model"
         sk_model = mclnt.get_model("sklearn")(uri)
