@@ -8,7 +8,7 @@ class MLflowOps():
         #
         # dictionary for mapping model types to their respective load_model calls
         # TODO in Lab
-        # Extend the dictionary to include mlflow.pyfunc load_model
+        # Extend the dictionary mapping to include mlflow.pyfunc.load_model
         #
         self._model_funcs = {
             'sklearn':mlflow.sklearn.load_model}

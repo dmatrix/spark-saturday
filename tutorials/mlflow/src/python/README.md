@@ -9,7 +9,7 @@
   * Road Map 1.x
   * Community and Adoption
   * Get Involved!
-  * Demo of Managed MLflow
+  * Managed MLflow Demo
  * Q & A
  * Setting up your environment
  * Hands-on Tutorials
@@ -89,7 +89,8 @@ Objectives of this lab:
   * Check in MLfow UI if the metrics are affected
   * Log confusion matrix, recall and F1-score as metrics
   
- [Nice blog to read](https://joshlawman.com/metrics-classification-report-breakdown-precision-recall-f1/), 
+ [Nice blog to read](https://joshlawman.com/metrics-classification-report-breakdown-precision-recall-f1/),
+ [Nice blog to read](https://towardsdatascience.com/understanding-random-forest-58381e0602d2) 
  [source for Lab 1 & 2](https://stackabuse.com/random-forest-algorithm-with-python-and-scikit-learn/), and  
  [data source for lab 1 & 2](https://archive.ics.uci.edu/ml/datasets/banknote+authentication)
 
@@ -132,7 +133,7 @@ Objectives of this lab:
 #### Lab Excercises: 
  * Consult [Keras Sequential Model](https://keras.io/getting-started/sequential-model-guide/) documentation
  * Change or modify Neural Network and regularization parameters
-    * Add layers
+    * Add hidden layers
     * Make hidden units larger
     * Try a different [Keras optimizers](https://keras.io/optimizers/): RMSprop and Adadelta
     * Train for more epochs
