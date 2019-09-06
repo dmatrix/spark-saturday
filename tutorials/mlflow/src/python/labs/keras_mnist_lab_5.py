@@ -17,12 +17,13 @@ Aim of this module is:
 '''
 
 # TODO in LAB
-# Add layers
+#    Add layers
 #    Make hidden units larger
 #    Try a different optimizer: RMSprop and Adadelta
 #    Train for more epochs
-#    change these default parameters are and it will effect the results
-#    or provide them on command line For exaxmple `python keras_mnist_lab_5.py --epochs 10`
+#    change these default parameters are and observe how it will effect the results
+#    or provide them on command line.
+#    For exaxmple `python keras_mnist_lab_5.py --epochs 10`
 #    `python keras_mnist_lab_5.py -e 10 -n 128`
 #
 parser = argparse.ArgumentParser(
@@ -54,11 +55,10 @@ if entity is None:
 else:
     exp_id = entity.experiment_id
 
-# do the MLflow
-def mlfow_run(run_name="Lab-5:Keras_MNIST", experiment_id=exp_id):
+def mlfow_run(run_name="Lab-5:Keras_MNIST", experiment_id=exp_id, model_summary=False):
     '''
     Method to run MLflow experiment
-    :return:
+    :return: Tuple (experiment_id, run_id)
     '''
     with mlflow.start_run(run_name=run_name,  experiment_id = exp_id) as run:
 
@@ -70,7 +70,8 @@ def mlfow_run(run_name="Lab-5:Keras_MNIST", experiment_id=exp_id):
             model.add(layers.Dense(args.num_hidden_units, activation=tf.nn.relu))
         model.add(layers.Dropout(args.dropout))
         model.add(layers.Dense(10, activation=tf.nn.softmax))
-        model.summary()
+        if model_summary:
+            model.summary()
         # Use Scholastic Gradient Descent (SGD)
         # https://keras.io/optimizers/
         optimizer = keras.optimizers.SGD(lr=args.learning_rate,
@@ -91,6 +92,11 @@ def mlfow_run(run_name="Lab-5:Keras_MNIST", experiment_id=exp_id):
                 mlflow.log_metric("training_accuracy", logs["acc"], epoch)
 
         # fit the model
+        # get experiment id and run id
+        runID = run.info.run_uuid
+        experimentID = run.info.experiment_id
+        print("-" * 100)
+        print("MLflow Run with run_id {} and experiment_id {}".format(runID, experimentID))
         model.fit(x_train, y_train,
                   epochs=args.epochs,
                   batch_size=args.batch_size,
@@ -111,7 +117,11 @@ def mlfow_run(run_name="Lab-5:Keras_MNIST", experiment_id=exp_id):
         # get experiment id and run id
         runID = run.info.run_uuid
         experimentID = run.info.experiment_id
-        print("MLflow Run with run_id {} and experiment_id {}".format(runID, experimentID))
+
+        return (experimentID, runID)
 
 if __name__ == '__main__':
-    mlfow_run(run_name="Jules-Lab5:Keras_MNIST")
+    (experimentID, runID) = mlfow_run(run_name="Jules-Lab5:Keras_MNIST")
+    print("MLflow completed with run_id {} and experiment_id {}".format(runID, experimentID))
+    print("-" * 100)
+
