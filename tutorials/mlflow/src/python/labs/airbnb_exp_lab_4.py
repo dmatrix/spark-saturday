@@ -1,4 +1,4 @@
-'''
+"""
 Databricks Learning Academy Lab -
 
 Refactored code to modularize it
@@ -26,7 +26,7 @@ https://towardsdatascience.com/understanding-random-forest-58381e0602d2
 https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html
 https://towardsdatascience.com/explaining-feature-importance-by-example-of-a-random-forest-d9166011959e
 https://seaborn.pydata.org/tutorial/regression.html
-'''
+"""
 
 import tempfile
 
@@ -44,26 +44,26 @@ from lab_utils import load_data, plot_residual_graphs, get_mlflow_directory_path
 
 
 class RFFExperimentModel(RFRBaseModel):
-    '''
+    """
     Constructor for the Experimental RandomForestRegressor.
-    '''
+    """
     def __int__(self, params):
-        '''
+        """
         Call the superclass initializer
         :param params: parameters for the RandomForestRegressor instance
         :return: None
-        '''
+        """
         RFRBaseModel.__init__(self, params)
 
     def mlflow_run(self, df, r_name="Lab-4:RF Experiment Model"):
-        '''
+        """
         Override the base class mlflow_run for this epxerimental runs
         This method trains the model, evaluates, computes the metrics, logs
         all the relevant metrics, artifacts, and models.
         :param df: pandas dataFrame
         :param r_name: name of the experiment run
         :return:  MLflow Tuple (ExperimentID, runID)
-        '''
+        """
 
         with mlflow.start_run(run_name=r_name) as run:
             X_train, X_test, y_train, y_test = train_test_split(df.drop(["price"], axis=1), df[["price"]].values.ravel(), random_state=42)

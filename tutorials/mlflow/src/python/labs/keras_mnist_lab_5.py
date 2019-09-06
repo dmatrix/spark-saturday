@@ -9,12 +9,12 @@ import mlflow
 import mlflow.keras
 from mlflow.tracking import MlflowClient
 
-'''
+"""
 Aim of this module is:
 1. Introduce tracking ML experiments in MLflow
 2. Create your own experiment name and log runs under it
 3. Record parameters, metrics, and a model
-'''
+"""
 
 # TODO in LAB
 #    Add layers
@@ -56,10 +56,10 @@ else:
     exp_id = entity.experiment_id
 
 def mlfow_run(run_name="Lab-5:Keras_MNIST", experiment_id=exp_id, model_summary=False):
-    '''
+    """
     Method to run MLflow experiment
     :return: Tuple (experiment_id, run_id)
-    '''
+    """
     with mlflow.start_run(run_name=run_name,  experiment_id = exp_id) as run:
 
         model = models.Sequential()

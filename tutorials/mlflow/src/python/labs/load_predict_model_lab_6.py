@@ -4,6 +4,13 @@ import mlflow.pyfunc
 from lab_utils import load_data
 
 class MLflowOps():
+    """
+    Class for some operations on model like loading, reproducing or predicting results
+    This class could be extend to implement other operations:
+    1. Execute or run methods from  MLflow Command LIne interface using Click Python module
+    2. Execute any methods using click.CLIRunner()
+    3. Deploy or serve model usng MLflow CLI interface
+    """
     def __init__(self):
         #
         # dictionary for mapping model types to their respective load_model calls
@@ -16,14 +23,15 @@ class MLflowOps():
         return
 
     def get_model(self, model_type):
-        '''
+        """
         Method to return the respective model function to load
         :param model_type: string, type of model For example, "sklearn", "keras", "pyfunc" etc
         :return: load_model function to the model type
-        '''
+        """
         return self._model_funcs[model_type]
 
 if __name__ == '__main__':
+
     mclnt = MLflowOps()
     dataset = load_data("data/test_petrol_consumption.csv")
     # get all rows and columns but the last column

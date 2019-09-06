@@ -40,37 +40,37 @@ from sklearn import metrics
 from lab_utils import load_data, plot_graphs, get_mlflow_directory_path, print_pandas_dataset
 
 class RFRModel():
-    '''
+    """
     General class for Sckit-learn RandomForestRegressor
-    '''
-
+    """
     # class wide variables common to all instances
+    # keep track of cumulative estimators and rsme 
     rsme = []
     estimators = []
 
     def __init__(self, params={}):
-        '''
+        """
         Construtor for the RandomForestRegressor
         :param params: dictionary to RandomForestRegressor
-        '''
+        """
         self.rf = RandomForestRegressor(**params)
         self.params = params
 
     def model(self):
-        '''
+        """
         Return the model craeted
         :return: handle or instance of the RandomForestReqgressor
-        '''
+        """
         return self.rf
 
     def mlflow_run(self, df, r_name="Lab-1:RF Petrol Regression Experiment"):
-        '''
+        """
         This method trains, computes metrics, and logs all metrics, parameters,
         and artifacts for the current run
         :param df: pandas dataFrame
         :param r_name: Name of the experiment as logged by MLflow
         :return: MLflow Tuple (ExperimentID, runID)
-        '''
+        """
 
         with mlflow.start_run(run_name=r_name) as run:
             # get all rows and columns but the last column

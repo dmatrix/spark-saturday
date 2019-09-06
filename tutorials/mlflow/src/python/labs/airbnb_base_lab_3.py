@@ -37,28 +37,28 @@ from lab_utils import load_data, print_pandas_dataset
 class RFRBaseModel():
 
     def __init__(self, params={}):
-        '''
+        """
         Construtor for the RandomForestRegressor
         :param params: dictionary to RandomForestRegressor
-        '''
+        """
         self.params = params
         self.rf = RandomForestRegressor(**params)
 
     def model(self):
-        '''
+        """
         Getter for the model
         :return: return the model
-        '''
+        """
         return self.rf
 
     def mlflow_run(self, df, r_name="Lab-3: Baseline RF Model"):
-        '''
+        """
         This method trains, computes metrics, and logs all metrics, parameters,
         and artifacts for the current run
         :param df: pandas dataFrame
         :param r_name: Name of the experiment as logged by MLflow
         :return: Tuple of MLflow experimentID, runID
-        '''
+        """
         with mlflow.start_run(run_name=r_name) as run:
             X_train, X_test, y_train, y_test = train_test_split(df.drop(["price"], axis=1), df[["price"]].values.ravel(), random_state=42)
             self.rf.fit(X_train, y_train)
