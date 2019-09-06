@@ -56,7 +56,7 @@ class RFCModel():
         '''
         return self.rf
 
-    def mlflow_run(self, df, r_name="RF Bank Note Classification Experiment"):
+    def mlflow_run(self, df, r_name="Lab-2:RF Bank Note Classification Experiment"):
         '''
         This method trains, computes metrics, and logs all metrics, parameters,
         and artifacts for the current run
@@ -137,7 +137,7 @@ if __name__ == '__main__':
     dataset = load_data("data/bill_authentication.csv")
     print_pandas_dataset(dataset)
     # iterate over several runs with different parameters
-    # TO DO in the Lab (change these parameters, n_estimators and random_state
+    # TODO in the Lab (change these parameters, n_estimators and random_state
     # with each iteration.
     # Does that change the metrics and accuracy?
     # start with n=10, step by 10 up to X <=100

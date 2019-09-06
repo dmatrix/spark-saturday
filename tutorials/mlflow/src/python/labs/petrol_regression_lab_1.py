@@ -62,7 +62,7 @@ class RFRModel():
         '''
         return self.rf
 
-    def mlflow_run(self, df, r_name="RF Petrol Regression Experiment"):
+    def mlflow_run(self, df, r_name="Lab-1:RF Petrol Regression Experiment"):
         '''
         This method trains, computes metrics, and logs all metrics, parameters,
         and artifacts for the current run

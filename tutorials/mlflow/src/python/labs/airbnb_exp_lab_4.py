@@ -55,7 +55,7 @@ class RFFExperimentModel(RFRBaseModel):
         '''
         RFRBaseModel.__init__(self, params)
 
-    def mlflow_run(self, df, r_name="RF Experiment Model"):
+    def mlflow_run(self, df, r_name="Lab-4:RF Experiment Model"):
         '''
         Override the base class mlflow_run for this epxerimental runs
         This method trains the model, evaluates, computes the metrics, logs
@@ -134,8 +134,8 @@ class RFFExperimentModel(RFRBaseModel):
     # 4. Check in MLfow UI if the metrics are affected
 
 if __name__ == '__main__':
+    # TODO add more parameters to the list
     # create four experiments with different parameters
-    # TO DO add more parameters to the list
     params_list = [
         {"n_estimators": 200,"max_depth":  6, "random_state": 42}
         # add more to this list here

@@ -34,9 +34,9 @@ if __name__ == '__main__':
     print("-" * 100)
     #
     # TODO in Lab
-    # Add your run_uids from Lab-1 Runs
+    # Add your run_uids from Lab-1 Runs. <cut-and-past in the list>
     # Can you try Lab-2 runs with random-forest-class-mode, our classification model
-    for run_id in ['b476917b3a024f9abe996b40609b4fbf', 'a7884bb1d61e431388d4badf201f753a']:
+    for run_id in ['05c16b8bfdc845e7b69949bc16a5a361', 'f93bd1881de6404cb7726317215921bf']:
         uri = "runs:/" + run_id + "/random-forest-reg-model"
         sk_model = mclnt.get_model("sklearn")(uri)
         print("Using Sckit-Learn Model Prediction:{}".format(type(sk_model)))

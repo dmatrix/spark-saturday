@@ -14,6 +14,11 @@ Aim of this module is:
 3. Record parameters, metrics, and a model
 '''
 
+# TODO in LAB
+# Add layers
+#    Make hidden units larger
+#    Try a different optimizer: RMSprop and Adadelta
+#    Train for more epochs
 parser = argparse.ArgumentParser(
     description='Train a Keras feed-forward network for MNIST classification in TensorFlow/Keras')
 parser.add_argument('--batch-size', '-b', type=int, default=128)
@@ -44,7 +49,7 @@ else:
     exp_id = entity.experiment_id
 
 # do the MLflow thing
-with mlflow.start_run(run_name="Keras_MNIST",  experiment_id = exp_id) as run:
+with mlflow.start_run(run_name="Lab5:Keras_MNIST",  experiment_id = exp_id) as run:
 
     model = keras.models.Sequential([
       keras.layers.Flatten(input_shape=x_train[0].shape),
@@ -83,8 +88,8 @@ with mlflow.start_run(run_name="Keras_MNIST",  experiment_id = exp_id) as run:
     mlflow.log_metric("test_loss", test_loss)
     mlflow.log_metric("test_accuracy", test_acc)
 
+    # <TODO in LAB>
     # log parameters
-    # <TO DO in LAB>
 
     # log model as native Keras Model
     mlflow.keras.log_model(model, artifact_path="keras-model")

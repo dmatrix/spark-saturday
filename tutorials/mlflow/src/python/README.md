@@ -130,12 +130,13 @@ Objectives of this lab:
  * Create your own experiment name and log runs under it
  
 #### Lab Excercises: 
+ * Consult [Keras Sequential Model](https://keras.io/getting-started/sequential-model-guide/) documentation
  * Change or modify Neural Network and regularization parameters
     * Add layers
     * Make hidden units larger
-    * Try a different optimizer: RMSprop and Adadelta
+    * Try a different [Keras optimizers](https://keras.io/optimizers/): RMSprop and Adadelta
     * Train for more epochs
- * Log parameters, metrics, artifacts, and the model
+ * Log parameters, metrics, and the model
  * Check MLflow UI and compare metrics among different runs
 
 ### Lab 6: Loading and predicting an existing model 

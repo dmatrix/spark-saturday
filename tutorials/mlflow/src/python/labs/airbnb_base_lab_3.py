@@ -51,7 +51,7 @@ class RFRBaseModel():
         '''
         return self.rf
 
-    def mlflow_run(self, df, r_name="Baseline RF Model"):
+    def mlflow_run(self, df, r_name="Lab-3: Baseline RF Model"):
         '''
         This method trains, computes metrics, and logs all metrics, parameters,
         and artifacts for the current run
@@ -94,7 +94,7 @@ class RFRBaseModel():
 
             return (experimentID, runID)
 #
-# Lab/Homework for Some Experimental runs
+# TODO in Lab/Homework for Some Experimental runs
 #
     # 1. Consult RandomForest documentation
     # 2. Run the baseline model
