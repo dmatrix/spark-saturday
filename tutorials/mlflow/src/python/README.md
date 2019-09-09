@@ -20,7 +20,7 @@
 2. Preferably a UNIX-based, fully-charged laptop with 8-16 GB, with a Chrome or Fixfox browser
 3. Familiarity with GitHub, git, and an account on Github
 4. Some Knowledge of some Machine Learning concepts, libraries, and frameworks 
-     * sckit-Learn
+     * scikit-Learn
      * pandas and Numpy
      * TensorFlow/Keras
 5. PyCharm/IntelliJ or choice of sytnax-highligted Python editor
@@ -53,7 +53,7 @@ APIs. In simple terms:
 
 This above iterative process is recurrent in each of the lab. 
 
-### Lab-1: Sckit-Learn Regression with RandomForestRegressor 
+### Lab-1: Scikit-Learn Regression with RandomForestRegressor 
  * _petrol_regression_lab_1.py_
  
  Objectives of this Lab: 
@@ -74,7 +74,7 @@ This above iterative process is recurrent in each of the lab.
  
  *challenge-2:* Use linear regression model and see if it makes a difference in the evaluation metrics
 
-### Lab-2: Sckit-Learn Classification with RandomForestClassifier
+### Lab-2: Scikit-Learn Classification with RandomForestClassifier
  * _banknote_classification_lab_2.py_
  
 Objectives of this lab:
@@ -95,7 +95,7 @@ Objectives of this lab:
  [source for Lab 1 & 2](https://stackabuse.com/random-forest-algorithm-with-python-and-scikit-learn/), and  
  [data source for lab 1 & 2](https://archive.ics.uci.edu/ml/datasets/banknote+authentication)
 
-### Lab-3: Sckit-Learn Regression Base with RandomForestRegressor 
+### Lab-3: Scikit-Learn Regression Base with RandomForestRegressor 
   * _airbnb_base_lab_3.py_
 
 Objectives of this lab:
@@ -106,7 +106,7 @@ Objectives of this lab:
   *  Run script and simple base line model
   *  Observe the parameters and metrics in the MLflow UI
   
-### Lab-4: Sckit-Learn Regression Experimental with RandomForestRegressor
+### Lab-4: Scikit-Learn Regression Experimental with RandomForestRegressor
 * _airbnb_exp_lab_4.py_
  
 Objectives of this lab:
