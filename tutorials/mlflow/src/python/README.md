@@ -54,16 +54,16 @@ This above iterative process is recurrent in each of the lab.
 
 ### Lab-1: Scikit-Learn Regression with RandomForestRegressor 
  _petrol_regression_lab_1.py_
-##### Problem
+#### Problem
 Part 1: We want to predict the gas consumption in millions of gallons in 48 of the US states
 based on some key features. These features are petrol tax (in cents), per capital income (in US dollars),
 paved highway (in miles), population of people with driving licences.
-##### Solution
+#### Solution
 Since this is a regression problem where the value is a range of numbers, we can use the
 common Random Forest Algorithm in Scikit-Learn. Most regression models are evaluated with
 three standard evalution metrics: Mean Absolute Error(MAE); Mean Squared Error (MSE); and
 Root Mean Squared Error (RSME), and r2.
-##### Sample Data
+#### Sample Data
 |Petrol_tax	|Average_income|	Paved_Highways|	Population_Driver_license(%)|	Petrol_Consumption|
 |-----------|--------------|------------------|-----------------------------|---------------------|
 |9.0	    |    3571	   |     1976	      | 0.525	                    |   541               |
@@ -92,13 +92,13 @@ Root Mean Squared Error (RSME), and r2.
 
 ### Lab-2: Scikit-Learn Classification with RandomForestClassifier
 * _banknote_classification_lab_2.py_
-##### Problem
+#### Problem
 Part 2: Given a set of features or attributes of a bank note, can we predict whether it's authentic or fake
 Four attributes contribute to this classification:
-##### Solution
+#### Solution
 We are going to use Random Forest Classification to make the prediction, and measure on the accuracy.
 The closer to 1.0 is the accuracy the better is our confidence in its prediction.
-##### Sample Data
+#### Sample Data
 |Variance	|Skewness      |	Curtosis|	Entropy|	Class|
 |-----------|--------------|------------|----------|---------|
 |3.62160	|   8.6661	   |     -2.807 | -0.44699 |   0     |
@@ -127,9 +127,9 @@ Objectives of this lab:
 ### Lab-3: Scikit-Learn Regression Base with RandomForestRegressor 
   * _airbnb_base_lab_3.py_'
   
-##### Problem
+#### Problem
 Take a cleansed, featurized dataset from AirBnB listing develop a model to predict prices.  
-##### Solution
+#### Solution
 Use RandomForestRegressor and all experimental parameters to predict the price, given all the features.
 ##### Sample Data
 |host_total_listings_count|neighbourhood_cleansed|zipcode|latitude|longitude|property_type|room_type|accommodates|bathrooms|bedrooms|beds|bed_type|minimum_nights|number_of_reviews|review_scores_rating|review_scores_accuracy|review_scores_cleanliness|review_scores_checkin|review_scores_communication|review_scores_location|review_scores_value|price|
@@ -153,7 +153,7 @@ Objectives of this lab:
 * _airbnb_exp_lab_4.py_
 #### Problem
 Can you extend the baseline model built in lab 3 to build several experimental models?
-##### Solution
+#### Solution
 Use the existing model and make changes to code to experiment with model parameters.
  
 Objectives of this lab:
@@ -177,8 +177,6 @@ Modified from [MLflow example](https://github.com/dbczumar/mlflow-keras-ffnn-mni
 ### MNIST Neural Network with Layers
 
 ![](images/mnist_1layer.png)
-
-
 
 Objectives of this lab:
  * Introduce Keras NN Model
@@ -205,6 +203,7 @@ use test data on its _model_.predict(test_data) method.
 Objectives of this lab:
  * loading an existing model and predicting with test data
  * using pyfunc model function
+ 
  *challenge-1:* Can you load and predict other models from the labs?
   * Lab-3, lab-4 or lab-5?
  
