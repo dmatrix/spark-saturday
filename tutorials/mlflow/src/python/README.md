@@ -169,6 +169,8 @@ Objectives of this lab:
  * Interpret and observe runs via the MLflow UI
  * How to use _MLflowClient()_ API to peruse experiment details
  
+ Nice read on [Feature Importance](https://towardsdatascience.com/explaining-feature-importance-by-example-of-a-random-forest-d9166011959e) in Random Forest model.
+ 
 #### Lab-4 Exercise: 
   * Modify or extend the parameters
   * Compare the results between baseline and experimental runs

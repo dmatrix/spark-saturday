@@ -95,7 +95,10 @@ class RFFExperimentModel(RFRBaseModel):
             runID = run.info.run_uuid
             experimentID = run.info.experiment_id
 
-            # Create feature importance
+            # Create feature importance and save them as artifact
+            # This allows us to remove least important features from the dataset
+            # with each iteration if they don't have any effect on the predictive power of
+            # the prediction.
             importance = pd.DataFrame(list(zip(df.columns, self.rf.feature_importances_)),
                                       columns=["Feature", "Importance"]
                                       ).sort_values("Importance", ascending=False)
