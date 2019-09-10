@@ -37,6 +37,14 @@
 5. `cd labs`
 6. If using PyCharm or IntelliJ, create a project and load source files in the project
 
+### Documentation Resources
+
+1. [MLflow](https://mlflow.org/docs/latest/index.html) 
+2. [Numpy](https://numpy.org/devdocs/user/quickstart.html)
+3. [Pandas](https://pandas.pydata.org/pandas-docs/stable/reference/index.html)
+4. [Scikit-Learn](https://scikit-learn.org/stable/index.html)
+5. [Keras](https://keras.io/optimizers/)
+
 ## Labs 
 The general objective of the labs are to create a baseline or a benchmark model,
 followed by creating experimental models by tuning parameters to produce a better outcome. 
