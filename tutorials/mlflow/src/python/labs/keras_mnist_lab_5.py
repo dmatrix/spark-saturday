@@ -23,7 +23,8 @@ Aim of this module is:
 #    Train for more epochs
 #    change these default parameters are and observe how it will effect the results
 #    or provide them on command line.
-#    For exaxmple `python keras_mnist_lab_5.py --epochs 10`
+#    For exaxmple,
+#    `python keras_mnist_lab_5.py --epochs 10`
 #    `python keras_mnist_lab_5.py -e 10 -n 128`
 #
 parser = argparse.ArgumentParser(
@@ -71,7 +72,10 @@ def mlfow_run(run_name="Lab-5:Keras_MNIST", experiment_id=exp_id, model_summary=
         # --num_hidden_layers or -N  in the command line arguments
         for n in range(0, args.num_hidden_layers):
             model.add(layers.Dense(args.num_hidden_units, activation=tf.nn.relu))
+        # dropout is an regularization technique for NN where we randomly dropout a layer if the
+        # computed gradients are minimal or have no effect.
         model.add(layers.Dropout(args.dropout))
+        # final layer with softmax activation layer
         model.add(layers.Dense(10, activation=tf.nn.softmax))
         if model_summary:
             model.summary()
@@ -126,5 +130,6 @@ def mlfow_run(run_name="Lab-5:Keras_MNIST", experiment_id=exp_id, model_summary=
 if __name__ == '__main__':
     (experimentID, runID) = mlfow_run(run_name="Jules-Lab5:Keras_MNIST")
     print("MLflow completed with run_id {} and experiment_id {}".format(runID, experimentID))
+    print(tf.__version__)
     print("-" * 100)
 

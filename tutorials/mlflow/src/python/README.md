@@ -43,14 +43,14 @@ followed by creating experimental models by tuning parameters to produce a bette
 This is achieved by experimenting and tracking the effects, using MLflow and MLflow tracking
 APIs. In simple terms:
 
-* 1. Train a base line model with initial parameters
-* 2. Record the relevant metrics and parameters with MLflow APIs
-* 3. Observe the results via MLflow UI
-* 4. Change or tweak relevant parameters
-* 5. Test or evaluate model
-* 6. Repeat 2-5 until satisfied
+1. Train a base line model with initial parameters
+2. Record the relevant metrics and parameters with MLflow APIs
+3. Observe the results via MLflow UI
+4. Change or tweak relevant parameters
+5. Test or evaluate model
+6. Repeat 2-5 until satisfied
 
-This above iterative process is recurrent in each of the lab. 
+This iterative process is recurrent in each of the lab, as part of model management life cycle. 
 
 ### Lab-1: Scikit-Learn Regression with RandomForestRegressor 
  _petrol_regression_lab_1.py_
@@ -62,7 +62,8 @@ paved highway (in miles), population of people with driving licences.
 Since this is a regression problem where the value is a range of numbers, we can use the
 common Random Forest Algorithm in Scikit-Learn. Most regression models are evaluated with
 three standard evalution metrics: Mean Absolute Error(MAE); Mean Squared Error (MSE); and
-Root Mean Squared Error (RSME), and r2.
+Root Mean Squared Error (RSME), and r2 score.
+
 #### Sample Data
 |Petrol_tax	|Average_income|	Paved_Highways|	Population_Driver_license(%)|	Petrol_Consumption|
 |-----------|--------------|------------------|-----------------------------|---------------------|
@@ -126,7 +127,6 @@ Objectives of this lab:
 
 ### Lab-3: Scikit-Learn Regression Base with RandomForestRegressor 
   * _airbnb_base_lab_3.py_'
-  
 #### Problem
 Take a cleansed, featurized dataset from AirBnB listing develop a model to predict prices.  
 #### Solution
@@ -178,9 +178,17 @@ Modified from [MLflow example](https://github.com/dbczumar/mlflow-keras-ffnn-mni
 
 ![](images/mnist_1layer.png)
 
+#### Problem
+
+Build a Keras/TensorFlow Neural Network to classify digital digits from 0-9
+#### Solution
+Use Keras Sequential Layers to build input, hidden, and outut layers.
+##### Sample Data
+Use the built in MNIST dataset available via dataset module `keras.datasets.mnist`
 Objectives of this lab:
  * Introduce Keras NN Model
  * Create your own experiment name and log runs under it
+ * Use various optimzation techniques to get the best outcome
  
 #### Lab Exercise: 
  * Consult [Keras Sequential Model](https://keras.io/getting-started/sequential-model-guide/) documentation
@@ -196,7 +204,7 @@ Objectives of this lab:
 * _load_predict__model_lab_6.py_
 #### Problem
 Having experimented several runs from lab 1-5, can can you reuse the model to predict?
-##### Solution
+#### Solution
 Load an existing model by extending or modifying code to reload the saved model and 
 use test data on its _model_.predict(test_data) method.
 
@@ -212,7 +220,7 @@ Objectives of this lab:
  function mappers to include [pyfunc](https://mlflow.org/docs/latest/python_api/mlflow.pyfunc.html#mlflow.pyfunc.load_model) model
  * Use a couple of the run_uid from your Lab-1 runs. 
   * Check your MLflow UI for run_uids
- * Use the _load_model_type.predict(test_data)_ to predict tht outcome
+ * Use the _load_model_type.predict(test_data)_ to predict the outcome
  
 ### Lab-7 (optional): Executing MLproject from GitHub
 
