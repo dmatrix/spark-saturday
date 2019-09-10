@@ -7,7 +7,7 @@ paved highway (in miles), population of people with driving licences
 Solution:
 
 Since this is a regression problem where the value is a range of numbers, we can use the
-common Random Forest Algorithm in Sckit-Learn. Most regression models are evaluated with
+common Random Forest Algorithm in Scikit-Learn. Most regression models are evaluated with
 three standard evalution metrics: Mean Absolute Error(MAE); Mean Squared Error (MSE); and
 Root Mean Squared Error (RSME), and r2.
 
@@ -44,7 +44,7 @@ class RFRModel():
     General class for Sckit-learn RandomForestRegressor
     """
     # class wide variables common to all instances
-    # keep track of cumulative estimators and rsme 
+    # keep track of cumulative estimators and rsme
     rsme = []
     estimators = []
 

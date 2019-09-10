@@ -63,6 +63,9 @@ def mlfow_run(run_name="Lab-5:Keras_MNIST", experiment_id=exp_id, model_summary=
     with mlflow.start_run(run_name=run_name,  experiment_id = exp_id) as run:
 
         model = models.Sequential()
+        #
+        # The first layer in this network transforms the format of the images from a 2d-array (of 28 by 28 pixels),
+        # to a 1d-array of 28 * 28 = 784 pixels.
         model.add(layers.Flatten(input_shape=x_train[0].shape))
         # add extra hidden layers to expand the NN
         # --num_hidden_layers or -N  in the command line arguments

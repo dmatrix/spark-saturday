@@ -128,7 +128,7 @@ class RFFExperimentModel(RFRBaseModel):
 #
 # Lab/Homework for Some Experimental runs
 #
-    # 1. Consult RandomForestClassifier documentation
+    # 1. Consult RandomForestRegressor documentation
     # 2. Change or add parameters, such as depth of the tree or random_state: 42 etc.
     # 3. Change or alter the range of runs and increments of n_estimators
     # 4. Check in MLfow UI if the metrics are affected
