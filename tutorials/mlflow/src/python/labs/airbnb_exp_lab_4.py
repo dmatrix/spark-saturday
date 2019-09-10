@@ -72,12 +72,12 @@ class RFFExperimentModel(RFRBaseModel):
 
             # Log model and parameters
             mlflow.sklearn.log_model(self.rf, "random-forest-model")
-            # Note we are logging as dictionary of all params instead
-            # loggging each parameter
+
+            # Note we are logging as a dictionary of all params instead of logging each parameter
             mlflow.log_params(self.params)
 
             # Log params
-            [mlflow.log_param(param, value) for param, value in params.items()]
+            #[mlflow.log_param(param, value) for param, value in self.params.items()]
 
             # Create metrics
             mse = metrics.mean_squared_error(y_test, predictions)
