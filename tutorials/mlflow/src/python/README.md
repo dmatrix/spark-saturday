@@ -63,17 +63,17 @@ This iterative process is recurrent in each of the lab, as part of model managem
 
 ### Lab-1: Scikit-Learn Regression with RandomForestRegressor 
  _petrol_regression_lab_1.py_
-#### Problem
+### Problem
 Part 1: We want to predict the gas consumption in millions of gallons in 48 of the US states
 based on some key features. These features are petrol tax (in cents), per capital income (in US dollars),
 paved highway (in miles), population of people with driving licences.
-#### Solution
+### Solution
 Since this is a regression problem where the value is a range of numbers, we can use the
 common Random Forest Algorithm in Scikit-Learn. Most regression models are evaluated with
 three standard evalution metrics: Mean Absolute Error(MAE); Mean Squared Error (MSE); and
 Root Mean Squared Error (RSME), and r2 score.
 
-#### Sample Data
+### Sample Data
 |Petrol_tax	|Average_income|	Paved_Highways|	Population_Driver_license(%)|	Petrol_Consumption|
 |-----------|--------------|------------------|-----------------------------|---------------------|
 |9.0	    |    3571	   |     1976	      | 0.525	                    |   541               |
@@ -113,7 +113,7 @@ Root Mean Squared Error (RSME), and r2 score.
 
 ![](images/fake_note.jpeg)
 
-#### Problem
+### Problem
 Part 2: Given a set of features or attributes of a bank note, can we predict whether it's authentic or fake?
 Four attributes, extracted from wavelet transformed images, contribute as independent variables to this classification:
 
@@ -122,10 +122,10 @@ Four attributes, extracted from wavelet transformed images, contribute as indepe
  3. Image.Curt (Curtosis of WTI)
  4. Entropy (Entropy of image)
  5. Class (Whether or not the banknote was authentic; zero=fake; one=authentic)
-#### Solution
+### Solution
 We are going to use Random Forest Classification to make the prediction, and measure on the accuracy.
 The closer to 1.0 is the accuracy the better is our confidence in its prediction.
-#### Sample Data
+### Sample Data
 |Variance	|Skewness      |	Curtosis|	Entropy|	Class|
 |-----------|--------------|------------|----------|---------|
 |3.62160	|   8.6661	   |     -2.807 | -0.44699 |   0     |
@@ -165,11 +165,11 @@ Objectives of this lab:
 
 ### Lab-3: Scikit-Learn Regression Base with RandomForestRegressor 
   * _airbnb_base_lab_3.py_'
-#### Problem
+### Problem
 Take a cleansed, featurized dataset from AirBnB listing develop a model to predict prices.  
-#### Solution
+### Solution
 Use RandomForestRegressor and all experimental parameters to predict the price, given all the features.
-##### Sample Data
+### Sample Data
 |host_total_listings_count|neighbourhood_cleansed|zipcode|latitude|longitude|property_type|room_type|accommodates|bathrooms|bedrooms|beds|bed_type|minimum_nights|number_of_reviews|review_scores_rating|review_scores_accuracy|review_scores_cleanliness|review_scores_checkin|review_scores_communication|review_scores_location|review_scores_value|price|
 |-------------------------|----------------------|-------|--------|---------|-------------|---------|------------|---------|--------|----|--------|--------------|-----------------|--------------------|----------------------|-------------------------|---------------------|---------------------------|----------------------|-------------------|-----|
 |1.0|0|0|37.769310377340766|-122.43385634488999|0|0|3.0|1.0|1.0|2.0|0|1.0|127.0|97.0|10.0|10.0|10.0|10.0|10.0|10.0|170.0|
@@ -189,9 +189,9 @@ Objectives of this lab:
   
 ### Lab-4: Scikit-Learn Regression Experimental with RandomForestRegressor
 * _airbnb_exp_lab_4.py_
-#### Problem
+### Problem
 Can you extend the baseline model built in lab 3 to build several experimental models?
-#### Solution
+### Solution
 Use the existing model and make changes to code to experiment with model parameters.
  
 Objectives of this lab:
@@ -221,11 +221,11 @@ Modified from [MLflow example](https://github.com/dbczumar/mlflow-keras-ffnn-mni
 
 ![](images/mnist_1layer.png)
 
-#### Problem
+### Problem
 Build a Keras/TensorFlow Neural Network to classify digital digits from 0-9
-#### Solution
+### Solution
 Use Keras Sequential Layers to build input, hidden, and outut layers.
-##### Sample Data
+### Sample Data
 Use the built in MNIST dataset available via dataset module `keras.datasets.mnist`
 Objectives of this lab:
  * Introduce Keras NN Model
@@ -244,9 +244,9 @@ Objectives of this lab:
 
 ### Lab-6: Loading and predicting an existing model 
 * _load_predict__model_lab_6.py_
-#### Problem
+### Problem
 Having experimented several runs from lab 1-5, can can you reuse the model to predict?
-#### Solution
+### Solution
 Load an existing model by extending or modifying code to reload the saved model and 
 use test data on its _model_.predict(test_data) method.
 
@@ -286,7 +286,7 @@ Objectives of this lab:
 Objectives of this lab:
  * Use and build whatever you have learned from above
  
- #### Lab Exercise:
+#### Lab Exercise:
  * Create a Python script for your model example
  * Consult [MLflow](https://mlflow.org/docs/latest/python_api/mlflow.html) and [Tracking APIs](https://mlflow.org/docs/latest/python_api/mlflow.tracking.html):
     * compute relevant metrics
