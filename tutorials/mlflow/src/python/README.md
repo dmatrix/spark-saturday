@@ -146,7 +146,9 @@ Objectives of this lab:
   * Check in MLflow UI if the metrics are affected
   * Log confusion matrix, recall and F1-score as metrics
    
- *_challenge-1_:* Use linear regression classifier and see if it makes a difference in the evaluation metrics
+ *_challenge-1_:* Use linear regression or SVM algorithm and see if it makes a difference in the evaluation metrics. This is a classic scenario where
+ MLflow allows you to experiment, record, and evaluate three different algorithms to pick the best one, after
+ experimentation and evaluation. 
  **Hint**: Read the blog below on using three algorithms
  
  Nice blog on [RF, SVM, & LR](https://www.vshsolutions.com/blogs/banknote-authentication-using-machine-learning-algorithms/) on detecting fake notes
