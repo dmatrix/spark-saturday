@@ -100,6 +100,7 @@ Root Mean Squared Error (RSME), and r2 score.
  
  *challenge-2:* Use linear regression model and see if it makes a difference in the evaluation metrics
 
+ Nice [blog on TensorFlow](https://medium.com/tensorist/detecting-fake-banknotes-using-tensorflow-be21ffd2c478) Detecting Fake notes
  Refresh on [Regression Metrics](https://www.dataquest.io/blog/understanding-regression-error-metrics/)
  
  Refresh on [RandomForest](https://towardsdatascience.com/understanding-random-forest-58381e0602d2)
@@ -110,6 +111,9 @@ Root Mean Squared Error (RSME), and r2 score.
 
 ### Lab-2: Scikit-Learn Classification with RandomForestClassifier
 * _banknote_classification_lab_2.py_
+
+![](images/fake_note.jpeg)
+
 #### Problem
 Part 2: Given a set of features or attributes of a bank note, can we predict whether it's authentic or fake
 Four attributes contribute to this classification:
@@ -263,24 +267,25 @@ Objectives of this lab:
   * Create a an MLproject on your github for one of above labs
   * Execute the MLproject with `mlflow run https://github.com/<your_example.git> [-P args...]`
 
-### Lab-8 (Capstone): Experiment your own model of choice
+### Lab-8 (Capstone): Create, experiment, and manage your model of choice
 
 Objectives of this lab:
  * Use and build whatever you have learned from above
  
  #### Lab Exercise:
- * Create a Python script for your example
- * Consult [MLflow](https://mlflow.org/docs/latest/python_api/mlflow.html) and [Tracking APIs](https://mlflow.org/docs/latest/python_api/mlflow.tracking.html) to log:
-    * individual or bulk parameters and  metrics
-    * add tags or notes
-    * create an experiment name
+ * Create a Python script for your model example
+ * Consult [MLflow](https://mlflow.org/docs/latest/python_api/mlflow.html) and [Tracking APIs](https://mlflow.org/docs/latest/python_api/mlflow.tracking.html):
+    * compute relevant metrics
+    * log individual or bulk parameters and metrics
+    * add tags or notes for your runs
+    * create a distinct experiment name
     * experiment different parameters with each run under this experiment
     * can you create appropriate artifacts (using matplotlib) and save them?
     * consult MLflow UI to pick the best model
     * can you load the best model using native model or pyfunc?
     * can you predict with test data?
     
-Some possible choices to use or to modify:
+Some possible choices to use or modify:
 
 1. [TensorFlow/Keras MNIST fashion Model](https://www.tensorflow.org/tutorials/keras/basic_classification)
 2. [MLflow Examples from Github repo](https://github.com/mlflow/mlflow/tree/master/examples)
