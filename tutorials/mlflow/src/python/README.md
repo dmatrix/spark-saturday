@@ -114,8 +114,14 @@ Root Mean Squared Error (RSME), and r2 score.
 ![](images/fake_note.jpeg)
 
 #### Problem
-Part 2: Given a set of features or attributes of a bank note, can we predict whether it's authentic or fake
-Four attributes contribute to this classification:
+Part 2: Given a set of features or attributes of a bank note, can we predict whether it's authentic or fake?
+Four attributes, extracted from wavelet transformed images, contribute as independent variables to this classification:
+
+ 1. Image.Var (Variance of Wavelet Transformed image (WTI))
+ 2. Image.Skew (Skewness of WTI)
+ 3. Image.Curt (Curtosis of WTI)
+ 4. Entropy (Entropy of image)
+ 5. Class (Whether or not the banknote was authentic; zero=fake; one=authentic)
 #### Solution
 We are going to use Random Forest Classification to make the prediction, and measure on the accuracy.
 The closer to 1.0 is the accuracy the better is our confidence in its prediction.
