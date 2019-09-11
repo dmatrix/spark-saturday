@@ -5,17 +5,19 @@ from sklearn.utils.multiclass import unique_labels
 from sklearn.metrics import confusion_matrix
 import os
 import numpy as np
+
 def load_data(path):
-    '''
+    """
     Read a CSV file from a given path and return a Pandas DataFrame
     :param path: path to csv file
     :return: returns Pandas DataFrame
-    '''
+    """
+
     df = pd.read_csv(path)
     return df
 
 def plot_graphs(x_data, y_data, x_label, y_label, title):
-    '''
+    """
     Use the Mathplot lib to plot data points provide and respective x-axis and y-axis labels
     :param x_data: Data for x-axis
     :param y_data: Data for y-axis
@@ -23,7 +25,8 @@ def plot_graphs(x_data, y_data, x_label, y_label, title):
     :param y_label: LabEL FOR Y-axis
     :param title: Title for the plot
     :return: return an instance of the plt
-    '''
+    """
+
     plt.plot(x_data, y_data)
     plt.xlabel(x_label)
     plt.ylabel(y_label)
@@ -32,7 +35,7 @@ def plot_graphs(x_data, y_data, x_label, y_label, title):
     return plt
 
 def plot_residual_graphs(predictions, y_test, x_label, y_label, title):
-    '''
+    """
     Create residual plot usin seaborn plotting library
     https://seaborn.pydata.org/tutorial/regression.html
     :param predictions: predictions from the run
@@ -41,7 +44,7 @@ def plot_residual_graphs(predictions, y_test, x_label, y_label, title):
     :param y_label: name for the y-axis
     :param title:  title for the plot
     :return: tuple of plt, fig, ax
-    '''
+    """
 
     fig, ax = plt.subplots()
 
@@ -53,14 +56,15 @@ def plot_residual_graphs(predictions, y_test, x_label, y_label, title):
     return (plt, fig, ax)
 
 def get_mlflow_directory_path(*paths, create_dir=True):
-    '''
-    Get the current running path where mlruns is created. This is the directorty from which
-    the pythonfile containing Mlflow code is executed. This method is used for artifacts, such
+    """
+    Get the current running path where mlruns is created. This is the directory from which
+    the python file containing MLflow code is executed. This method is used for artifacts, such
     as images, where we want to store plots.
     :param paths: list of directories below mlfruns, experimentID, mlflow_run_id
     :param create_dir: detfault is True
-    :return: path to directorys.
-    '''
+    :return: path to directory.
+    """
+
     cwd = os.getcwd()
     dir = os.path.join(cwd, "mlruns", *paths)
     if create_dir:
@@ -70,11 +74,11 @@ def get_mlflow_directory_path(*paths, create_dir=True):
 
 
 def print_pandas_dataset(d):
-    '''
+    """
     Given a Pandas dataFrame show the dimensions sizes
     :param d: Pandas dataFrame
     :return: None
-    '''
+    """
     print("rows = %d; columns=%d" % (d.shape[0], d.shape[1]))
     print(d.head())
 
@@ -82,7 +86,7 @@ def plot_confusion_matrix(y_true, y_pred, classes,
                           normalize=False,
                           title=None,
                           cmap=plt.cm.Blues):
-    '''
+    """
     This function prints and plots the confusion matrix.
     Normalization can be applied by setting `normalize=True`.
     Borrowed from the sckit-learn libary documentation
@@ -94,7 +98,8 @@ def plot_confusion_matrix(y_true, y_pred, classes,
     :param title: title of the plot for confusion matrix
     :param cmap: color of plot
     :return: returns a tuple of (plt, fig, ax)
-    '''
+    """
+
     if not title:
         if normalize:
             title = 'Normalized confusion matrix'
@@ -139,4 +144,3 @@ def plot_confusion_matrix(y_true, y_pred, classes,
                     color="white" if cm[i, j] > thresh else "black")
     fig.tight_layout()
     return (plt, fig, ax)
-
