@@ -143,7 +143,7 @@ if __name__ == '__main__':
     # run these different experiments, each with its own instance of model with the supplied parameters.
     # add more parameters to this dictionary list here
     params_list = [
-        {"n_estimators": 200,"max_depth":  6, "random_state": 42}
+        {"n_estimators": 200,"max_depth": 6, "random_state": 42}
     ]
     # load the data
     dataset = load_data("data/airbnb-cleaned-mlflow.csv")

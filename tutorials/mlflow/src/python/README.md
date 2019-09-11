@@ -99,6 +99,14 @@ Root Mean Squared Error (RSME), and r2 score.
  
  *challenge-2:* Use linear regression model and see if it makes a difference in the evaluation metrics
 
+ Refresh on [Metrics](https://www.dataquest.io/blog/understanding-regression-error-metrics/)
+ 
+ Refresh on [RandomForest](https://towardsdatascience.com/understanding-random-forest-58381e0602d2)
+ 
+ Source for [Lab 1 & 2](https://stackabuse.com/random-forest-algorithm-with-python-and-scikit-learn/)
+ 
+ Data source for [lab 1 & 2](https://archive.ics.uci.edu/ml/datasets/banknote+authentication)
+
 ### Lab-2: Scikit-Learn Classification with RandomForestClassifier
 * _banknote_classification_lab_2.py_
 #### Problem
@@ -128,10 +136,15 @@ Objectives of this lab:
   * Check in MLfow UI if the metrics are affected
   * Log confusion matrix, recall and F1-score as metrics
   
- [Nice blog to read](https://joshlawman.com/metrics-classification-report-breakdown-precision-recall-f1/),
- [Nice blog to read](https://towardsdatascience.com/understanding-random-forest-58381e0602d2) 
- [source for Lab 1 & 2](https://stackabuse.com/random-forest-algorithm-with-python-and-scikit-learn/), and  
- [data source for lab 1 & 2](https://archive.ics.uci.edu/ml/datasets/banknote+authentication)
+ Refresh on [Metrics](https://www.dataquest.io/blog/understanding-regression-error-metrics/)
+ 
+ Refresh on [Classification Metrics](https://joshlawman.com/metrics-classification-report-breakdown-precision-recall-f1/)
+ 
+ Refresh on [RandomForest](https://towardsdatascience.com/understanding-random-forest-58381e0602d2)
+ 
+ Source for [Lab 1 & 2](https://stackabuse.com/random-forest-algorithm-with-python-and-scikit-learn/)
+ 
+ Data source for [lab 1 & 2](https://archive.ics.uci.edu/ml/datasets/banknote+authentication)
 
 ### Lab-3: Scikit-Learn Regression Base with RandomForestRegressor 
   * _airbnb_base_lab_3.py_'
@@ -177,9 +190,9 @@ Objectives of this lab:
   * Did the experimental runs produce better outcomes of metrics?
   * Did the RMSE decrease over the experiments
 
-  [Related code](https://github.com/MangoTheCat/Modelling-Airbnb-Prices) for this model.
+[Related code](https://github.com/MangoTheCat/Modelling-Airbnb-Prices) for this model.
   
- Nice read [feature importance](https://towardsdatascience.com/explaining-feature-importance-by-example-of-a-random-forest-d9166011959e)
+ Nice read on[feature importance](https://towardsdatascience.com/explaining-feature-importance-by-example-of-a-random-forest-d9166011959e)
  
  Nice read on [residual plots](http://docs.statwing.com/interpreting-residual-plots-to-improve-your-regression/)
  
