@@ -89,7 +89,7 @@ def plot_confusion_matrix(y_true, y_pred, classes,
     """
     This function prints and plots the confusion matrix.
     Normalization can be applied by setting `normalize=True`.
-    Borrowed from the sckit-learn libary documentation
+    Borrowed from the scikit-learn library documentation
 
     :param y_true: the actual value of y
     :param y_pred: the predicted valuye of y

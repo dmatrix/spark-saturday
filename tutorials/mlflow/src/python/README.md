@@ -12,6 +12,7 @@
   * Get Involved!
   * Managed MLflow Demo
  * Q & A
+ * break?
  * Setting up your environment
  * Hands-on Tutorials
  
@@ -99,7 +100,7 @@ Root Mean Squared Error (RSME), and r2 score.
  
  *challenge-2:* Use linear regression model and see if it makes a difference in the evaluation metrics
 
- Refresh on [Metrics](https://www.dataquest.io/blog/understanding-regression-error-metrics/)
+ Refresh on [Regression Metrics](https://www.dataquest.io/blog/understanding-regression-error-metrics/)
  
  Refresh on [RandomForest](https://towardsdatascience.com/understanding-random-forest-58381e0602d2)
  
@@ -133,11 +134,9 @@ Objectives of this lab:
   * Consult [RandomForestClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) documentation
   * Change or add parameters, such as depth of the tree or random_state: 42 etc.
   * Change or alter the range of runs and increments of n_estimators
-  * Check in MLfow UI if the metrics are affected
+  * Check in MLflow UI if the metrics are affected
   * Log confusion matrix, recall and F1-score as metrics
-  
- Refresh on [Metrics](https://www.dataquest.io/blog/understanding-regression-error-metrics/)
- 
+   
  Refresh on [Classification Metrics](https://joshlawman.com/metrics-classification-report-breakdown-precision-recall-f1/)
  
  Refresh on [RandomForest](https://towardsdatascience.com/understanding-random-forest-58381e0602d2)
@@ -192,9 +191,9 @@ Objectives of this lab:
 
 [Related code](https://github.com/MangoTheCat/Modelling-Airbnb-Prices) for this model.
   
- Nice read on[feature importance](https://towardsdatascience.com/explaining-feature-importance-by-example-of-a-random-forest-d9166011959e)
+Nice read on[feature importance](https://towardsdatascience.com/explaining-feature-importance-by-example-of-a-random-forest-d9166011959e)
  
- Nice read on [residual plots](http://docs.statwing.com/interpreting-residual-plots-to-improve-your-regression/)
+Nice read on [residual plots](http://docs.statwing.com/interpreting-residual-plots-to-improve-your-regression/)
  
 ### Lab-5 : Deep Learning Neural Networks for Classification
 * _keras_mnist_lab_5.py_ 
@@ -205,7 +204,6 @@ Modified from [MLflow example](https://github.com/dbczumar/mlflow-keras-ffnn-mni
 ![](images/mnist_1layer.png)
 
 #### Problem
-
 Build a Keras/TensorFlow Neural Network to classify digital digits from 0-9
 #### Solution
 Use Keras Sequential Layers to build input, hidden, and outut layers.
@@ -256,12 +254,14 @@ Objectives of this lab:
  
 #### Lab Exercise:
  * Execute an existing MLproject on git
- * Consult [docs](https://mlflow.org/docs/latest/quickstart.html#running-mlflow-projects)
-) for running MLprojects
- * Can you create an MLproject for one of these labs?
+ * Consult [docs](https://mlflow.org/docs/latest/quickstart.html#running-mlflow-projects) for running MLprojects
  * Can you execute it with different parameters?
  * `mlflow run https://github.com/mlflow/mlflow-example.git -P alpha=5`
  * with no-conda use `mlflow run --no-conda https://github.com/mlflow/mlflow-example.git -P alpha=5`
+ 
+  *_challenge-1_:* 
+  * Create a an MLproject on your github for one of above labs
+  * Execute the MLproject with `mlflow run https://github.com/<your_example.git> [-P args...]`
 
 ### Lab-8 (Capstone): Experiment your own model of choice
 
@@ -273,11 +273,12 @@ Objectives of this lab:
  * Consult [MLflow](https://mlflow.org/docs/latest/python_api/mlflow.html) and [Tracking APIs](https://mlflow.org/docs/latest/python_api/mlflow.tracking.html) to log:
     * individual or bulk parameters and  metrics
     * add tags or notes
-    * experiment different parameters with each run
-    * can you create artifacts (mathplot) and save them?
-    * Consult MLflow UI to pick the best model
-    * Can you load the best model using native model or pyfunc?
-    * Can you predict with test data?
+    * create an experiment name
+    * experiment different parameters with each run under this experiment
+    * can you create appropriate artifacts (using matplotlib) and save them?
+    * consult MLflow UI to pick the best model
+    * can you load the best model using native model or pyfunc?
+    * can you predict with test data?
     
 Some possible choices to use or to modify:
 
