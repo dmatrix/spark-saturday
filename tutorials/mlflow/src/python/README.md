@@ -96,9 +96,9 @@ Root Mean Squared Error (RSME), and r2 score.
  3. Change or alter the range of runs and increments of n_estimators
  4. Check in MLfow UI if the metrics are affected
  
- *challenge-1:* Create mean square error and r2 artifacts and save them for each run
+ *_challenge-1_:* Create mean square error and r2 artifacts and save them for each run
  
- *challenge-2:* Use linear regression model and see if it makes a difference in the evaluation metrics
+ *_challenge-2_:* Use linear regression model and see if it makes a difference in the evaluation metrics
 
  Refresh on [Regression Metrics](https://www.dataquest.io/blog/understanding-regression-error-metrics/)
  
@@ -140,9 +140,12 @@ Objectives of this lab:
   * Check in MLflow UI if the metrics are affected
   * Log confusion matrix, recall and F1-score as metrics
    
- Nice blog on [TensorFlow and scikit-learn](https://medium.com/tensorist/detecting-fake-banknotes-using-tensorflow-be21ffd2c478) on detecting fake notes
+ *_challenge-1_:* Use linear regression classifier and see if it makes a difference in the evaluation metrics
+ **Hint**: Read the blog below on using three algorithms
  
- Nice blog on [RF, SVM, LR](https://www.vshsolutions.com/blogs/banknote-authentication-using-machine-learning-algorithms/) on detecting fake notes
+ Nice blog on [RF, SVM, & LR](https://www.vshsolutions.com/blogs/banknote-authentication-using-machine-learning-algorithms/) on detecting fake notes
+
+ Nice blog on [TensorFlow and scikit-learn](https://medium.com/tensorist/detecting-fake-banknotes-using-tensorflow-be21ffd2c478) on detecting fake notes
 
  Refresh on [Classification Metrics](https://joshlawman.com/metrics-classification-report-breakdown-precision-recall-f1/)
  
