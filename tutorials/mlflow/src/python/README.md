@@ -178,7 +178,10 @@ Objectives of this lab:
   * Did the RMSE decrease over the experiments
 
   [Related code](https://github.com/MangoTheCat/Modelling-Airbnb-Prices) for this model.
- [Nice blog to read](https://towardsdatascience.com/explaining-feature-importance-by-example-of-a-random-forest-d9166011959e)
+  
+ Nice read [feature importance](https://towardsdatascience.com/explaining-feature-importance-by-example-of-a-random-forest-d9166011959e)
+ 
+ Nice read on [residual plots](http://docs.statwing.com/interpreting-residual-plots-to-improve-your-regression/)
  
 ### Lab-5 : Deep Learning Neural Networks for Classification
 * _keras_mnist_lab_5.py_ 

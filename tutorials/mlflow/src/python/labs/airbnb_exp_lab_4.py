@@ -110,6 +110,7 @@ class RFFExperimentModel(RFRBaseModel):
             mlflow.log_artifacts(feature_importance_dir, "features")
 
             # Create residual plots and image directory
+            # Residuals R = observed value - predicted value
             (plt, fig, ax) = plot_residual_graphs(predictions, y_test, "Predicted values for Price ($)","Residual" , "Residual Plot")
 
             # Log residuals images
@@ -139,15 +140,15 @@ class RFFExperimentModel(RFRBaseModel):
 if __name__ == '__main__':
     # TODO add more parameters to the list
     # create four experiments with different parameters
+    # run these different experiments, each with its own instance of model with the supplied parameters.
+    # add more parameters to this dictionary list here
     params_list = [
         {"n_estimators": 200,"max_depth":  6, "random_state": 42}
-        # add more to this list here
-        ]
+    ]
     # load the data
     dataset = load_data("data/airbnb-cleaned-mlflow.csv")
 
-
-    # run three different experiments, each with its own instance of model with the supplied parameters.
+    # run these experiments, each with its own instance of model with the supplied parameters.
     for params in params_list:
         rfr = RFFExperimentModel(params)
         experiment = "Experiment with {} trees".format(params['n_estimators'])
@@ -155,7 +156,7 @@ if __name__ == '__main__':
         print("MLflow Run completed with run_id {} and experiment_id {}".format(runID, experimentID))
         print("-" * 100)
 
-    # Use MLflowClient API to query programmatically any previous run info
+    # Use MLflowClient API to query programmatically any previous run info under an experiment ID
     # consult https://mlflow.org/docs/latest/python_api/mlflow.tracking.html
     client = MlflowClient()
     run_list = client.list_run_infos(experimentID)
