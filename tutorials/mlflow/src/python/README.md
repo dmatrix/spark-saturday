@@ -113,7 +113,7 @@ Root Mean Squared Error (RSME), and r2 score.
 ### Lab-2: Scikit-Learn Classification with RandomForestClassifier
 * [_banknote_classification_lab_2.py_](./labs/banknote_classification_lab_2.py)
 
-![](images/fake_note.jpeg)
+![](images/bank_note.png)
 
 ### Problem
 Part 2: Given a set of features or attributes of a bank note, can we predict whether it's authentic or fake?
