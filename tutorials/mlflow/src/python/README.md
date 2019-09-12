@@ -246,7 +246,7 @@ Objectives of this lab:
  * Check MLflow UI and compare metrics among different runs
 
 ### Lab-6: Loading and predicting an existing model 
-* [_load_predict__model_lab_6.py_](./labs/load_predict__model_lab_6.py)
+* [_load_predict_model_lab_6.py_](./labs/load_predict_model_lab_6.py)
 
 ![](images/pyfunc_models.png)
 ### Problem
