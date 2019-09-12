@@ -141,17 +141,16 @@ class RFRModel():
 #
     # 1. Consult RandomForestRegressor documentation
     # 2. Change or add parameters, such as depth of the tree or random_state: 42 etc.
-    # 3. Change or alter the range of runs and increments of n_estimators
+    # 3. Change or alter the range of runs and increments of n_estimators.
     # 4. Check in MLfow UI if the metrics are affected
     # challenge-1: create mean square error and r2 artifacts and save them for each run
-    # challenge-2: Use linear regression model and see if it makes a difference in the evaluation metrics
 
 if __name__ == '__main__':
     # load and print dataset
     dataset = load_data("data/petrol_consumption.csv")
     print_pandas_dataset(dataset)
     # iterate over several runs with different parameters
-    for n in range (25, 200, 25):
+    for n in range (25, 100, 25):
         params = {"n_estimators": n, "random_state": 0 }
         rfr = RFRModel(params)
         (experimentID, runID) = rfr.mlflow_run(dataset)

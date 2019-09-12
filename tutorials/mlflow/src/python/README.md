@@ -99,14 +99,12 @@ Root Mean Squared Error (RSME), and r2 score.
 #### Lab-1 Exercise: 
 
  1. Consult [RandomForestRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html) documentation 
- 2. Change or add parameters, such as depth of the tree or random_state: 42 etc.
+ 2. Change or alter the range of runs and increments of n_estimators, random_state etc.
  3. Change or alter the range of runs and increments of n_estimators
  4. Check in MLfow UI if the metrics are affected
  
- *_challenge-1_:* Create mean square error and r2 artifacts and save them for each run
+ *_challenge-1_:* Create mean square error or r2 artifacts and save them for each run
  
- *_challenge-2_:* Use linear regression model and see if it makes a difference in the evaluation metrics
-
  Refresh on [Regression Metrics](https://www.dataquest.io/blog/understanding-regression-error-metrics/)
  
  Refresh on [RandomForest](https://towardsdatascience.com/understanding-random-forest-58381e0602d2)
