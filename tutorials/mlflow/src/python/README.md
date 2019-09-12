@@ -1,7 +1,7 @@
 
 ![](images/intro_slide.png)
 
-# MLflow Tutorial for Strata Conference New York September 24, 2019
+# MLflow Tutorial at Strata NYC September 24, 2019
 ## Agenda
  * Introduction
  * MLflow: What, Why, and How
