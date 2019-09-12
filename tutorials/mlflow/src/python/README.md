@@ -1,4 +1,6 @@
 
+![](images/intro_slide.png)
+
 # MLflow Tutorial for Start Conference New York, 2019
 ## Agenda
  * Introduction
@@ -62,7 +64,7 @@ APIs. In simple terms:
 This iterative process is recurrent in each of the lab, as part of model management life cycle. 
 
 ### Lab-1: Scikit-Learn Regression with RandomForestRegressor 
- _petrol_regression_lab_1.py_
+ [_petrol_regression_lab_1.py_](./labs/petrol_regression_lab_1.py)
 ### Problem
 Part 1: We want to predict the gas consumption in millions of gallons in 48 of the US states
 based on some key features. These features are petrol tax (in cents), per capital income (in US dollars),
@@ -84,7 +86,7 @@ Root Mean Squared Error (RSME), and r2 score.
 
  Objectives of this Lab: 
  
- * Use RandomForestRegressor Model
+ * Use _RandomForestRegressor_ Model
  * How to use the MLflow API
  * Use the MLflow API to experiment several Runs
  * Interpret and observe runs via the MLflow UI
@@ -109,7 +111,7 @@ Root Mean Squared Error (RSME), and r2 score.
  Data source for [lab 1 & 2](https://archive.ics.uci.edu/ml/datasets/banknote+authentication)
 
 ### Lab-2: Scikit-Learn Classification with RandomForestClassifier
-* _banknote_classification_lab_2.py_
+* [_banknote_classification_lab_2.py_](./labs/banknote_classification_lab_2.py)
 
 ![](images/fake_note.jpeg)
 
@@ -141,7 +143,7 @@ Objectives of this lab:
  
 #### Lab-2 Exercise: 
   * Consult [RandomForestClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) documentation
-  * Change or add parameters, such as depth of the tree or random_state: 42 etc.
+  * Change or add parameters, such as depth of the tree or random_state, etc.
   * Change or alter the range of runs and increments of n_estimators
   * Check in MLflow UI if the metrics are affected
   * Log confusion matrix, recall and F1-score as metrics
@@ -164,11 +166,11 @@ Objectives of this lab:
  Data source for [lab 1 & 2](https://archive.ics.uci.edu/ml/datasets/banknote+authentication)
 
 ### Lab-3: Scikit-Learn Regression Base with RandomForestRegressor 
-  * _airbnb_base_lab_3.py_'
+  * [_airbnb_base_lab_3.py_](./labs/airbnb_base_lab_3.py)
 ### Problem
-Take a cleansed, featurized dataset from AirBnB listing develop a model to predict prices.  
+Take a cleansed, featurized dataset from AirBnB listing and develop a base line model to predict prices.  
 ### Solution
-Use RandomForestRegressor and all experimental parameters to predict the price, given all the features.
+Use RandomForestRegressor and baseline  parameters to predict the price, given all the features.
 ### Sample Data
 |host_total_listings_count|neighbourhood_cleansed|zipcode|latitude|longitude|property_type|room_type|accommodates|bathrooms|bedrooms|beds|bed_type|minimum_nights|number_of_reviews|review_scores_rating|review_scores_accuracy|review_scores_cleanliness|review_scores_checkin|review_scores_communication|review_scores_location|review_scores_value|price|
 |-------------------------|----------------------|-------|--------|---------|-------------|---------|------------|---------|--------|----|--------|--------------|-----------------|--------------------|----------------------|-------------------------|---------------------|---------------------------|----------------------|-------------------|-----|
@@ -182,13 +184,13 @@ Objectives of this lab:
  * Interpret and observe runs via the MLflow UI
   
 #### Lab-3 Exercise: 
-  *  Run script and create a ssimple base line model
+  *  Run script and create a simple base line model
   *  Observe the parameters and metrics in the MLflow UI
   
   [Related code](https://github.com/MangoTheCat/Modelling-Airbnb-Prices) for this model.
   
 ### Lab-4: Scikit-Learn Regression Experimental with RandomForestRegressor
-* _airbnb_exp_lab_4.py_
+* [_airbnb_exp_lab_4.py_](./labs/airbnb_exp_lab_4.py)
 ### Problem
 Can you extend the baseline model built in lab 3 to build several experimental models?
 ### Solution
@@ -214,7 +216,7 @@ Nice read on[feature importance](https://towardsdatascience.com/explaining-featu
 Nice read on [residual plots](http://docs.statwing.com/interpreting-residual-plots-to-improve-your-regression/)
  
 ### Lab-5 : Deep Learning Neural Networks for Classification
-* _keras_mnist_lab_5.py_ 
+* [_keras_mnist_lab_5.py_](./labs/keras_mnist_lab_5.py) 
 Modified from [MLflow example](https://github.com/dbczumar/mlflow-keras-ffnn-mnist/blob/master/train.py)
 
 ### MNIST Neural Network with Layers
@@ -227,6 +229,7 @@ Build a Keras/TensorFlow Neural Network to classify digital digits from 0-9
 Use Keras Sequential Layers to build input, hidden, and outut layers.
 ### Sample Data
 Use the built in MNIST dataset available via dataset module `keras.datasets.mnist`
+
 Objectives of this lab:
  * Introduce Keras NN Model
  * Create your own experiment name and log runs under it
@@ -243,7 +246,9 @@ Objectives of this lab:
  * Check MLflow UI and compare metrics among different runs
 
 ### Lab-6: Loading and predicting an existing model 
-* _load_predict__model_lab_6.py_
+* [_load_predict__model_lab_6.py_](./labs/load_predict__model_lab_6.py)
+
+![](images/pyfunc_models.png)
 ### Problem
 Having experimented several runs from lab 1-5, can can you reuse the model to predict?
 ### Solution
@@ -251,8 +256,10 @@ Load an existing model by extending or modifying code to reload the saved model 
 use test data on its _model_.predict(test_data) method.
 
 Objectives of this lab:
- * loading an existing model and predicting with test data
- * using pyfunc model function
+ * load an existing model and predicting with test data
+ * load model as pyfunc function
+ * understand MLflow model flavors that can deployed and loaded in different deployment
+ environments.
  
  *challenge-1:* Can you load and predict other models from the labs?
   * Lab-3, lab-4 or lab-5?
@@ -265,6 +272,8 @@ Objectives of this lab:
  * Use the _load_model_type.predict(test_data)_ to predict the outcome
  
 ### Lab-7 (optional): Executing MLproject from GitHub
+
+![](images/mlproject_file.png)
 
 Objectives of this lab:
  * Understanding MLflow Project files
