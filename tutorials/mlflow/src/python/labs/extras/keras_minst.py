@@ -34,8 +34,9 @@ for i in range(3):
     print(predictions_single)
     prediction_result = np.argmax(predictions_single[0])
     print("predicted value={};observed value={}".format(prediction_result, y_test[i]))
-
-#pyfunc_model = pyfunc.load_pyfunc(mlflow.get_artifact_uri('keras-model'))
-#df = pd.DataFrame(data=x_test, columns=["features"] * x_train.shape[1])
-#print(pyfunc_model.predict(df))
+"""
+pyfunc_model = pyfunc.load_pyfunc(mlflow.get_artifact_uri('keras-model'))
+df = pd.DataFrame(data=x_test, columns=["features"] * x_train.shape[1])
+print(pyfunc_model.predict(df))
+"""
 print("Done!")

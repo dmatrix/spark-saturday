@@ -1,7 +1,7 @@
 
 ![](images/intro_slide.png)
 
-# MLflow Tutorial for Start Conference New York, 2019
+# MLflow Tutorial for Start Conference New York, September 24, 2019
 ## Agenda
  * Introduction
  * MLflow: What, Why, and How
@@ -49,10 +49,14 @@
 5. [Keras](https://keras.io/optimizers/)
 
 ## Labs 
-The general objective of the labs are to create a baseline or a benchmark model,
-followed by creating experimental models by tuning parameters to produce a better outcome. 
-This is achieved by experimenting and tracking the effects, using MLflow and MLflow tracking
-APIs. In simple terms:
+The general objective of the labs are to familiarize you with MLflow APIs and how these
+APIs facilitate different machine learning cycle: from creating a baseline or a benchmark model to 
+creating many experimental models by tuning parameters to produce a best outcome; from understanding
+how to package an MLflow project as a unit of execution and sharing to learning about MLflow model flavors
+and their flexibility to deploy them. 
+
+All this is achieved by experimenting and tracking the effects of different models, developed with different ML
+algorithms and using MLflow APIs. In simple terms:
 
 1. Train a base line model with initial parameters
 2. Record the relevant metrics and parameters with MLflow APIs
@@ -60,6 +64,7 @@ APIs. In simple terms:
 4. Change or tweak relevant parameters
 5. Test or evaluate model
 6. Repeat 2-5 until satisfied
+7. Deploy your model flavor
 
 This iterative process is recurrent in each of the lab, as part of model management life cycle. 
 
