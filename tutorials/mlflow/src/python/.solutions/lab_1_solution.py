@@ -37,7 +37,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestRegressor
 from sklearn import metrics
-from lab_ans_utils import load_data, plot_graphs, get_mlflow_directory_path, print_pandas_dataset
+from lab_utils import load_data, plot_graphs, get_mlflow_directory_path, print_pandas_dataset
 
 class RFRModel():
     """
