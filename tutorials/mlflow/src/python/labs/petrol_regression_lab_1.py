@@ -111,7 +111,7 @@ class RFRModel():
             self.estimators.append(params["n_estimators"])
 
             # plot graphs and save as artifacts
-            fig = plot_graphs(rfr.estimators, rfr.rsme, "Random Forest Estimators", "Root Mean Square", "Root Mean Square vs Estimators")
+            (fig, ax) = plot_graphs(rfr.estimators, rfr.rsme, "Random Forest Estimators", "Root Mean Square", "Root Mean Square vs Estimators")
 
             # get current run and experiment id
             runID = run.info.run_uuid

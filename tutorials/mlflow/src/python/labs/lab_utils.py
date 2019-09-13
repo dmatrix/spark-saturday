@@ -24,19 +24,23 @@ def plot_graphs(x_data, y_data, x_label, y_label, title):
     :param x_label: Label for x-axis
     :param y_label: LabEL FOR Y-axis
     :param title: Title for the plot
-    :return: return an instance of the plt
+    :return: return tuple (fig, ax)
     """
 
-    plt.plot(x_data, y_data)
-    plt.xlabel(x_label)
-    plt.ylabel(y_label)
-    plt.title(title)
+    plt.clf()
 
-    return plt
+    fig, ax = plt.subplots()
+    ax.plot(x_data, y_data)
+    ax.set_xlabel(x_label)
+    ax.set_ylabel(y_label)
+    ax.set_title(title)
+
+    return (fig, ax)
+
 
 def plot_residual_graphs(predictions, y_test, x_label, y_label, title):
     """
-    Create residual plot usin seaborn plotting library
+    Create residual plot using seaborn plotting library
     https://seaborn.pydata.org/tutorial/regression.html
     :param predictions: predictions from the run
     :param y_test: actual labels
