@@ -1,7 +1,6 @@
 import mlflow
 import mlflow.sklearn
 import mlflow.pyfunc
-import pandas as pd
 
 from lab_utils import load_data
 
@@ -16,11 +15,11 @@ class MLflowOperations():
         return
 
     def get_model(self, model_type):
-        '''
+        """
         Method to return the respective model function to load
         :param model_type: string, type of model For example, "sklearn", "keras", "pyfunc" etc
         :return: load_model function to the model type
-        '''
+        """
         return self._model_funcs[model_type]
 
 if __name__ == '__main__':
@@ -31,6 +30,7 @@ if __name__ == '__main__':
     # get all the last columns, which is what we want to predict
     y_test = dataset.iloc[:, 4].values
     print("Observed values {}".format(y_test))
+    # Insert your run_id here in the list
     for run_id in ['c0c2010c793345dd80d88da5cac6cdcf']:
         uri = "runs:/" + run_id + "/random-forest-reg-model"
         sk_model = mclnt.get_model("sklearn")(uri)

@@ -310,6 +310,8 @@ Objectives of this lab:
     * consult MLflow UI to pick the best model
     * can you load the best model using native model or pyfunc?
     * can you predict with test data?
+    * create an MLproject on GitHub
+    * can you execute it using `mlflow run https://github.com/<your_project.git ...` ?
     
 Some possible choices to use or modify:
 
