@@ -4,7 +4,7 @@ import mlflow.pyfunc
 
 from lab_utils import load_data
 
-class MLflowOperations():
+class MLflowOps():
     def __init__(self):
         #
         # dictionary for mapping model types to their respective load_model calls
@@ -23,7 +23,7 @@ class MLflowOperations():
         return self._model_funcs[model_type]
 
 if __name__ == '__main__':
-    mclnt = MLflowOperations()
+    mclnt = MLflowOps()
     dataset = load_data("data/test_petrol_consumption.csv")
     # get all rows and columns but the last column
     X_test = dataset.iloc[:, 0:4].values
