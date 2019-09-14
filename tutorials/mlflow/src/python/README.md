@@ -214,7 +214,7 @@ Objectives of this lab:
 
 [Related code](https://github.com/MangoTheCat/Modelling-Airbnb-Prices) for this model.
   
-Nice read on[feature importance](https://towardsdatascience.com/explaining-feature-importance-by-example-of-a-random-forest-d9166011959e)
+Nice read on [feature importance](https://towardsdatascience.com/explaining-feature-importance-by-example-of-a-random-forest-d9166011959e)
  
 Nice read on [residual plots](http://docs.statwing.com/interpreting-residual-plots-to-improve-your-regression/)
  
