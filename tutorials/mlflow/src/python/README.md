@@ -20,15 +20,15 @@
  
 ### Prerequisites 
 1. Knowledge of Python 3 and programming in general
-2. Preferably a UNIX-based, fully-charged laptop with 8-16 GB, with a Chrome or Fixfox browser
+2. Preferably a UNIX-based, fully-charged laptop with 8-16 GB, with a Chrome or Firefox browser
 3. Familiarity with GitHub, git, and an account on Github
 4. Some Knowledge of some Machine Learning concepts, libraries, and frameworks 
      * scikit-Learn
      * pandas and Numpy
      * TensorFlow/Keras
-5. PyCharm/IntelliJ or choice of sytnax-highligted Python editor
+5. PyCharm/IntelliJ or choice of syntax-based Python editor
 6. pip/pip3 and Python 3 installed
-7. Loads of laughter, curiosity, and sense of humor ... :-)
+7. Loads of laughter, curiosity, and a sense of humor ... :-)
 
 ### Installation and Setup environment
 
