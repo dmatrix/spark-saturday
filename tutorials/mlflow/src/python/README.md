@@ -285,10 +285,13 @@ Objectives of this lab:
  * Can you execute it with different parameters?
  * `mlflow run https://github.com/mlflow/mlflow-example.git -P alpha=5`
  * with no-conda use `mlflow run --no-conda https://github.com/mlflow/mlflow-example.git -P alpha=5`
+ * Execute the MLproject using [mlflow.run(...)](https://mlflow.org/docs/latest/python_api/mlflow.html#mlflow.run) API
  
   *_challenge-1_:* 
   * Create a an MLproject on your github for one of above labs
+  * Use `https://github.com/mlflow/mlflow-example.git` as an example
   * Execute the MLproject with `mlflow run https://github.com/<your_example.git> [-P args...]`
+  * Execute your new MLproject using [mlflow.run(...)](https://mlflow.org/docs/latest/python_api/mlflow.html#mlflow.run) API
 
 ### Lab-8 (Capstone): Create, experiment, and manage your model of choice
 
