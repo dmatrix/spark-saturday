@@ -56,10 +56,30 @@ if entity is None:
 else:
     exp_id = entity.experiment_id
 
-def mlfow_run(run_name="Lab-5:Keras_MNIST", experiment_id=exp_id, model_summary=False):
+def get_optimizer(opt_name):
     """
-    Method to run MLflow experiment
-    :return: Tuple (experiment_id, run_id)
+    :param name: name of the Keras optimizer
+    :param args: args for the optimizer
+    :return: Keras optimizer
+    """
+    if opt_name == 'SGD':
+        optimizer = keras.optimizers.SGD(lr=args.learning_rate,
+                                         momentum=args.momentum,
+                                         nesterov=True)
+    elif (opt_name == 'RMSprop'):
+        optimizer = keras.optimizers.RMSprop(lr=args.learning_rate, rho=0.9, epsilon=None, decay=0.0)
+    else:
+        optimizer = keras.optimizers.Adadelta(lr=args.learning_rate, epsilon=None, decay=0.0)
+
+    return optimizer
+
+def mlfow_run(run_name="Lab-5:Keras_MNIST", experiment_id=exp_id, model_summary=False, opt_name="SGD"):
+    """
+    :param run_name: name of the run
+    :param experiment_id: experiment id under which to create this run
+    :param model_summary: print model summary; default is False
+    :param opt_name: name of the optimizer to use
+    :return: Keras optimizer
     """
     with mlflow.start_run(run_name=run_name,  experiment_id = exp_id) as run:
 
@@ -81,10 +101,7 @@ def mlfow_run(run_name="Lab-5:Keras_MNIST", experiment_id=exp_id, model_summary=
             model.summary()
         # Use Scholastic Gradient Descent (SGD)
         # https://keras.io/optimizers/
-        #
-        optimizer = keras.optimizers.SGD(lr=args.learning_rate,
-                                         momentum=args.momentum,
-                                         nesterov=True)
+        optimizer = get_optimizer(opt_name)
 
         # compile the model with optimizer and loss type
         # common loss types for classification are
@@ -119,6 +136,10 @@ def mlfow_run(run_name="Lab-5:Keras_MNIST", experiment_id=exp_id, model_summary=
         # <TODO in LAB>
         # log parameters used in the command line args use in the model
         #
+        [mlflow.log_param(arg, getattr(args, arg)) for arg in vars(args)]
+        mlflow.log_param("optimizer", opt_name)
+        mlflow.log_param("loss_function", "sparse_categorical_crossentropy")
+
 
         # log model as native Keras Model
         mlflow.keras.log_model(model, artifact_path="keras-model")
@@ -130,8 +151,9 @@ def mlfow_run(run_name="Lab-5:Keras_MNIST", experiment_id=exp_id, model_summary=
         return (experimentID, runID)
 
 if __name__ == '__main__':
-    (experimentID, runID) = mlfow_run(run_name="Jules-Lab5:Keras_MNIST")
-    print("MLflow completed with run_id {} and experiment_id {}".format(runID, experimentID))
-    print(tf.__version__)
-    print("-" * 100)
+    for opt_name in ['SGD', 'RMSprop','Adadelta']:
+        (experimentID, runID) = mlfow_run(run_name="Jules-Lab5:Keras_MNIST", opt_name=opt_name)
+        print("MLflow completed with run_id {}, optimizer {} and experiment_id {}".format(runID, opt_name, experimentID))
+        print(tf.__version__)
+        print("-" * 100)
 

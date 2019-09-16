@@ -243,7 +243,7 @@ Objectives of this lab:
  * Change or modify Neural Network and regularization parameters
     * Add hidden layers
     * Make hidden units larger
-    * Try a different [Keras optimizers](https://keras.io/optimizers/): RMSprop and Adadelta
+    * Try a different [Keras optimizers](https://keras.io/optimizers/): RMSprop,  Adadelta etc
     * Train for more epochs
  * Log parameters, metrics, and the model
  * Check MLflow UI and compare metrics among different runs
@@ -263,9 +263,6 @@ Objectives of this lab:
  * load model as pyfunc function
  * understand MLflow model flavors that can deployed and loaded in different deployment
  environments.
- 
- *challenge-1:* Can you load and predict other models from the labs?
-  * Lab-3, lab-4 or lab-5?
  
 #### Lab Exercise: 
  * Extend the _MLflowOps_ class private instance dictionary of 
