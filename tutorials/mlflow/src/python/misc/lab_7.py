@@ -6,3 +6,4 @@ if __name__ == '__main__':
     params = {'alpha': 0.5,
               'l1_ratio': 0.01}
     mlflow.run("git://github.com/mlflow/mlflow-example.git", use_conda=False, parameters=params)
+    mlflow.run("git://github.com/dmatrix/mlflow-example.git", use_conda=False)
