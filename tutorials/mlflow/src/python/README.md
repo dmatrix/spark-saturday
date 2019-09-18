@@ -25,7 +25,7 @@
 
 ### Installation and Setup environment
 
-1. Open MLflow [docs](https://mlflow.org) and scikit-learn[docs](https://scikit-learn.org/stable/index.html) in your browser. Keep this tab open.
+1. Open MLflow [docs](https://mlflow.org) and scikit-learn [docs](https://scikit-learn.org/stable/index.html) in your browser. Keep this tab open.
 2. `git clone git@github.com:dmatrix/spark-saturday.git`
 3. `cd <your_cloned_directory>/tutorials/mlflow/src/python`
 4. Install MLflow and the required Python modules 
