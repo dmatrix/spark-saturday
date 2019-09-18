@@ -1,23 +1,16 @@
 
 ![](images/intro_slide.png)
-
 # MLflow Tutorial at Strata NYC September 24, 2019
 ## Agenda
- * Introduction
- * MLflow: What, Why, and How
-  * MLflow Concepts: 
-    * Philosophy & Motivation
-    * Tracking, Projects & Models
-    * Deployment
-  * Road Map 1.x
-  * Community and Adoption
-  * Get Involved!
-  * Managed MLflow Demo
+ * Overview of ML development challenges
+ * How MLflow tackles these
+ * MLflow Components
+ * Ongoing Roadmap
+ * Managed MLflow Demo
  * Q & A
- * break?
- * Setting up your environment
- * Hands-on Tutorials
- 
+ * (Break?)
+ * Set up Environment
+ * Hands of Tutorial
 ### Prerequisites 
 1. Knowledge of Python 3 and programming in general
 2. Preferably a UNIX-based, fully-charged laptop with 8-16 GB, with a Chrome or Firefox browser
