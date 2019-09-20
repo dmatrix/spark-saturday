@@ -1,4 +1,4 @@
-'''
+"""
 
 Problem - part 1: We want to predict the gas consumption in millions of gallons in 48 of the US states
 based on some key features. These features are petrol tax (in cents), per capital income (in US dollars),
@@ -27,7 +27,7 @@ https://www.saedsayad.com/decision_tree_reg.htm
 https://towardsdatascience.com/understanding-random-forest-58381e0602d2
 https://stackabuse.com/random-forest-algorithm-with-python-and-scikit-learn/
 https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html
-'''
+"""
 
 import os
 import numpy as np
@@ -41,7 +41,7 @@ from lab_utils import load_data, plot_graphs, get_mlflow_directory_path, print_p
 
 class RFRModel():
     """
-    General class for Sckit-learn RandomForestRegressor
+    General class for Scikit-Learn RandomForestRegressor
     """
     # class wide variables common to all instances
     # keep track of cumulative estimators and rsme
@@ -68,15 +68,15 @@ class RFRModel():
         This method trains, computes metrics, and logs all metrics, parameters,
         and artifacts for the current run
         :param df: pandas dataFrame
-        :param r_name: Name of the experiment as logged by MLflow
+        :param r_name: Name of the run as logged by MLflow
         :return: MLflow Tuple (ExperimentID, runID)
         """
 
         with mlflow.start_run(run_name=r_name) as run:
-            # get all rows and columns but the last column
-            X = dataset.iloc[:, 0:4].values
-            # get all the last columns, which is what we want to predict
-            y = dataset.iloc[:, 4].values
+            # get all attributes
+            X = df.iloc[:, 0:4].values
+            # get all the last columns, which is what we want to predict, our values
+            y = df.iloc[:, 4].values
 
             # create train and test data
             X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)

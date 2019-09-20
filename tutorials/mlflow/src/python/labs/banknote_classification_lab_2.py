@@ -64,9 +64,9 @@ class RFCModel():
         """
 
         with mlflow.start_run(run_name=r_name) as run:
-            # get all rows and columns but the last column, which is our class
+            # get all attributes
             X = df.iloc[:, 0:4].values
-            # get all observed values in the last columns, which is what we want to predict
+            # get all the last columns, which is what we want to predict, our values
             y = df.iloc[:, 4].values
 
             # create train and test data
