@@ -32,6 +32,7 @@
     * `pip install -r req.txt` or `pip3 install -r req.txt`
 5. `cd labs`
 6. If using PyCharm or IntelliJ, create a project and load source files in the project
+7. Having git clone problems:Worst case, Download the zip file from [https://dbricks.co/StrataNYC](https://dbricks.co/StrataNYC)
 
 ### Documentation Resources
 
