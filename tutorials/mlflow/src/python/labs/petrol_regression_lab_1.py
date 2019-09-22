@@ -50,7 +50,7 @@ class RFRModel():
 
     def __init__(self, params={}):
         """
-        Construtor for the RandomForestRegressor
+        Constructor for the RandomForestRegressor
         :param params: dictionary to RandomForestRegressor
         """
         self.rf = RandomForestRegressor(**params)
@@ -94,7 +94,8 @@ class RFRModel():
             mlflow.sklearn.log_model(self.rf, "random-forest-reg-model")
             mlflow.log_params(self.params)
 
-            # compute  metrics
+            # compute  metrics; r2 is a statistical measure of how well the
+            # data fits the model: higher the value indicates better fit.
             mae = metrics.mean_absolute_error(y_test, y_pred)
             mse = metrics.mean_squared_error(y_test, y_pred)
             rsme = np.sqrt(mse)
