@@ -1,6 +1,6 @@
 
 ![](images/intro_slide.png)
-# MLflow Tutorial at Strata NYC September 24, 2019
+# MLflow Tutorial 
 ## Agenda
  * Overview of ML development challenges
  * How MLflow tackles these
