@@ -6,7 +6,6 @@
  * How MLflow tackles these
  * MLflow Components
  * Ongoing Roadmap
- * Managed MLflow Demo
  * Q & A
  * (Break?)
  * Set up Environment
