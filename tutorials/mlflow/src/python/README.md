@@ -1,6 +1,6 @@
 
 ![](images/intro_slide.png)
-# MLflow Tutorial for ODSC West, 2019
+# MLflow Tutorial for 2019 Conferences
 ## Agenda
  * Overview of ML development challenges
  * How MLflow tackles these
@@ -9,7 +9,7 @@
  * Q & A
  * (Break?)
  * Set up Environment
- * Hands of Tutorial
+ * Hands-on Tutorial
 ### Prerequisites 
 1. Knowledge of Python 3 and programming in general
 2. Preferably a UNIX-based, fully-charged laptop with 8-16 GB, with a Chrome or Firefox browser
