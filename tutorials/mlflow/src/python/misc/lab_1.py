@@ -37,11 +37,11 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestRegressor
 from sklearn import metrics
-from lab_utils import load_data, plot_graphs, get_mlflow_directory_path, print_pandas_dataset
+from lab_utils import load_data, plot_graphs, get_temporary_directory_path, print_pandas_dataset
 
 class RFRModel():
     """
-    General class for Sckit-learn RandomForestRegressor
+    General class for Scikit-learn RandomForestRegressor
     """
     # class wide variables common to all instances
     # keep track of cumulative estimators and rsme
@@ -119,19 +119,26 @@ class RFRModel():
             runID = run.info.run_uuid
             experimentID = run.info.experiment_id
 
-            # create image artifact directory
-            image_dir = get_mlflow_directory_path(experimentID, runID, "images")
-            save_image = os.path.join(image_dir, "rsme_estimators.png")
-            fig.savefig(save_image)
+            # create temporary artifact file name and log artifact
+            temp_file_name = get_temporary_directory_path("rsme_estimators-", ".png")
+            temp_name = temp_file_name.name
+            try:
+                fig.savefig(temp_name)
+                mlflow.log_artifact(temp_name, "rsme_estimators_plots")
+            finally:
+                temp_file_name.close()  # Delete the temp file
 
             # plot R2 graph and save as artifacts
             (fig_2, ax) = plot_graphs(rfr.estimators, rfr.r2, "Random Forest Estimators", "R2", "R2 vs Estimators")
-            # save images
-            save_image_2 = os.path.join(image_dir, "r2_estimators.png")
-            fig_2.savefig(save_image_2)
 
-            # log artifact
-            mlflow.log_artifacts(image_dir, "images")
+            # create temporary artifact file name and log artifact
+            temp_file_name = get_temporary_directory_path("r2-estimators-", ".png")
+            temp_name = temp_file_name.name
+            try:
+                fig_2.savefig(temp_name)
+                mlflow.log_artifact(temp_name, "r2_estimators_plots")
+            finally:
+                temp_file_name.close()  # Delete the temp file
 
             # print some data
             print("-" * 100)

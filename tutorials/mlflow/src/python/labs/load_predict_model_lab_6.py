@@ -45,7 +45,7 @@ if __name__ == '__main__':
     # Add your run_uids from Lab-1 Runs. <cut-and-past in the list>
     # Can you try Lab-1 runs with model `random-forest-class-mode`, our classification model
     # and use its respective run_uids and test data
-    for run_id in ['05c16b8bfdc845e7b69949bc16a5a361', 'f93bd1881de6404cb7726317215921bf']:
+    for run_id in ['f232d9435e0a4cd6847ec0cef946ae69', '4a355562b2434cb88f0b2474cffd5057']:
         uri = "runs:/" + run_id + "/random-forest-reg-model"
         sk_model = mclnt.get_model("sklearn")(uri)
         print("Using Sckit-Learn Model Prediction:{}".format(type(sk_model)))

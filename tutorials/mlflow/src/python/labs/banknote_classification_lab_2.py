@@ -35,7 +35,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score, precision_score
-from lab_utils import load_data, plot_graphs, get_mlflow_directory_path, print_pandas_dataset, plot_confusion_matrix
+from lab_utils import load_data, get_temporary_directory_path, print_pandas_dataset, plot_confusion_matrix
 
 class RFCModel():
 
@@ -99,12 +99,15 @@ class RFCModel():
 
             # create confusion matrix images
             (plt, fig, ax) = plot_confusion_matrix(y_test,y_pred,y, title="Bank Note Classification Confusion Matrix")
-            image_dir = get_mlflow_directory_path(experimentID, runID, "images")
-            save_image = os.path.join(image_dir, "confusion_matrix.png")
-            fig.savefig(save_image)
 
-            # log artifact
-            mlflow.log_artifacts(image_dir, "images")
+            # create temporary artifact file name and log artifact
+            temp_file_name = get_temporary_directory_path("confusion_matrix-", ".png")
+            temp_name = temp_file_name.name
+            try:
+                fig.savefig(temp_name)
+                mlflow.log_artifact(temp_name, "confusion_matrix_plots")
+            finally:
+                temp_file_name.close()  # Delete the temp file
 
             # print some data
             print("-" * 100)

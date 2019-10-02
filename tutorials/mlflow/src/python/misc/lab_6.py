@@ -35,7 +35,7 @@ if __name__ == '__main__':
         uri = "runs:/" + run_id + "/random-forest-reg-model"
         sk_model = mclnt.get_model("sklearn")(uri)
         print("-" * 100)
-        print("Using Sckit-Learn Model Prediction:{}".format(type(sk_model)))
+        print("Using Scikit-Learn Model Prediction:{}".format(type(sk_model)))
         y_pred = sk_model.predict(X_test)
         print(y_pred)
         py_model = mclnt.get_model("pyfunc")(uri)

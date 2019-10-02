@@ -40,7 +40,7 @@ from sklearn import metrics
 from  mlflow.tracking import MlflowClient
 
 from lab_3 import RFRBaseModel
-from lab_utils import load_data, plot_residual_graphs, get_mlflow_directory_path
+from lab_utils import load_data, plot_residual_graphs, get_temporary_directory_path
 
 
 class RFFExperimentModel(RFRBaseModel):
@@ -104,22 +104,27 @@ class RFFExperimentModel(RFRBaseModel):
                                       ).sort_values("Importance", ascending=False)
 
             # Log importance file as feature artifact
-            feature_importance_dir = get_mlflow_directory_path(experimentID, runID, "features")
-            fname = os.path.join(feature_importance_dir,"feature-importance.csv")
-            importance.to_csv(fname, index=False)
-            mlflow.log_artifacts(feature_importance_dir, "features")
+            temp_file_name = get_temporary_directory_path("feature-importance-", ".csv")
+            temp_name = temp_file_name.name
+            try:
+                importance.to_csv(temp_name, index=False)
+                mlflow.log_artifact(temp_name, "feature-importance-files")
+            finally:
+                temp_file_name.close()  # Delete the temp file
 
             # Create residual plots and image directory
             # Residuals R = observed value - predicted value
-            (plt, fig, ax) = plot_residual_graphs(predictions, y_test, "Predicted values for Price ($)","Residual" , "Residual Plot")
+            (plt, fig, ax) = plot_residual_graphs(predictions, y_test, "Predicted values for Price ($)", "Residual",
+                                                  "Residual Plot")
 
             # Log residuals images
-            image_dir = get_mlflow_directory_path(experimentID, runID, "images")
-            save_image = os.path.join(image_dir, "residuals.png")
-            fig.savefig(save_image)
-
-            # log artifact
-            mlflow.log_artifacts(image_dir, "images")
+            temp_file_name = get_temporary_directory_path("residuals-", ".png")
+            temp_name = temp_file_name.name
+            try:
+                fig.savefig(temp_name)
+                mlflow.log_artifact(temp_name, "residuals-plots")
+            finally:
+                temp_file_name.close()  # Delete the temp file
 
             print("-" * 100)
             print("Inside MLflow {} Run with run_id {} and experiment_id {}".format(r_name, runID, experimentID))
@@ -167,4 +172,3 @@ if __name__ == '__main__':
     client = MlflowClient()
     run_list = client.list_run_infos(experimentID)
     [print(rinfo) for rinfo in run_list]
-

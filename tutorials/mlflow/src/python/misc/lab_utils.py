@@ -1,5 +1,5 @@
 import pandas as pd
-import matplotlib
+import tempfile
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.utils.multiclass import unique_labels
@@ -76,6 +76,16 @@ def get_mlflow_directory_path(*paths, create_dir=True):
             os.mkdir(dir, mode=0o755)
     return dir
 
+def get_temporary_directory_path(prefix, suffix):
+    """
+    Get a temporary directory and files for artifacts
+    :param prefix: name of the file
+    :param suffix: .csv, .txt, .png etc
+    :return: object to tempfile.
+    """
+
+    temp = tempfile.NamedTemporaryFile(prefix=prefix, suffix=suffix)
+    return temp
 
 def print_pandas_dataset(d):
     """

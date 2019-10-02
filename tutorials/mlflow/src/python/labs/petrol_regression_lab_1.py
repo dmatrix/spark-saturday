@@ -29,7 +29,6 @@ https://stackabuse.com/random-forest-algorithm-with-python-and-scikit-learn/
 https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html
 """
 
-import os
 import numpy as np
 import mlflow.sklearn
 
@@ -37,7 +36,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestRegressor
 from sklearn import metrics
-from lab_utils import load_data, plot_graphs, get_mlflow_directory_path, print_pandas_dataset
+from lab_utils import load_data, plot_graphs, get_temporary_directory_path, print_pandas_dataset
 
 class RFRModel():
     """
@@ -118,13 +117,14 @@ class RFRModel():
             runID = run.info.run_uuid
             experimentID = run.info.experiment_id
 
-            # create image artifact directory
-            image_dir = get_mlflow_directory_path(experimentID, runID, "images")
-            save_image = os.path.join(image_dir, "rsme_estimators.png")
-            fig.savefig(save_image)
-
-            # log artifact
-            mlflow.log_artifacts(image_dir, "images")
+            # create temporary artifact file name and log artifact
+            temp_file_name = get_temporary_directory_path("rsme_estimators-", ".png")
+            temp_name = temp_file_name.name
+            try:
+                fig.savefig(temp_name)
+                mlflow.log_artifact(temp_name, "rsme_estimators_plots")
+            finally:
+                temp_file_name.close()  # Delete the temp file
 
             # print some data
             print("-" * 100)
@@ -148,6 +148,7 @@ class RFRModel():
 
 if __name__ == '__main__':
     # load and print dataset
+    print("Running {} as MLflow Experiment on {}".format('petrol_regression_lab_1.py', 'Databricks Community Edition'))
     dataset = load_data("data/petrol_consumption.csv")
     print_pandas_dataset(dataset)
     # iterate over several runs with different parameters

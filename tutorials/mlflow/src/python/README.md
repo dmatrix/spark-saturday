@@ -1,6 +1,6 @@
 
 ![](images/intro_slide.png)
-# MLflow Tutorial 
+# MLflow Tutorial for ODSC West, 2019
 ## Agenda
  * Overview of ML development challenges
  * How MLflow tackles these
@@ -31,7 +31,7 @@
     * `pip install -r req.txt` or `pip3 install -r req.txt`
 5. `cd labs`
 6. If using PyCharm or IntelliJ, create a project and load source files in the project
-7. Having git clone problems:Worst case, Download the zip file from [https://dbricks.co/StrataNYC](https://dbricks.co/StrataNYC)
+7. Pre-register for [Databricks Community Edition](https://databricks.com/try-databricks)
 
 ### Documentation Resources
 

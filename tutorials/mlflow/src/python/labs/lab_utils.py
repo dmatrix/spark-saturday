@@ -4,6 +4,7 @@ import seaborn as sns
 from sklearn.utils.multiclass import unique_labels
 from sklearn.metrics import confusion_matrix
 import os
+import tempfile
 import numpy as np
 
 def load_data(path):
@@ -76,6 +77,17 @@ def get_mlflow_directory_path(*paths, create_dir=True):
             os.mkdir(dir, mode=0o755)
     return dir
 
+
+def get_temporary_directory_path(prefix, suffix):
+    """
+    Get a temporary directory and files for artifacts
+    :param prefix: name of the file
+    :param suffix: .csv, .txt, .png etc
+    :return: object to tempfile.
+    """
+
+    temp = tempfile.NamedTemporaryFile(prefix=prefix, suffix=suffix)
+    return temp
 
 def print_pandas_dataset(d):
     """
