@@ -7,8 +7,8 @@ from mlflow import log_metric, log_param, log_artifacts
 
 if __name__ == "__main__":
 
-    # set the tracking server to be Databricks Communit Edition
-    # set the experiment name; if name does not exisit, MLflow will
+    # set the tracking server to be Databricks Community Edition
+    # set the experiment name; if name does not exist, MLflow will
     # create one for you
     mlflow.set_tracking_uri("databricks")
     mlflow.set_experiment("/Users/jules.damji@gmail.com/Jules_CE_Test")
