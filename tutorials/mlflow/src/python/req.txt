@@ -5,4 +5,4 @@ matplotlib
 seaborn
 statsmodels
 keras
-tensorflow
+tensorflow==1.14.0
