@@ -44,19 +44,16 @@ mnist = keras.datasets.mnist
 (x_train, y_train),(x_test, y_test) = mnist.load_data()
 x_train, x_test = x_train / 255.0, x_test / 255.0
 
-# get an experiment name to see if it exists before creating one
-# MLflow creates run under the name "Default," with experiment id 0
-# Let's create our own experiment ID and name
-# Get handle to MLflowClient
-client = MlflowClient()
-exp_id = 0
-entity = client.get_experiment_by_name("MLflow Strata Tutorial")
-if entity is None:
-    exp_id = mlflow.create_experiment("MLflow Strata Tutorial")
-else:
-    exp_id = entity.experiment_id
+# Set experiment name; if one does exist, one will be created for you
+# Use MlflowClient() to fetch the experiment details
 
-def mlfow_run(run_name="Lab-5:Keras_MNIST", experiment_id=exp_id, model_summary=False):
+client = MlflowClient()
+
+mlflow.set_experiment("MLflow ODSC Tutorial")
+entity = client.get_experiment_by_name("MLflow ODSC Tutorial")
+exp_id = entity.experiment_id
+
+def mlfow_run(run_name="Lab-5:Keras_MNIST", model_summary=False):
     """
     Method to run MLflow experiment
     :return: Tuple (experiment_id, run_id)
