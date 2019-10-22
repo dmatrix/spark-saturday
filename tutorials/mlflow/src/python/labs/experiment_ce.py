@@ -14,7 +14,7 @@ if __name__ == "__main__":
     mlflow.set_experiment("/Users/jules.damji@gmail.com/Jules_CE_Test")
     print("Running experiment_ce.py")
     print("Tracking on https://community.cloud.databricks.com")
-
+    mlflow.start_run(run_name="CE_TEST")
     log_param("param-1", randint(0, 100))
 
     log_metric("metric-1", random())
@@ -28,3 +28,4 @@ if __name__ == "__main__":
 
     log_artifacts("outputs")
     shutil.rmtree('outputs')
+    mlflow.end_run()

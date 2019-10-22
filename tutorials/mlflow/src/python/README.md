@@ -5,7 +5,10 @@
  * Overview of ML development challenges
  * How MLflow tackles these
  * MLflow Components
- * Ongoing Roadmap
+   * Mlflow Tracking
+   * MLflow Projects
+   * MLflow Models
+   * MLflow Registry
  * Q & A
  * (Break?)
  * Set up Environment
