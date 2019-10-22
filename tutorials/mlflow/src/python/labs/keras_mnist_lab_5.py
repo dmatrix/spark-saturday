@@ -133,5 +133,6 @@ if __name__ == '__main__':
     (experimentID, runID) = mlfow_run(run_name="Jules-Lab5:Keras_MNIST")
     print("MLflow completed with run_id {} and experiment_id {}".format(runID, experimentID))
     print(tf.__version__)
+    print(mlflow.__version__)
     print("-" * 100)
 
