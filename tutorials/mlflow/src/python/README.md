@@ -36,6 +36,16 @@
 6. If using PyCharm or IntelliJ, create a project and load source files in the project
 7. Pre-register for [Databricks Community Edition](https://databricks.com/try-databricks)
 
+### Configuring local host MLflow Credentials for Community Edition (CE)
+
+**Note**: This step is optional if not using CE for tracking experiments
+1. Run from your shell `databricks configure`
+2. Answer the prompts
+3. **Databricks Host (should begin with https://)**: _https://community.cloud.databricks.com_
+4. **Username**: _enter your community edition login credentials_
+5. **Password**: _enter password for community edition_
+6. Configure MLflow to communicate with the Community Edition server: `export MLFLOW_TRACKING_URI=databricks`
+7. Test out your configuration by creating an experiment via the CLI: `mlflow experiments create -n /Users/<your-username@email_addr>/my-experiment`
 ### Documentation Resources
 
 1. [MLflow](https://mlflow.org/docs/latest/index.html) 
