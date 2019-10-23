@@ -46,7 +46,7 @@
 4. **Username**: _enter your community edition login credentials_
 5. **Password**: _enter password for community edition_
 6. Configure MLflow to communicate with the Community Edition server: `export MLFLOW_TRACKING_URI=databricks`
-7. Test out your configuration by creating an experiment via the CLI: `mlflow experiments create -n /Users/<your-username@email_addr>/my-experiment`
+7. Test out your configuration by creating an experiment via the CLI: `mlflow experiments create -n /Users/username@email_addr/my-experiment`
 ### Documentation Resources
 
 1. [MLflow](https://mlflow.org/docs/latest/index.html) 
