@@ -38,7 +38,9 @@
 
 ### Configuring local host with MLflow Credentials for Community Edition (CE)
 
-**Note**: This step is optional if you're not using CE for tracking experiments
+**Note**: This step is **only** required if you're going to use CE to track experiment runs
+
+Good [Resource Blog](https://databricks.com/blog/2019/10/17/managed-mlflow-now-available-on-databricks-community-edition.html)
 
 1. Run from your shell `databricks configure`
 2. Answer the prompts
@@ -47,6 +49,7 @@
 5. **Password**: _enter password for community edition_
 6. Configure MLflow to communicate with the Community Edition server: `export MLFLOW_TRACKING_URI=databricks`
 7. Test out your configuration by creating an experiment via the CLI: `mlflow experiments create -n /Users/username@email_addr/my-experiment`
+
 ### Documentation Resources
 
 1. [MLflow](https://mlflow.org/docs/latest/index.html) 
