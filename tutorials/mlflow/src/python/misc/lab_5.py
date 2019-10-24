@@ -151,6 +151,7 @@ if __name__ == '__main__':
     for opt_name in ['SGD', 'RMSprop','Adadelta']:
         (experimentID, runID) = mlfow_run(run_name="Jules-Lab5:Keras_MNIST", opt_name=opt_name)
         print("MLflow completed with run_id {}, optimizer {} and experiment_id {}".format(runID, opt_name, experimentID))
-        print(tf.__version__)
         print("-" * 100)
+    print(tf.__version__)
+    print(mlflow.__version__)
 
