@@ -9,6 +9,7 @@
    * MLflow Projects
    * MLflow Models
    * MLflow Registry
+ * Managed MLflow MLlib + Registry Demo
  * Q & A
  * (Break?)
  * Set up Environment
