@@ -28,12 +28,9 @@ https://towardsdatascience.com/explaining-feature-importance-by-example-of-a-ran
 https://seaborn.pydata.org/tutorial/regression.html
 """
 
-import tempfile
-
 import mlflow.sklearn
 import pandas as pd
 import numpy as np
-import os
 
 from sklearn.model_selection import train_test_split
 from sklearn import metrics

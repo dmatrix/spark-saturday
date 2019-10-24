@@ -1,5 +1,4 @@
-
-'''
+"""
 source: Databricks Learning Academy Lab
 
 Refactored code to modularize it
@@ -26,7 +25,7 @@ https://stackabuse.com/random-forest-algorithm-with-python-and-scikit-learn/
 https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html
 https://towardsdatascience.com/understanding-random-forest-58381e0602d2
 https://github.com/MangoTheCat/Modelling-Airbnb-Prices
-'''
+"""
 
 import mlflow.sklearn
 import numpy as np

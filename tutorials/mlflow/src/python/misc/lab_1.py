@@ -1,4 +1,4 @@
-'''
+"""
 
 Problem - part 1: We want to predict the gas consumption in millions of gallons in 48 of the US states
 based on some key features. These features are petrol tax (in cents), per capital income (in US dollars),
@@ -27,9 +27,8 @@ https://www.saedsayad.com/decision_tree_reg.htm
 https://towardsdatascience.com/understanding-random-forest-58381e0602d2
 https://stackabuse.com/random-forest-algorithm-with-python-and-scikit-learn/
 https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html
-'''
+"""
 
-import os
 import numpy as np
 import mlflow.sklearn
 
@@ -144,6 +143,7 @@ class RFRModel():
             print("-" * 100)
             print("Inside MLflow Run with run_id {} and experiment_id {}".format(runID, experimentID))
             print("Estimator trees        :", self.params["n_estimators"])
+            print("Estimator trees depth  :", self.params["max_depth"])
             print('Mean Absolute Error    :', mae)
             print('Mean Squared Error     :', mse)
             print('Root Mean Squared Error:', rsme)
@@ -164,9 +164,11 @@ if __name__ == '__main__':
     # load and print dataset
     dataset = load_data("data/petrol_consumption.csv")
     print_pandas_dataset(dataset)
-    # iterate over several runs with different parameters
+    # iterate over several runs with different parameters, stepping up by 50
+    max_depth = 0
     for n in range (50, 350, 50):
-        params = {"n_estimators": n, "random_state": 0 }
+        max_depth = max_depth + 2
+        params = {"n_estimators": n, "max_depth": max_depth, "random_state": 42}
         rfr = RFRModel(params)
         (experimentID, runID) = rfr.mlflow_run(dataset)
         print("MLflow Run completed with run_id {} and experiment_id {}".format(runID, experimentID))

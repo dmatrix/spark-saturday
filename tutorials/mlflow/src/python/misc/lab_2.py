@@ -1,4 +1,4 @@
-'''
+"""
 
 Problem - part 2: Given a set of features or attributes of a bank note, can we predict whether it's authentic or fake
 Four attributes contribute to this classification:
@@ -27,7 +27,7 @@ Some resources:
 https://mlflow.org/docs/latest/python_api/mlflow.html
 https://devopedia.org/confusion-matrix
 https://stackabuse.com/random-forest-algorithm-with-python-and-scikit-learn/
-'''
+"""
 
 import mlflow.sklearn
 import os
