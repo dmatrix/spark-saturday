@@ -165,6 +165,7 @@ if __name__ == '__main__':
     dataset = load_data("data/petrol_consumption.csv")
     print_pandas_dataset(dataset)
     # iterate over several runs with different parameters, stepping up by 50
+    # limiting to 300
     max_depth = 0
     for n in range (50, 350, 50):
         max_depth = max_depth + 2
