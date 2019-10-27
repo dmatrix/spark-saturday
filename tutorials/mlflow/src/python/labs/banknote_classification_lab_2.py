@@ -40,7 +40,7 @@ class RFCModel():
 
     def __init__(self, params={}):
         """
-        Constructor for RandamForestClassifier
+        Constructor for RandomForestClassifier
         :param params: parameters for the constructor such as no of estimators, depth of the tree, random_state etc
         """
         self.rf = RandomForestClassifier(**params)

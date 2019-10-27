@@ -160,8 +160,8 @@ if __name__ == '__main__':
     # TODO in the Lab (change these parameters, n_estimators and random_state
     # with each iteration.
     # Does that change the metrics and accuracy?
-    # start with n=10, step by 10 up to X <=100
-    for n in range(10, 130, 10):
+    # start with n=10, step by 10 up to X <=120
+    for n in range(10, 120, 10):
         params = {"n_estimators": n, "random_state": 42}
         rfr = RFCModel(params)
         (experimentID, runID) = rfr.mlflow_run(dataset)

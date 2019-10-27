@@ -169,8 +169,6 @@ Objectives of this lab:
  
  Nice blog on [RF, SVM, & LR](https://www.vshsolutions.com/blogs/banknote-authentication-using-machine-learning-algorithms/) on detecting fake notes
 
- Nice blog on [TensorFlow and scikit-learn](https://medium.com/tensorist/detecting-fake-banknotes-using-tensorflow-be21ffd2c478) on detecting fake notes
-
  Refresh on [Classification Metrics](https://joshlawman.com/metrics-classification-report-breakdown-precision-recall-f1/)
  
  Refresh on [RandomForest](https://towardsdatascience.com/understanding-random-forest-58381e0602d2)
