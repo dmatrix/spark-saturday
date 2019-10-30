@@ -53,7 +53,7 @@ class RFFExperimentModel(RFRBaseModel):
         :param params: parameters for the RandomForestRegressor instance
         :return: None
         """
-        RFRBaseModel.__init__(self, params)
+        super(RFRBaseModel, self).__init__(params)
 
     def mlflow_run(self, df, r_name="Lab-4:RF Experiment Model"):
         """
