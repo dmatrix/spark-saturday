@@ -155,8 +155,8 @@ if __name__ == '__main__':
     dataset = load_data("data/petrol_consumption.csv")
     print_pandas_dataset(dataset)
     # iterate over several runs with different parameters,
-    # stepping up by 25 trees and limiting to 100
     for n in range (25, 125, 25):
+    # stepping up by 25 trees and limiting to 100
         params = {"n_estimators": n, "random_state": 0 }
         rfr = RFRModel(params)
         (experimentID, runID) = rfr.mlflow_run(dataset)
