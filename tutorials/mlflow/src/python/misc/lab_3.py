@@ -44,6 +44,10 @@ class RFRBaseModel():
         self.params = params
         self.rf = RandomForestRegressor(**params)
 
+    @classmethod
+    def new_instance(cls, params={}):
+        return cls(params)
+
     def model(self):
         """
         Getter for the model
@@ -109,7 +113,7 @@ if __name__ == '__main__':
     # this is our benchmark model to compare experimental results with
     #
     params = {"n_estimators": 100, "max_depth": 3, "random_state": 0}
-    rfr = RFRBaseModel(params)
+    rfr = RFRBaseModel.new_instance(params)
     (experimentID, runID) = rfr.mlflow_run(dataset)
     print("MLflow completed with run_id {} and experiment_id {}".format(runID, experimentID))
     print("-" * 100)

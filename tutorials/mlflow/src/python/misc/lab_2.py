@@ -47,6 +47,10 @@ class RFCModel():
         self.rf = RandomForestClassifier(**params)
         self.params = params
 
+    @classmethod
+    def new_instance(cls, params={}):
+        return cls(params)
+
     def model(self):
         """
         Fetch the model
@@ -163,7 +167,7 @@ if __name__ == '__main__':
     # start with n=10, step by 10 up to X <=120
     for n in range(10, 120, 10):
         params = {"n_estimators": n, "random_state": 42}
-        rfr = RFCModel(params)
+        rfr = RFCModel.new_instance(params)
         (experimentID, runID) = rfr.mlflow_run(dataset)
         print("MLflow Run completed with run_id {} and experiment_id {}".format(runID, experimentID))
         print("-" * 100)

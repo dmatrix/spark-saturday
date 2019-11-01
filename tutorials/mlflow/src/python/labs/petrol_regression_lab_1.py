@@ -56,6 +56,10 @@ class RFRModel():
         self.rf = RandomForestRegressor(**params)
         self.params = params
 
+    @classmethod
+    def new_instance(cls, params={}):
+        return cls(params)
+
     def model(self):
         """
         Return the model craeted
@@ -158,7 +162,7 @@ if __name__ == '__main__':
     for n in range (25, 125, 25):
     # stepping up by 25 trees and limiting to 100
         params = {"n_estimators": n, "random_state": 0 }
-        rfr = RFRModel(params)
+        rfr = RFRModel.new_instance(params)
         (experimentID, runID) = rfr.mlflow_run(dataset)
         print("MLflow Run completed with run_id {} and experiment_id {}".format(runID, experimentID))
         print("-" * 100)

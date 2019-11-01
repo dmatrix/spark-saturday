@@ -161,7 +161,7 @@ if __name__ == '__main__':
 
     # run these experiments, each with its own instance of model with the supplied parameters.
     for params in params_list:
-        rfr = RFFExperimentModel(params)
+        rfr = RFFExperimentModel.new_instance(params)
         experiment = "Experiment with {} trees".format(params['n_estimators'])
         (experimentID, runID) = rfr.mlflow_run(dataset, experiment)
         print("MLflow Run completed with run_id {} and experiment_id {}".format(runID, experimentID))
