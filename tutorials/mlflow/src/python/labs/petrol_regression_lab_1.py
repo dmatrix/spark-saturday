@@ -36,7 +36,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestRegressor
 from sklearn import metrics
-from lab_utils import load_data, plot_graphs, get_temporary_directory_path, print_pandas_dataset
+from lab_utils import Utils
 
 class RFRModel():
     """
@@ -119,14 +119,14 @@ class RFRModel():
             self.estimators.append(params["n_estimators"])
 
             # plot graphs and save as artifacts
-            (fig, ax) = plot_graphs(rfr.estimators, rfr.rsme, "Random Forest Estimators", "Root Mean Square", "Root Mean Square vs Estimators")
+            (fig, ax) = Utils.plot_graphs(rfr.estimators, rfr.rsme, "Random Forest Estimators", "Root Mean Square", "Root Mean Square vs Estimators")
 
             # get current run and experiment id
             runID = run.info.run_uuid
             experimentID = run.info.experiment_id
 
             # create temporary artifact file name and log artifact
-            temp_file_name = get_temporary_directory_path("rsme_estimators-", ".png")
+            temp_file_name = Utils.get_temporary_directory_path("rsme_estimators-", ".png")
             temp_name = temp_file_name.name
             try:
                 fig.savefig(temp_name)
@@ -156,8 +156,8 @@ class RFRModel():
 
 if __name__ == '__main__':
     # load and print dataset
-    dataset = load_data("data/petrol_consumption.csv")
-    print_pandas_dataset(dataset)
+    dataset = Utils.load_data("data/petrol_consumption.csv")
+    Utils.print_pandas_dataset(dataset)
     # iterate over several runs with different parameters,
     for n in range (25, 125, 25):
     # stepping up by 25 trees and limiting to 100

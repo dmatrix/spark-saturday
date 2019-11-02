@@ -34,7 +34,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score, precision_score
-from lab_utils import load_data, get_temporary_directory_path, print_pandas_dataset, plot_confusion_matrix
+from lab_utils import Utils
 
 class RFCModel():
 
@@ -101,10 +101,10 @@ class RFCModel():
             experimentID = run.info.experiment_id
 
             # create confusion matrix images
-            (plt, fig, ax) = plot_confusion_matrix(y_test,y_pred,y, title="Bank Note Classification Confusion Matrix")
+            (plt, fig, ax) = Utils.plot_confusion_matrix(y_test,y_pred,y, title="Bank Note Classification Confusion Matrix")
 
             # create temporary artifact file name and log artifact
-            temp_file_name = get_temporary_directory_path("confusion_matrix-", ".png")
+            temp_file_name = Utils.get_temporary_directory_path("confusion_matrix-", ".png")
             temp_name = temp_file_name.name
             try:
                 fig.savefig(temp_name)
@@ -135,8 +135,8 @@ class RFCModel():
 
 if __name__ == '__main__':
     # load and print dataset
-    dataset = load_data("data/bill_authentication.csv")
-    print_pandas_dataset(dataset)
+    dataset = Utils.load_data("data/bill_authentication.csv")
+    Utils.print_pandas_dataset(dataset)
     # iterate over several runs with different parameters
     # TODO in the Lab (change these parameters, n_estimators and random_state
     # with each iteration.

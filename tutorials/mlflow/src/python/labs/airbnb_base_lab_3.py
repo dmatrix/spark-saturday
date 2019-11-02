@@ -32,7 +32,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 from sklearn import metrics
-from lab_utils import load_data, print_pandas_dataset
+from lab_utils import Utils
 
 class RFRBaseModel():
 
@@ -106,8 +106,8 @@ class RFRBaseModel():
 
 if __name__ == '__main__':
     # load and print dataset
-    dataset = load_data("data/airbnb-cleaned-mlflow.csv")
-    print_pandas_dataset(dataset)
+    dataset = Utils.load_data("data/airbnb-cleaned-mlflow.csv")
+    Utils.print_pandas_dataset(dataset)
     #
     # create a base line model parameters
     # this is our benchmark model to compare experimental results with
