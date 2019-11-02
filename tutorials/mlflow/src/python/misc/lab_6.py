@@ -2,7 +2,7 @@ import mlflow
 import mlflow.sklearn
 import mlflow.pyfunc
 
-from lab_utils import load_data
+from lab_utils import Utils
 from sklearn.preprocessing import StandardScaler
 
 
@@ -26,7 +26,7 @@ class MLflowOps():
 
 if __name__ == '__main__':
     mclnt = MLflowOps()
-    dataset = load_data("data/test_petrol_consumption.csv")
+    dataset = Utils.load_data("data/test_petrol_consumption.csv")
     # get all rows and columns but the last column
     X_test = dataset.iloc[:, 0:4].values
     # get all the last columns, which is what we want to predict
