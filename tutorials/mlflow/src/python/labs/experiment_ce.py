@@ -4,6 +4,7 @@ import shutil
 from random import random, randint
 import mlflow
 from mlflow import log_metric, log_param, log_artifacts
+from mlflow.tracking import MlflowClient
 
 if __name__ == "__main__":
 
@@ -29,3 +30,13 @@ if __name__ == "__main__":
     log_artifacts("outputs")
     shutil.rmtree('outputs')
     mlflow.end_run()
+    #
+    # try model registry on CE: not yet supported
+    #
+    """
+    cltn = MlflowClient()
+    cltn.create_registered_model("test_model_registry_on_CE")
+    """
+
+
+

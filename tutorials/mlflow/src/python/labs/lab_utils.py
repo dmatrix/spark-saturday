@@ -1,9 +1,12 @@
+import statistics
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.utils.multiclass import unique_labels
 from sklearn.metrics import confusion_matrix
 import os
+import math
 import tempfile
 import numpy as np
 
@@ -167,3 +170,8 @@ class Utils:
                         color="white" if cm[i, j] > thresh else "black")
         fig.tight_layout()
         return (plt, fig, ax)
+
+    @staticmethod
+    def rmse(y_true, y_pred):
+        from keras import backend
+        return backend.sqrt(backend.mean(backend.square(y_pred - y_true), axis=-1))

@@ -2,11 +2,11 @@ import argparse
 
 import keras
 import tensorflow as tf
-from keras import models
-from keras import layers
+
 
 import mlflow
 import mlflow.keras
+import mlflow.tensorflow
 from mlflow.tracking import MlflowClient
 
 """
@@ -59,27 +59,25 @@ def mlfow_run(run_name="Lab-5:Keras_MNIST", model_summary=False):
     :return: Tuple (experiment_id, run_id)
     """
     with mlflow.start_run(run_name=run_name,  experiment_id = exp_id) as run:
-
-        model = models.Sequential()
-        #
+        model = tf.keras.models.Sequential()
         # The first layer in this network transforms the format of the images from a 2d-array (of 28 by 28 pixels),
         # to a 1d-array of 28 * 28 = 784 pixels.
-        model.add(layers.Flatten(input_shape=x_train[0].shape))
+        model.add(tf.keras.layers.Flatten(input_shape=x_train[0].shape)),
         # add extra hidden layers to expand the NN
         # --num_hidden_layers or -N  in the command line arguments
         for n in range(0, args.num_hidden_layers):
-            model.add(layers.Dense(args.num_hidden_units, activation=tf.nn.relu))
-        # dropout is an regularization technique for NN where we randomly dropout a layer if the
+            model.add(tf.keras.layers.Dense(args.num_hidden_units, activation='relu')),
+        # dropout is a regularization technique for NN where we randomly dropout a layer if the
         # computed gradients are minimal or have no effect.
-        model.add(layers.Dropout(args.dropout))
+        model.add(tf.keras.layers.Dropout(args.dropout)),
         # final layer with softmax activation layer
-        model.add(layers.Dense(10, activation=tf.nn.softmax))
+        model.add(tf.keras.layers.Dense(10, activation='softmax'))
         if model_summary:
             model.summary()
         # Use Scholastic Gradient Descent (SGD)
         # https://keras.io/optimizers/
         #
-        optimizer = keras.optimizers.SGD(lr=args.learning_rate,
+        optimizer = tf.keras.optimizers.SGD(lr=args.learning_rate,
                                          momentum=args.momentum,
                                          nesterov=True)
 
@@ -95,7 +93,7 @@ def mlfow_run(run_name="Lab-5:Keras_MNIST", model_summary=False):
         class LogMetricsCallback(keras.callbacks.Callback):
             def on_epoch_end(self, epoch, logs={}):
                 mlflow.log_metric("training_loss", logs["loss"], epoch)
-                mlflow.log_metric("training_accuracy", logs["acc"], epoch)
+                mlflow.log_metric("training_accuracy", logs["accuracy"], epoch)
 
         # fit the model
         # get experiment id and run id
@@ -120,6 +118,7 @@ def mlfow_run(run_name="Lab-5:Keras_MNIST", model_summary=False):
         # log model as native Keras Model
         mlflow.keras.log_model(model, artifact_path="keras-model")
 
+
         # get experiment id and run id
         runID = run.info.run_uuid
         experimentID = run.info.experiment_id
@@ -127,7 +126,7 @@ def mlfow_run(run_name="Lab-5:Keras_MNIST", model_summary=False):
         return (experimentID, runID)
 
 if __name__ == '__main__':
-    (experimentID, runID) = mlfow_run(run_name="Jules-Lab5:Keras_MNIST")
+    (experimentID, runID) = mlfow_run(run_name="Jules-Lab5:TensorFlow-Keras_MNIST")
     print("MLflow completed with run_id {} and experiment_id {}".format(runID, experimentID))
     print(tf.__version__)
     print(mlflow.__version__)
