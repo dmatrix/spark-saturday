@@ -5,6 +5,8 @@ import mlflow.tensorflow
 from sklearn.model_selection import train_test_split
 
 from lab_utils import Utils
+from sklearn.preprocessing import StandardScaler
+
 
 class KerasRegModel:
 
@@ -32,7 +34,7 @@ class KerasRegModel:
             return None
 
     def model(self):
-        model_attr = "keras_reg_model"
+        model_attr = "tf_keras_reg_model"
         model_reg = getattr(self, model_attr, None)
         if model_reg is None:
             try:
@@ -66,6 +68,8 @@ class KerasRegModel:
             # and source code with the `autolog()` function
             mlflow.tensorflow.autolog()
             X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
+            sc = StandardScaler()
+            X_train = sc.fit_transform(X_train)
             self.model().fit(X_train, y_train,
                             epochs= self.get_parameter('epochs'),
                             batch_size=self.get_parameter('batch_size'),
@@ -77,20 +81,37 @@ class KerasRegModel:
 
 if __name__ =='__main__':
     print(tf.__version__)
-    params = {'input_units': 256,
+    params_list = [
+        {'input_units': 128,
               'input_shape': (4,),
               'activation': 'relu',
               'optimizer': 'adam',
               'loss': 'mse',
-              'epochs': 150,
-              'batch_size': 64}
+              'epochs': 200,
+              'batch_size': 128},
+        {'input_units': 256,
+              'input_shape': (4,),
+              'activation': 'relu',
+              'optimizer': 'adam',
+              'loss': 'mse',
+              'epochs': 300,
+              'batch_size': 128},
+        {'input_units': 512,
+            'input_shape': (4,),
+            'activation': 'relu',
+            'optimizer': 'adam',
+            'loss': 'mse',
+            'epochs': 500,
+            'batch_size': 256}
+        ]
 
-    keras_model = KerasRegModel(params)
     dataset = Utils.load_data("data/petrol_consumption.csv")
     # get all feature independent attributes
     X = dataset.iloc[:, 0:4].values
     # get all the values of last columns, dependent variables,
     # which is what we want to predict as our values, the petrol consumption
     y = dataset.iloc[:, 4].values
-    (runID, experimentID) = keras_model.train_model(X,y)
-    print("MLflow completed with run_id {} and experiment_id {}".format(runID, experimentID))
+    for params in params_list:
+        keras_model = KerasRegModel(params)
+        (runID, experimentID) = keras_model.train_model(X,y)
+        print("MLflow completed with run_id {} and experiment_id {}".format(runID, experimentID))
