@@ -70,6 +70,7 @@ class KerasRegModel:
             X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
             sc = StandardScaler()
             X_train = sc.fit_transform(X_train)
+            X_test = sc.fit_transform(X_test)
             self.model().fit(X_train, y_train,
                             epochs= self.get_parameter('epochs'),
                             batch_size=self.get_parameter('batch_size'),
@@ -87,7 +88,7 @@ if __name__ =='__main__':
               'activation': 'relu',
               'optimizer': 'adam',
               'loss': 'mse',
-              'epochs': 200,
+              'epochs': 100,
               'batch_size': 128},
         {'input_units': 256,
               'input_shape': (4,),
