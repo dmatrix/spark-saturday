@@ -50,10 +50,10 @@ class TFKerasRegModel:
                 tf.keras.layers.Dense(self.get_parameter('input_units'),
                     input_shape=self.get_parameter('input_shape'),
                     activation=self.get_parameter('activation'),
-                    name="hidden_layer"),
-                tf.keras.layers.Dense(self.get_parameter('input_units'),
-                    activation=self.get_parameter('activation'),
-                    name="hidden_layer_2"),
+                    name="input_layer"),
+                 tf.keras.layers.Dense(self.get_parameter('input_units'),
+                                activation=self.get_parameter('activation'),
+                                name="hidden_layer_1"),
                 tf.keras.layers.Dense(1)])
         # compile the model
         km.compile(loss=self.get_parameter('loss'),
@@ -61,7 +61,7 @@ class TFKerasRegModel:
                    metrics=['mse', Utils.rmse])
         return km
 
-    def  mlflow_run(self, X, y, run_name="TF_Keras_Regression"):
+    def mlflow_run(self, X, y, run_name="TF_Keras_Regression"):
         # create train and test data
         with mlflow.start_run(run_name=run_name)as run:
             # Automatically capture the model's parameters, metrics, artifacts,
