@@ -58,6 +58,7 @@ Good [Resource Blog](https://databricks.com/blog/2019/10/17/managed-mlflow-now-a
 3. [Pandas](https://pandas.pydata.org/pandas-docs/stable/reference/index.html)
 4. [Scikit-Learn](https://scikit-learn.org/stable/index.html)
 5. [Keras](https://keras.io/optimizers/)
+6. [TensorFlow](https://tensorflow.org)
 
 ## Labs 
 The general objective of the labs are to familiarize you with MLflow APIs and how these
@@ -81,6 +82,8 @@ This iterative process is recurrent in each of the lab, as part of model managem
 
 ### Lab-1: Scikit-Learn Regression with RandomForestRegressor 
  [_petrol_regression_lab_1.py_](./labs/petrol_regression_lab_1.py)
+ 
+ [_tensorflow_keras_petrol_regression_lab_1.py_](./labs/tensorflow_keras_petrol_regression_lab_1.py)
 ### Problem
 Part 1: We want to predict the gas consumption in millions of gallons in 48 of the US states
 based on some key features. These features are petrol tax (in cents), per capital income (in US dollars),
