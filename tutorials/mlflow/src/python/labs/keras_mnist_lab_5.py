@@ -53,7 +53,7 @@ mlflow.set_experiment("MLflow Tutorial")
 entity = client.get_experiment_by_name("MLflow Tutorial")
 exp_id = entity.experiment_id
 
-def mlfow_run(run_name="Lab-5:Keras_MNIST", model_summary=False):
+def mlfow_run(run_name="Lab-5:TensorFlow/Keras_MNIST", model_summary=False):
     """
     Method to run MLflow experiment
     :return: Tuple (experiment_id, run_id)
