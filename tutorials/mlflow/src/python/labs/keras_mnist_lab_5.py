@@ -49,8 +49,8 @@ x_train, x_test = x_train / 255.0, x_test / 255.0
 
 client = MlflowClient()
 
-mlflow.set_experiment("MLflow ODSC Tutorial")
-entity = client.get_experiment_by_name("MLflow ODSC Tutorial")
+mlflow.set_experiment("MLflow Tutorial")
+entity = client.get_experiment_by_name("MLflow Tutorial")
 exp_id = entity.experiment_id
 
 def mlfow_run(run_name="Lab-5:Keras_MNIST", model_summary=False):
@@ -128,7 +128,7 @@ def mlfow_run(run_name="Lab-5:Keras_MNIST", model_summary=False):
 if __name__ == '__main__':
     (experimentID, runID) = mlfow_run(run_name="Jules-Lab5:TensorFlow-Keras_MNIST")
     print("MLflow completed with run_id {} and experiment_id {}".format(runID, experimentID))
-    print(tf.__version__)
-    print(mlflow.__version__)
+    print("Using TensorFlow Version={}".format(tf.__version__))
+    print("Using MLflow Version={}".format(mlflow.__version__))
     print("-" * 100)
 

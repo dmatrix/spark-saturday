@@ -6,7 +6,6 @@ import seaborn as sns
 from sklearn.utils.multiclass import unique_labels
 from sklearn.metrics import confusion_matrix
 import os
-import math
 import tempfile
 import numpy as np
 

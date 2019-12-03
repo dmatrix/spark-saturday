@@ -8,7 +8,7 @@ from lab_utils import Utils
 from sklearn.preprocessing import StandardScaler
 
 
-class KerasRegModel:
+class TFKerasRegModel:
 
     def __init__(self, params={}):
         self._params = params
@@ -55,13 +55,13 @@ class KerasRegModel:
                     activation=self.get_parameter('activation'),
                     name="hidden_layer_2"),
                 tf.keras.layers.Dense(1)])
-        #compile the model
+        # compile the model
         km.compile(loss=self.get_parameter('loss'),
                    optimizer=self.get_parameter('optimizer'),
                    metrics=['mse', Utils.rmse])
         return km
 
-    def train_model(self, X, y, run_name="Keras_Regression"):
+    def  mlflow_run(self, X, y, run_name="TF_Keras_Regression"):
         # create train and test data
         with mlflow.start_run(run_name=run_name)as run:
             # Automatically capture the model's parameters, metrics, artifacts,
@@ -81,29 +81,29 @@ class KerasRegModel:
             return (experimentID, runID)
 
 if __name__ =='__main__':
-    print(tf.__version__)
+    print("Using TensorFlow Version={}".format(tf.__version__))
     params_list = [
-        {'input_units': 128,
+        {'input_units': 64,
               'input_shape': (4,),
               'activation': 'relu',
               'optimizer': 'adam',
               'loss': 'mse',
               'epochs': 100,
               'batch_size': 128},
-        {'input_units': 256,
+        {'input_units': 128,
               'input_shape': (4,),
               'activation': 'relu',
               'optimizer': 'adam',
               'loss': 'mse',
-              'epochs': 300,
+              'epochs': 200,
               'batch_size': 128},
-        {'input_units': 512,
+        {'input_units': 256,
             'input_shape': (4,),
             'activation': 'relu',
             'optimizer': 'adam',
             'loss': 'mse',
-            'epochs': 500,
-            'batch_size': 256}
+            'epochs': 200,
+            'batch_size': 128}
         ]
 
     dataset = Utils.load_data("data/petrol_consumption.csv")
@@ -113,6 +113,6 @@ if __name__ =='__main__':
     # which is what we want to predict as our values, the petrol consumption
     y = dataset.iloc[:, 4].values
     for params in params_list:
-        keras_model = KerasRegModel(params)
-        (runID, experimentID) = keras_model.train_model(X,y)
+        keras_model = TFKerasRegModel(params)
+        (experimentID, runID) = keras_model.mlflow_run(X, y)
         print("MLflow completed with run_id {} and experiment_id {}".format(runID, experimentID))
