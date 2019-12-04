@@ -30,7 +30,6 @@ https://stackabuse.com/random-forest-algorithm-with-python-and-scikit-learn/
 """
 
 import mlflow.sklearn
-import os
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
