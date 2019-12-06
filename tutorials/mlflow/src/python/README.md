@@ -1,7 +1,8 @@
 
-#READ THIS NOW BEFORE CLONING: 
+# READ THIS NOW BEFORE CLONING: 
 
-This repo has been deprecated and moved to __git@github.com:dmatrix/tutorials.git__
+## This repo has been deprecated and moved to __git@github.com:dmatrix/tutorials.git__
+
 ![](images/intro_slide.png)
 # MLflow Tutorial for 2019 Conferences
 ## Agenda
